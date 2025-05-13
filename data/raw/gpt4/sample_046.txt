@@ -1,0 +1,17 @@
+A relational database enforces data integrity to ensure the accuracy, consistency, and reliability of the data stored within it. Data integrity is crucial for the correct operation of applications relying on the database and for ensuring meaningful data analysis. There are several mechanisms and constraints that relational databases use to enforce data integrity:
+
+1. **Primary Key Constraint**: Every table in a relational database can have a primary key, which uniquely identifies each row in the table. This ensures that there are no duplicate rows in a table, maintaining the uniqueness integrity of the database.
+
+2. **Foreign Key Constraint**: A foreign key is a column (or a set of columns) in one table that uniquely identifies a row of another table. It is used to establish and enforce a link between the data in two tables. The foreign key constraint ensures referential integrity by making sure that the value in one table must exist in the other table. This maintains consistency across relational tables.
+
+3. **Unique Constraint**: This constraint ensures that all values in a column are unique across the table. This is useful for enforcing business rules that require a unique value for a specific column, such as email addresses or employee IDs.
+
+4. **Check Constraint**: A check constraint allows specifying a condition on a column that must be true for all rows in the table. This is used to enforce domain integrity by restricting the data that can be stored in a column. For example, a check constraint could limit an age column to values between 0 and 120.
+
+5. **Not Null Constraint**: This constraint prevents null values from being entered into a column, ensuring that columns that require a value are not left empty. This is essential for maintaining the completeness integrity of the database.
+
+6. **Default Values**: Setting a default value for a column helps maintain data integrity by ensuring that a sensible default is used if no value is specified during a data insertion. This can help avoid null values in columns that are not explicitly set during record creation.
+
+7. **Data Type Constraints**: By enforcing specific data types for each column (e.g., integer, decimal, text, date), a relational database ensures that only appropriate data can be stored in each column, maintaining the type integrity of the data.
+
+8. **Transactional Integrity (ACID Properties)**: Relational databases use transactions that are atomic, consistent, isolated, and durable (ACID) to ensure data integrity in multi-step operations. If a transaction is interrupted or fails, the database can roll back to its previous state,

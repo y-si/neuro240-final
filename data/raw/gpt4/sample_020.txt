@@ -1,0 +1,24 @@
+Overfitting is a common problem in machine learning where a model learns the detail and noise in the training data to the extent that it negatively impacts the performance of the model on new data. Here are some common techniques used to prevent overfitting:
+
+### 1. **Cross-Validation**
+Cross-validation is a powerful preventative measure against overfitting. The most common method is k-fold cross-validation, where the training set is split into k smaller sets. The model is trained on k-1 of these subsets, then validated on the remaining part. This process is repeated k times (folds), with each of the k subsets used exactly once as the validation data. This technique helps ensure the model's performance is consistent across different subsets of the data.
+
+### 2. **Train/Test Split**
+Splitting the dataset into a training set and a test set can help identify overfitting. The model is trained on the training set and then tested on the unseen test set. If the model performs well on the training data but poorly on the test data, it may be overfitting.
+
+### 3. **Simplifying The Model**
+Using a simpler model can also prevent overfitting. This can involve reducing the number of layers in a neural network, using fewer parameters, or selecting features with fewer degrees of freedom. The idea is to reduce the model's complexity without significantly impacting its performance.
+
+### 4. **Regularization**
+Regularization techniques add a penalty on the size of the coefficients to the loss function:
+   - **L1 regularization** (Lasso regularization) adds a penalty equal to the absolute value of the magnitude of coefficients.
+   - **L2 regularization** (Ridge regularization) adds a penalty equal to the square of the magnitude of coefficients.
+   - **Elastic Net** combines both L1 and L2 regularization.
+
+These techniques can discourage the model from fitting too closely to the training data by penalizing large coefficients.
+
+### 5. **Early Stopping**
+In gradient descent-based algorithms, early stopping is a form of regularization used to avoid overfitting. Training is stopped as soon as the performance on a validation set starts to degrade, thereby preventing the model from learning noise in the training set.
+
+### 6. **Pruning**
+In decision trees and some neural network architectures, pruning removes parts of the model that are not critical to its predictive power. This simplification helps to prevent the model from becoming overly complex and overfitting

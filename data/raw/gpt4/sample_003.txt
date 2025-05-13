@@ -1,0 +1,27 @@
+Attention mechanisms in transformer models are a breakthrough technique designed to enhance the model's ability to focus on different parts of the input data when performing a specific task, such as translating languages or generating text. This mechanism addresses the limitations of earlier sequence-to-sequence models, which struggled with long-distance dependencies in data. The core idea behind attention is to allow the model to weigh the importance of different input elements differently, thereby "attending" more to those deemed more relevant for the task at hand.
+
+### Components of Attention Mechanism
+
+The attention mechanism in transformers is often exemplified by the "Scaled Dot-Product Attention" and the "Multi-head Attention" mechanisms. Here's a basic outline of how these components work:
+
+#### Scaled Dot-Product Attention
+
+This form of attention computes the attention scores based on a dot product of the input elements, scaled down to manage the gradient flow better. It involves three main components: queries (Q), keys (K), and values (V), which are derived from the input representations. The process is as follows:
+
+1. **Dot Product of Q and K**: Compute the dot product between all queries and keys to determine the alignment scores, indicating how much focus should be given to other parts of the input for each query.
+   
+2. **Scaling**: Scale down the dot products by the square root of the dimension of the keys to prevent extremely large values that could hamper softmax gradient.
+   
+3. **Softmax**: Apply the softmax function on the scores to obtain the weights on the values. This step ensures that the weights are normalized and sum up to 1, turning the scores into probabilities.
+   
+4. **Weighted Sum**: Multiply the softmax output with the values (V) to obtain a weighted sum, which is the output of the attention mechanism. This output is a reflection of how the model has decided to "attend" to the different parts of the input.
+
+#### Multi-head Attention
+
+To capture various aspects and relationships in the input data, transformers utilize multi-head attention. This mechanism splits the Q, K, and V matrices into multiple "heads", allowing the model to jointly attend to information from different representation subspaces at different positions. The steps for each head are as follows:
+
+1. **Splitting**: The Q, K, and V matrices are split into multiple heads by dividing their dimensions.
+   
+2. **Scaled Dot-Product Attention**: Each head performs scaled dot-product attention in parallel.
+   
+3. **Concatenation

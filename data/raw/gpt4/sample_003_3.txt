@@ -1,0 +1,34 @@
+Attention mechanisms in transformer models, famously employed in models like BERT and GPT, fundamentally improve the way machines contextualize and synthesize sequential data, like text. Introduced in "Attention is All You Need" (2017) by Vaswani et al., attention allows models to focus selectively on important components of their input data rather than treating all the data identically.
+
+### Core Principles of Attention
+
+The primary kind of attention mechanism used in transformers is called "scaled dot-product attention". The mechanism computes attention scores based on interactions between different components (for example, different words in a sentence). A transformer's attention operates using three main elements:
+
+1. **Query (Q)**
+2. **Key (K)**
+3. **Value (V)**
+
+Inputs to the mechanism are transformed into these three representations through trainable neural network weight matrices. That is, for any input \( x \):
+
+- \( Q = x W_Q \)
+- \( K = x W_K \)
+- \( V = x W_V \)
+
+Where \( W_Q \), \( W_K \), and \( W_V \) are learnable parameter matrices.
+
+### Calculation of Attention
+
+For a set of queries, keys, and values, attention scores are computed using the formula:
+
+\[ \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \]
+
+Where:
+- \( QK^T \) represents the matrix multiplication of queries and the transpose of keys, producing a matrix of scores that denote the impact or influence of each key on each query.
+- \( d_k \) is the dimensionality of key vectors, and the square root is used to scale the attention mechanics to avoid excessively large values during subsequent multiplication and addition steps (especially with deeper models or larger dimension numbers). This helps in learning stability and performance.
+- **softmax** function is applied to each row of \( QK^T \) normalized scores making sure they all add up to 1 (probability distribution).
+
+The values \( V \) are then scaled by these obtained attention weights before final output delivery for further processing. It ensures that the output represents the weighted importance as determined by the model's understanding.
+
+### Multi-Head Attention
+
+Transformers don't stop at a simple attention mechanism. Instead, they expand upon this with what is called multi-head attention. This divides the query, key, and value matrices into multiple "heads" by splitting the weight matrices up, allowing the model

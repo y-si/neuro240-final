@@ -1,0 +1,36 @@
+A binary search algorithm is an efficient searching algorithm used to find the position of a target value within a sorted array. It follows a divide-and-conquer approach, repeatedly dividing the search interval in half.
+
+Here's how the binary search algorithm works:
+
+1. Start with a sorted array and the target value you want to find.
+2. Set two pointers, one at the beginning (left) and one at the end (right) of the array.
+3. Calculate the middle index by taking the average of the left and right pointers.
+4. Compare the middle element with the target value:
+   - If the middle element is equal to the target value, return the middle index as the target is found.
+   - If the target value is greater than the middle element, update the left pointer to be middle + 1, discarding the left half of the array.
+   - If the target value is less than the middle element, update the right pointer to be middle - 1, discarding the right half of the array.
+5. Repeat steps 3-4 until the target value is found or the left pointer becomes greater than the right pointer (indicating the target is not present in the array).
+
+The time complexity of the binary search algorithm is O(log n), where n is the number of elements in the array. This is because the search space is halved at each iteration, resulting in a logarithmic time complexity.
+
+Here's a simple example of binary search in Python:
+
+```python
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1  # Target not found
+```
+
+In this example, the `binary_search` function takes a sorted array `arr` and a target value `target`. It initializes the `left` and `right` pointers and enters a loop until the target is found or the pointers cross each other. Inside the loop, it calculates the middle index, compares the middle element with the target, an

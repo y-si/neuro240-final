@@ -1,0 +1,14 @@
+Decision trees make predictions by recursively splitting the input data based on features to create a tree-like model of decisions and their possible outcomes. Here's a step-by-step explanation:
+
+1. Feature selection: At each node of the tree, the algorithm selects the feature that best splits the data into distinct classes based on a certain criterion, such as Gini impurity or information gain.
+
+2. Splitting: The selected feature is used to split the data into subsets. For example, if the feature is "age" and the split point is 30, the data will be divided into two subsets: one with instances where age < 30 and another with instances where age ≥ 30.
+
+3. Recursive splitting: The algorithm recursively splits the subsets using the same process of feature selection and splitting until a stopping criterion is met. This could be a maximum depth of the tree, a minimum number of instances per leaf, or when the splitting no longer improves the performance.
+
+4. Leaf nodes: Once the stopping criterion is met, the final subsets become leaf nodes. Each leaf node is assigned a class label based on the majority class of the instances in that subset.
+
+5. Prediction: To make a prediction for a new instance, the decision tree traverses from the root to a leaf node based on the feature values of the instance. The class label associated with the reached leaf node is the predicted class for that instance.
+
+Here's a simple example:
+Suppose you have a decision tree that predicts whether a person will buy a product based on their age and income. The tree splits the data first on the "age" feature at 30, and then on the "income" feature at $50,000 for the subset where age ≥ 30. If a new instance has an age of 35 and an income of $60,000, the decision tree will traverse to the leaf node corresponding to age ≥ 30 and income ≥ $50,000, and predict that the person will buy the product.

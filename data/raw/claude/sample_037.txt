@@ -1,0 +1,27 @@
+TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over the internet, but they have some key differences:
+
+1. Connection:
+   - TCP is connection-oriented, meaning it establishes a connection between the sender and the receiver before data transmission begins.
+   - UDP is connectionless, meaning it doesn't establish a prior connection. Data is sent without any handshaking.
+
+2. Reliability:
+   - TCP ensures reliable delivery of data. It uses sequence numbers, acknowledgments, and retransmission of lost packets to guarantee that data is delivered correctly and in order.
+   - UDP does not guarantee reliable delivery. Packets can be lost, duplicated, or arrive out of order. There is no built-in mechanism for error checking or recovery.
+
+3. Ordering:
+   - TCP ensures that data packets are delivered in the correct order to the recipient.
+   - UDP does not guarantee ordering. Packets may arrive in a different order than they were sent.
+
+4. Speed:
+   - TCP is slower compared to UDP because of the overhead involved in establishing a connection, error checking, and ensuring reliable delivery.
+   - UDP is faster because it doesn't have the overhead of connection establishment and error checking.
+
+5. Usage:
+   - TCP is used for applications that require reliable data delivery, such as web browsing, email, file transfer, and remote administration.
+   - UDP is used for applications that prioritize speed and can tolerate some data loss, such as streaming media, online gaming, and VoIP (Voice over IP).
+
+6. Error Checking:
+   - TCP includes error checking mechanisms to detect and recover from errors in the transmitted data.
+   - UDP has minimal error checking, relying on higher-layer protocols or the application to handle errors if necessary.
+
+In summary, TCP provides reliable, ordered, and error-checked delivery of data, making it suitable for applications that require data integrity. UDP, on the other hand, offers faster transmission but with less reliability, making it suitable for applications that can tolerate some data loss or out-of-order delivery.

@@ -1,0 +1,99 @@
+**Regularization in Neural Networks**
+=====================================
+
+Regularization is a technique used in neural networks to prevent overfitting, which occurs when a model is too complex and performs well on the training data but poorly on new, unseen data. Overfitting happens when a model learns the noise and random fluctuations in the training data rather than the underlying patterns.
+
+**Why Regularization is Needed**
+-----------------------------
+
+Neural networks are prone to overfitting due to their ability to learn complex patterns. When a model is too complex, it can fit the training data too closely, resulting in poor generalization performance. Regularization helps to prevent overfitting by adding a penalty term to the loss function that discourages large weights.
+
+**Types of Regularization**
+-------------------------
+
+There are several types of regularization techniques used in neural networks:
+
+### 1. L1 Regularization (Lasso Regression)
+
+L1 regularization adds a term to the loss function that is proportional to the absolute value of the model's weights. This term is also known as the L1 penalty.
+
+```python
+L1_penalty = λ * ∑|w_i|
+```
+
+where `λ` is the regularization strength, `w_i` are the model's weights, and `∑` denotes the sum over all weights.
+
+### 2. L2 Regularization (Ridge Regression)
+
+L2 regularization adds a term to the loss function that is proportional to the square of the model's weights. This term is also known as the L2 penalty.
+
+```python
+L2_penalty = λ * ∑w_i^2
+```
+
+where `λ` is the regularization strength, `w_i` are the model's weights, and `∑` denotes the sum over all weights.
+
+### 3. Dropout Regularization
+
+Dropout regularization randomly sets a fraction of the model's weights to zero during training. This helps to prevent overfitting by reducing the capacity of the model.
+
+### 4. Early Stopping Regularization
+
+Early stopping regularization stops training when the model's performance on the validation set starts to degrade. This helps to prevent overfitting by stopping training before the model has a chance to overfit.
+
+**How Regularization Works**
+---------------------------
+
+Regularization works by adding a penalty term to the loss function that discourages large weights. The penalty term is proportional to the magnitude of the weights, so larger weights result in a larger penalty.
+
+During training, the model tries to minimize the loss function, which includes the penalty term. As a result, the model is encouraged to use smaller weights, which reduces the risk of overfitting.
+
+**Example Code**
+---------------
+
+Here is an example of how to implement L1 and L2 regularization in PyTorch:
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# Define a simple neural network
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.fc1 = nn.Linear(784, 128)
+        self.fc2 = nn.Linear(128, 10)
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+# Define the loss function with L1 regularization
+def loss_fn(model, x, y, lambda_val):
+    output = model(x)
+    loss = nn.CrossEntropyLoss()(output, y)
+    l1_penalty = lambda_val * sum(abs(w) for w in model.parameters())
+    return loss + l1_penalty
+
+# Define the loss function with L2 regularization
+def loss_fn(model, x, y, lambda_val):
+    output = model(x)
+    loss = nn.CrossEntropyLoss()(output, y)
+    l2_penalty = lambda_val * sum(w**2 for w in model.parameters())
+    return loss + l2_penalty
+
+# Train the model
+model = Net()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+lambda_val = 0.01
+
+for epoch in range(10):
+    optimizer.zero_grad()
+    output = model(x)
+    loss = loss_fn(model, x, y, lambda_val)
+    loss.backward()
+    optimizer.step()
+    print(f'Epoch {epoch+1}, Loss: {loss.item()}')
+```
+In this example, we define a simple neural network and a loss function with L1 and L2 regularization. We then train the model using stochastic gradient descent (SGD) and print the loss at each epoch.

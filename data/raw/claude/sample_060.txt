@@ -1,0 +1,19 @@
+OAuth 2.0 is an authorization framework that allows third-party applications to obtain limited access to user accounts on an HTTP service, such as Google, Facebook, or GitHub. Although OAuth 2.0 is primarily used for authorization, it can also be used for authentication. Here's how OAuth 2.0 works for authentication:
+
+1. User initiates the authentication process: The user clicks a button or link on the client application to sign in using their account from an OAuth provider (e.g., Google, Facebook).
+
+2. Client application requests authorization: The client application redirects the user to the OAuth provider's authorization server, including the client ID, requested scope, local state, and a redirect URI.
+
+3. User authenticates and grants permission: The user is prompted to log in to the OAuth provider's server and grant permission to the client application to access their account.
+
+4. OAuth provider redirects the user back to the client application: If the user grants permission, the OAuth provider generates an authorization code and sends it to the client application via the provided redirect URI.
+
+5. Client application requests an access token: The client application sends the authorization code, along with the client ID and client secret, to the OAuth provider's token endpoint to request an access token.
+
+6. OAuth provider returns an access token: If the authorization code and client credentials are valid, the OAuth provider returns an access token (and optionally, a refresh token) to the client application.
+
+7. Client application uses the access token: The client application can now use the access token to make API requests to the OAuth provider's server on behalf of the user.
+
+8. OAuth provider validates the access token: When the client application makes an API request with the access token, the OAuth provider validates the token and returns the requested resource if the token is valid.
+
+In this process, the client application never directly handles the user's credentials. Instead, it relies on the OAuth provider to authenticate the user and provide an access token that grants limited access to the user's account. This helps improve security and allows users to control which applications have access to their accounts without sharing their passwords.

@@ -1,0 +1,50 @@
+**Big-O Notation: A Measure of Algorithm Efficiency**
+=====================================================
+
+Big-O notation is a mathematical notation that describes the complexity of an algorithm, which is the amount of time or space it requires as the size of the input increases. It's a way to measure the performance or efficiency of an algorithm.
+
+**What does Big-O notation represent?**
+------------------------------------
+
+Big-O notation represents the upper bound of an algorithm's complexity, usually expressed as a function of the input size `n`. It's a worst-case scenario, meaning it's the maximum amount of time or space an algorithm will require.
+
+**Common Big-O Notations**
+-------------------------
+
+Here are some common Big-O notations, listed from best to worst:
+
+* **O(1) - Constant Time Complexity**: The algorithm takes the same amount of time regardless of the input size.
+* **O(log n) - Logarithmic Time Complexity**: The algorithm takes time proportional to the logarithm of the input size.
+* **O(n) - Linear Time Complexity**: The algorithm takes time proportional to the input size.
+* **O(n log n) - Linearithmic Time Complexity**: The algorithm takes time proportional to the product of the input size and its logarithm.
+* **O(n^2) - Quadratic Time Complexity**: The algorithm takes time proportional to the square of the input size.
+* **O(2^n) - Exponential Time Complexity**: The algorithm takes time proportional to 2 raised to the power of the input size.
+* **O(n!) - Factorial Time Complexity**: The algorithm takes time proportional to the factorial of the input size.
+
+**Example Use Cases**
+--------------------
+
+* **Searching an array**: A linear search algorithm has a time complexity of O(n), while a binary search algorithm has a time complexity of O(log n).
+* **Sorting an array**: A bubble sort algorithm has a time complexity of O(n^2), while a merge sort algorithm has a time complexity of O(n log n).
+
+**Why is Big-O notation important?**
+---------------------------------
+
+Big-O notation is important because it helps developers:
+
+* **Predict performance**: By analyzing the time and space complexity of an algorithm, developers can predict how it will perform on large inputs.
+* **Compare algorithms**: Big-O notation provides a way to compare the efficiency of different algorithms and choose the best one for a particular problem.
+* **Optimize code**: By understanding the time and space complexity of an algorithm, developers can optimize their code to improve performance.
+
+**Code Example**
+---------------
+
+Here's an example of a simple algorithm with a time complexity of O(n):
+```python
+def find_element(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+```
+In this example, the algorithm iterates through the array once, so its time complexity is O(n).

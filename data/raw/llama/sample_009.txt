@@ -1,0 +1,34 @@
+Batch normalization is a technique used in deep learning to normalize the input data for each layer in a neural network. It was introduced by Ioffe and Szegedy in 2015 as a way to improve the training speed and stability of deep neural networks.
+
+**What problem does batch normalization solve?**
+
+In deep neural networks, the input data for each layer is typically the output of the previous layer. However, the output of each layer can have a different scale and distribution, which can cause problems for the next layer. Specifically:
+
+1. **Internal covariate shift**: The distribution of the input data changes as the network is trained, which can cause the next layer to have to adapt to a new distribution. This can slow down training and make it more difficult to converge.
+2. **Vanishing or exploding gradients**: If the input data has a large range of values, the gradients of the loss function can become very small or very large, which can cause the network to converge slowly or not at all.
+
+**How does batch normalization work?**
+
+Batch normalization normalizes the input data for each layer by:
+
+1. **Calculating the mean and standard deviation**: For each mini-batch of data, the mean and standard deviation of the input data are calculated.
+2. **Normalizing the data**: The input data is then normalized by subtracting the mean and dividing by the standard deviation.
+3. **Scaling and shifting**: The normalized data is then scaled and shifted by learned parameters, which allows the network to learn the optimal scale and shift for each layer.
+
+**Benefits of batch normalization**
+
+Batch normalization has several benefits, including:
+
+1. **Improved training speed**: By normalizing the input data, batch normalization can reduce the internal covariate shift and improve the training speed of the network.
+2. **Improved stability**: Batch normalization can also improve the stability of the network by reducing the vanishing or exploding gradients.
+3. **Improved generalization**: Batch normalization can also improve the generalization of the network by reducing overfitting.
+
+**Common use cases**
+
+Batch normalization is commonly used in deep neural networks, particularly in:
+
+1. **Convolutional neural networks (CNNs)**: Batch normalization is often used in CNNs to normalize the input data for each convolutional layer.
+2. **Recurrent neural networks (RNNs)**: Batch normalization can also be used in RNNs to normalize the input data for each recurrent layer.
+3. **Generative models**: Batch normalization is often used in generative models, such as generative adversarial networks (GANs) and variational autoencoders (VAEs), to normalize the input data for each layer.
+
+In summary, batch normalization is a technique used in deep learning to normalize the input data for each layer in a neural network, which can improve the training speed, stability, and generalization of the network.

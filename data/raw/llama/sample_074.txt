@@ -1,0 +1,87 @@
+**TLS Handshake Overview**
+==========================
+
+A TLS (Transport Layer Security) handshake is a critical process that establishes a secure connection between a client (usually a web browser) and a server. The handshake ensures that the communication between the client and server is encrypted, authenticated, and reliable.
+
+**Step-by-Step TLS Handshake Process**
+------------------------------------
+
+Here's a simplified overview of the TLS handshake process:
+
+### 1. Client Hello
+
+* The client initiates the handshake by sending a "Client Hello" message to the server.
+* The message includes:
+	+ The client's supported TLS versions.
+	+ The client's supported cipher suites ( encryption algorithms and keys).
+	+ A random session ID.
+
+### 2. Server Hello
+
+* The server responds with a "Server Hello" message.
+* The message includes:
+	+ The server's chosen TLS version.
+	+ The server's chosen cipher suite.
+	+ A random session ID.
+	+ The server's digital certificate (which includes its public key).
+
+### 3. Certificate Verification
+
+* The client verifies the server's digital certificate.
+* The client checks the certificate's validity, ensuring it's issued by a trusted Certificate Authority (CA) and not expired.
+
+### 4. Key Exchange
+
+* The client and server perform a key exchange to establish a shared secret key.
+* The key exchange can be done using:
+	+ RSA ( Rivest-Shamir-Adleman) key exchange.
+	+ Elliptic Curve Diffie-Hellman (ECDH) key exchange.
+
+### 5. Change Cipher Spec
+
+* The client and server send "Change Cipher Spec" messages to each other.
+* These messages indicate that the encryption keys will be used from this point forward.
+
+### 6. Finished
+
+* The client and server send "Finished" messages to each other.
+* These messages are encrypted with the newly established keys and contain a hash of all previous handshake messages.
+
+**Example Use Case**
+--------------------
+
+Here's an example of a TLS handshake in Python using the `ssl` library:
+```python
+import socket
+import ssl
+
+# Create a socket
+sock = socket.create_connection(("example.com", 443))
+
+# Wrap the socket with an SSL context
+context = ssl.create_default_context()
+ssl_sock = context.wrap_socket(sock, server_hostname="example.com")
+
+# Perform the TLS handshake
+ssl_sock.do_handshake()
+
+# Send a request
+ssl_sock.sendall(b"GET / HTTP/1.1\r\nHost: example.com\r\n\r\n")
+
+# Receive the response
+response = ssl_sock.recv(1024)
+print(response.decode())
+
+# Close the connection
+ssl_sock.close()
+```
+**Security Benefits**
+--------------------
+
+The TLS handshake provides several security benefits, including:
+
+* **Encryption**: The handshake establishes a shared secret key, which is used to encrypt all communication between the client and server.
+* **Authentication**: The handshake verifies the server's identity using its digital certificate.
+* **Integrity**: The handshake ensures that the communication between the client and server is not tampered with or modified.
+
+By following this process, the TLS handshake establishes a secure connection between the client and server, protecting sensitive data from eavesdropping, tampering, and man-in-the-middle attacks.

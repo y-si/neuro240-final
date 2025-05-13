@@ -1,0 +1,23 @@
+Transfer learning is a machine learning technique where a model trained on one task is repurposed or adapted to perform a second related task. The main idea is to leverage the knowledge gained from learning the first task to improve learning efficiency and performance on the second task, especially when training data for the second task is limited.
+
+Here's a step-by-step explanation of how transfer learning works:
+
+1. Pre-training: A model, often a deep neural network, is trained on a large dataset for a specific task, such as image classification or language modeling. This model learns to extract meaningful features and patterns from the data during the training process.
+
+2. Model Architecture: The pre-trained model's architecture is designed to capture the essential features and representations of the data. This architecture can include convolutional layers for image data or attention mechanisms for sequential data.
+
+3. Feature Extraction: Once the model is pre-trained, it has learned to extract relevant features from the input data. These learned features are often generic and can be useful for other related tasks.
+
+4. Fine-tuning: To adapt the pre-trained model for a new task, the last few layers of the model are typically replaced with new layers specific to the target task. These new layers are initialized randomly and are trained using the smaller dataset of the target task.
+
+5. Frozen Layers: During fine-tuning, the weights of the early layers in the pre-trained model are often frozen, meaning they are not updated during the training process. This is because these layers have already learned to extract general features, and keeping them fixed can prevent overfitting on the smaller target dataset.
+
+6. Training: The modified model, with the new layers, is then trained on the target task's dataset. The pre-trained weights help the model converge faster and achieve better performance, even with limited training data.
+
+7. Adaptation: The fine-tuned model can now make predictions or perform the desired task on new, unseen data related to the target task.
+
+The effectiveness of transfer learning depends on the similarity between the source and target tasks. If the tasks are closely related and share similar features, transfer learning can significantly improve performance and reduce the amount of labeled data needed for the target task.
+
+Some common examples of transfer learning include:
+
+- Using a pre-trained image classification model (e.g., trained on ImageNet) as a feature

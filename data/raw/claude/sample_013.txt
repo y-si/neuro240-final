@@ -1,0 +1,26 @@
+Relational and non-relational databases are two main types of databases used to store and manage data. Here's a comparison of the two with examples:
+
+Relational Databases:
+1. Structure: Relational databases organize data into tables with predefined schemas. Each table consists of rows (records) and columns (fields).
+2. Data Integrity: They enforce strict data integrity through primary keys, foreign keys, and ACID (Atomicity, Consistency, Isolation, Durability) properties.
+3. Querying: Relational databases use SQL (Structured Query Language) for querying and manipulating data.
+4. Scalability: They scale vertically by adding more resources to a single server.
+5. Use Cases: Relational databases are suitable for applications with structured data and complex relationships, such as financial systems, e-commerce platforms, and content management systems.
+6. Examples: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server.
+
+Non-Relational Databases (NoSQL):
+1. Structure: Non-relational databases have a flexible schema or no predefined schema at all. They can store structured, semi-structured, and unstructured data.
+2. Data Integrity: NoSQL databases often prioritize scalability and performance over strict data integrity. They may have eventual consistency instead of ACID properties.
+3. Querying: NoSQL databases use various query languages specific to their data model, such as document-based query languages or key-value APIs.
+4. Scalability: They are designed to scale horizontally by distributing data across multiple servers.
+5. Use Cases: Non-relational databases are suitable for handling large amounts of unstructured or rapidly changing data, such as real-time web applications, content delivery networks, and big data analytics.
+6. Examples:
+   - Document Databases: MongoDB, Couchbase, Apache CouchDB
+   - Key-Value Stores: Redis, Amazon DynamoDB, Riak
+   - Wide-Column Stores: Apache Cassandra, Google Bigtable
+   - Graph Databases: Neo4j, Amazon Neptune
+
+Here are a few examples to illustrate the differences:
+
+1. E-commerce Application:
+   - Relational Database: A relational database like MySQL can be use

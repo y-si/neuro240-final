@@ -1,0 +1,42 @@
+DNS (Domain Name System) is a crucial part of the internet infrastructure that translates human-readable domain names into IP addresses that computers can understand. Here's a step-by-step explanation of how DNS resolves a domain name:
+
+**Step 1: User Request**
+A user types a URL (e.g., [www.example.com](http://www.example.com)) into their web browser.
+
+**Step 2: DNS Query**
+The web browser sends a DNS query to a nearby DNS resolver (usually provided by the operating system or a local router). The DNS query asks for the IP address associated with the domain name.
+
+**Step 3: DNS Resolver**
+The DNS resolver checks its cache to see if it already has the IP address for the requested domain name. If it does, it returns the IP address to the web browser. If not, it sends the query to a higher-level DNS server.
+
+**Step 4: Root DNS Server**
+The DNS resolver sends the query to a root DNS server. The root DNS server is responsible for directing the query to the correct top-level domain (TLD) server. For example, if the domain name is [www.example.com](http://www.example.com), the root DNS server would direct the query to the .com TLD server.
+
+**Step 5: TLD Server**
+The TLD server receives the query and checks its database to see if it has the IP address for the requested domain name. If it does, it returns the IP address to the DNS resolver. If not, it sends the query to the authoritative name server (ANS) for the domain.
+
+**Step 6: Authoritative Name Server (ANS)**
+The ANS is responsible for maintaining the DNS records for the domain. It receives the query and returns the IP address associated with the domain name to the TLD server.
+
+**Step 7: Response**
+The TLD server receives the IP address from the ANS and returns it to the DNS resolver.
+
+**Step 8: DNS Resolver Cache**
+The DNS resolver caches the IP address for the domain name so that it can respond quickly to future queries.
+
+**Step 9: Web Browser**
+The DNS resolver returns the IP address to the web browser, which can then establish a connection to the server hosting the website.
+
+In summary, DNS resolution involves a hierarchical process of querying DNS servers to find the IP address associated with a domain name. The process involves:
+
+1. User request
+2. DNS query
+3. DNS resolver
+4. Root DNS server
+5. TLD server
+6. Authoritative name server (ANS)
+7. Response
+8. DNS resolver cache
+9. Web browser
+
+This process typically takes only a few milliseconds to complete, allowing users to access websites quickly and efficiently.

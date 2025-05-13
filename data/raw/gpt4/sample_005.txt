@@ -1,0 +1,23 @@
+Backpropagation, short for "backward propagation of errors," is a fundamental algorithm used in training artificial neural networks. It's a supervised learning method, meaning it requires a dataset with input-output pairs to train the network. The core idea of backpropagation is to minimize the error in the network's output by adjusting its weights and biases, effectively learning from the mistakes it makes.
+
+To understand backpropagation, it's important to grasp a few basic concepts related to neural networks:
+
+1. **Neural Network Structure**: A neural network consists of layers of interconnected nodes (neurons). There are three types of layers: input, hidden, and output. Each connection between neurons has an associated weight, and each neuron (except those in the input layer) has a bias.
+
+2. **Forward Pass**: The process of feeding input data through the network to obtain an output. During this pass, the input data is processed layer by layer, using the current weights and biases, to produce an output.
+
+3. **Loss Function**: A function that measures the difference between the network's predicted output and the actual output (the ground truth). The goal of training a neural network is to minimize this loss.
+
+Backpropagation involves two main phases: a forward pass and a backward pass.
+
+### Forward Pass
+- **Input is fed** into the network.
+- **Activation functions** are applied at each layer (e.g., ReLU, Sigmoid). These functions introduce non-linearities, making it possible for the network to learn complex patterns.
+- The **final output** is produced.
+
+### Backward Pass (Backpropagation)
+1. **Calculate the error**: Determine how far off the network's prediction is from the actual result using the loss function.
+2. **Propagate the error backward**: Starting from the output layer, move back through the network, layer by layer, to compute the gradient of the loss function with respect to each weight. This involves applying the chain rule from calculus, as the loss depends on activations, which in turn depend on weights.
+3. **Update the weights and biases**: With the gradients calculated, adjust the weights and biases in the direction that most reduces the error. This adjustment is controlled by a parameter called the learning rate, which determines the size of the steps taken towards minimizing the loss.
+
+The backpropagation algorithm is iterative. With each pass through the network (each epoch), the weights are adjusted slightly, aiming to reduce the loss. Over many epochs,

@@ -1,0 +1,25 @@
+Garbage collection is an automatic memory management mechanism in programming languages like Java and Python. Its purpose is to free up memory that is no longer being used by the program, preventing memory leaks and reducing the burden on the programmer to manually manage memory.
+
+Here's a simplified explanation of how garbage collection typically works:
+
+1. Memory allocation: When objects are created in the program, memory is allocated to store them in the heap, which is a portion of memory used for dynamic allocation.
+
+2. Object references: The program maintains references to the objects it is currently using. As long as an object is reachable through a reference, it is considered to be in use.
+
+3. Garbage identification: The garbage collector periodically scans the heap to identify objects that are no longer reachable from the program's root set of references. These unreachable objects are considered garbage.
+
+4. Garbage collection: Once the garbage objects are identified, the garbage collector frees up the memory occupied by these objects, making it available for future allocations.
+
+The garbage collector employs various algorithms to efficiently identify and collect garbage. Two common algorithms are:
+
+1. Mark and Sweep: The garbage collector starts from the root set of references and traverses the object graph, marking all reachable objects. Then, it sweeps through the heap and frees the memory of unmarked objects.
+
+2. Copying Collection: The heap is divided into two parts: the "from" space and the "to" space. Live objects are copied from the "from" space to the "to" space, updating the references accordingly. The "from" space is then considered free memory.
+
+Garbage collection can occur at different times, depending on the specific implementation and runtime environment. Some common triggers for garbage collection include:
+
+- Low available memory: When the available memory in the heap falls below a certain threshold, the garbage collector may be invoked to free up space.
+- Periodic intervals: The garbage collector may run at regular intervals to keep memory usage in check.
+- Explicit invocation: Some languages provide methods to manually trigger garbage collection, although it's generally not recommended to rely on manual invocation.
+
+Garbage collection helps simplify memory management and prevents common memory-related bugs, such as dangling pointers and memory leaks. However, it does introduce some runtime overhead and may cause occasional pauses in program execution

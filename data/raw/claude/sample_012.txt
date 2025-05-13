@@ -1,0 +1,31 @@
+The main differences between a Central Processing Unit (CPU) and a Graphics Processing Unit (GPU) are:
+
+1. Purpose:
+   - CPU: Designed for general-purpose computing tasks, handling a wide variety of instructions and operations.
+   - GPU: Designed specifically for rendering graphics, image processing, and compute-intensive tasks.
+
+2. Architecture:
+   - CPU: Consists of a few cores optimized for sequential serial processing.
+   - GPU: Consists of thousands of smaller, more specialized cores designed for handling multiple tasks simultaneously (parallel processing).
+
+3. Processing:
+   - CPU: Excels at processing sequential instructions and tasks that require decision-making and control logic.
+   - GPU: Excels at processing many similar and independent tasks simultaneously, making it suitable for graphics rendering and parallel computing.
+
+4. Memory:
+   - CPU: Accesses main system memory (RAM) and has a smaller cache memory for faster data access.
+   - GPU: Has its own high-bandwidth memory (VRAM) optimized for graphics-related tasks.
+
+5. Instruction Set:
+   - CPU: Has a more versatile and complex instruction set to handle various tasks.
+   - GPU: Has a more limited and specialized instruction set tailored for graphics processing and parallel computations.
+
+6. Applications:
+   - CPU: Handles general computing tasks, running operating systems, and executing a wide range of software applications.
+   - GPU: Primarily used for graphics-intensive tasks like gaming, video rendering, machine learning, and scientific simulations.
+
+7. Speed:
+   - CPU: Faster at executing sequential and general-purpose tasks.
+   - GPU: Faster at executing parallel and graphics-related tasks.
+
+In summary, CPUs are designed for general-purpose computing and excel at sequential processing, while GPUs are specialized for graphics rendering and parallel processing of large datasets. Modern computers often utilize both CPUs and GPUs to leverage their respective strengths for optimal performance.

@@ -1,0 +1,18 @@
+Activation functions play a crucial role in neural networks by introducing non-linearity into the network. They determine the output of a neuron given an input or set of inputs. Here are the key roles and benefits of activation functions:
+
+1. Non-linearity: Activation functions introduce non-linearity into the neural network. Without non-linear activation functions, neural networks would be equivalent to a linear regression model, limited to learning linear relationships. Non-linearity allows neural networks to model complex, non-linear patterns in data.
+
+2. Signal Transformation: Activation functions transform the weighted sum of inputs into an output signal. They map the input values to a specific range, such as between 0 and 1 or -1 and 1, depending on the chosen activation function.
+
+3. Thresholding: Some activation functions, like the sigmoid or hyperbolic tangent (tanh), can act as threshold functions. They squash the input values into a narrow range, effectively "turning on" or "turning off" neurons based on the input signal strength.
+
+4. Gradient Flow: Activation functions enable the backpropagation of gradients through the neural network during training. The choice of activation function affects the gradient flow and can impact the convergence speed and stability of the learning process. Functions like ReLU (Rectified Linear Unit) help alleviate the vanishing gradient problem.
+
+5. Sparsity: Certain activation functions, such as ReLU, introduce sparsity into the network. They output zero for negative input values, effectively "turning off" some neurons. This sparsity can help in feature selection and make the network more efficient.
+
+6. Output Interpretation: The choice of activation function in the output layer depends on the task at hand. For binary classification, the sigmoid function is commonly used to produce a probability-like output between 0 and 1. For multi-class classification, the softmax function is often used to produce a probability distribution over classes.
+
+Some commonly used activation functions include:
+- Sigmoid: Squashes the input to a range between 0 and 1.
+- Hyperbolic Tangent (tanh): Squashes the input to a range between -1 and 1.
+- ReLU (Rectified Linear Unit): Outputs the

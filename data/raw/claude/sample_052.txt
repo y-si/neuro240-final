@@ -1,0 +1,23 @@
+Symmetric and asymmetric encryption are two fundamental types of encryption used to secure data. Here's a breakdown of the key differences between the two:
+
+1. Key Usage:
+   - Symmetric Encryption: It uses a single secret key for both encryption and decryption. The same key is used to encrypt the plaintext and decrypt the ciphertext.
+   - Asymmetric Encryption: It uses a pair of keys - a public key and a private key. The public key is used for encryption, while the private key is used for decryption.
+
+2. Key Distribution:
+   - Symmetric Encryption: The secret key needs to be securely shared between the sender and the receiver before any communication can take place. This can be challenging, especially when communicating with multiple parties.
+   - Asymmetric Encryption: The public key can be freely distributed and shared with anyone. Only the corresponding private key needs to be kept secret by the owner.
+
+3. Computational Efficiency:
+   - Symmetric Encryption: It is generally faster and more computationally efficient compared to asymmetric encryption. It is suitable for encrypting large amounts of data.
+   - Asymmetric Encryption: It is slower and more computationally intensive than symmetric encryption. It is often used for key exchange and digital signatures rather than encrypting large data volumes.
+
+4. Security:
+   - Symmetric Encryption: The security of symmetric encryption relies on the secrecy of the shared key. If the key is compromised, the entire communication is at risk.
+   - Asymmetric Encryption: It provides better security in terms of key management. Even if the public key is compromised, the private key remains secure, ensuring the confidentiality of the encrypted data.
+
+5. Common Algorithms:
+   - Symmetric Encryption: Examples include AES (Advanced Encryption Standard), DES (Data Encryption Standard), and Blowfish.
+   - Asymmetric Encryption: Examples include RSA (Rivest-Shamir-Adleman), Elliptic Curve Cryptography (ECC), and DSA (Digital Signature Algorithm).
+
+In practice, symmetric and asymmetric encryption are often used together in a hybrid system. Asymmetric encryption is used for secure key exchange, while symmetric encryption is

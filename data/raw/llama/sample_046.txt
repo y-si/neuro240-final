@@ -1,0 +1,66 @@
+A relational database enforces data integrity through several mechanisms:
+
+### 1. Primary Keys
+
+A primary key is a unique identifier for each row in a table. It ensures that each row is distinct and prevents duplicate values. Primary keys are used to enforce entity integrity, which means that each entity (row) in the database is unique.
+
+### 2. Foreign Keys
+
+A foreign key is a field in a table that refers to the primary key of another table. It ensures that the relationship between tables is consistent and prevents orphaned records. Foreign keys are used to enforce referential integrity, which means that the relationships between entities are valid.
+
+### 3. Unique Constraints
+
+A unique constraint is a rule that ensures that all values in a column or set of columns are unique. It prevents duplicate values and ensures that each value is distinct.
+
+### 4. Check Constraints
+
+A check constraint is a rule that ensures that the values in a column or set of columns meet certain conditions. It can be used to enforce business rules, such as ensuring that a date is within a certain range or that a value is within a certain range.
+
+### 5. NOT NULL Constraints
+
+A NOT NULL constraint is a rule that ensures that a column cannot contain null values. It ensures that all columns have a value and prevents null values from being inserted.
+
+### 6. Indexes
+
+An index is a data structure that improves query performance by allowing the database to quickly locate specific data. Indexes can also be used to enforce uniqueness and prevent duplicate values.
+
+### 7. Triggers
+
+A trigger is a set of actions that are automatically executed in response to certain events, such as insert, update, or delete operations. Triggers can be used to enforce complex business rules and ensure data integrity.
+
+### 8. Normalization
+
+Normalization is the process of organizing data in a database to minimize data redundancy and improve data integrity. It ensures that each piece of data is stored in one place and one place only, which helps to prevent data inconsistencies.
+
+### Example Use Case
+
+Suppose we have a database that stores information about customers and orders. We can use the following mechanisms to enforce data integrity:
+
+* Primary key: Use the customer ID as the primary key to ensure that each customer is unique.
+* Foreign key: Use the order ID as a foreign key to ensure that each order is associated with a valid customer.
+* Unique constraint: Use a unique constraint to ensure that each customer has a unique email address.
+* Check constraint: Use a check constraint to ensure that the order date is within a certain range.
+* NOT NULL constraint: Use a NOT NULL constraint to ensure that all columns have a value.
+
+By using these mechanisms, we can ensure that the data in our database is accurate, consistent, and reliable.
+
+### Code Example
+
+Here is an example of how to create a table with primary key, foreign key, unique constraint, check constraint, and NOT NULL constraint in SQL:
+```sql
+CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE,
+  phone VARCHAR(20)
+);
+
+CREATE TABLE orders (
+  order_id INT PRIMARY KEY,
+  customer_id INT,
+  order_date DATE CHECK (order_date >= '2020-01-01'),
+  total DECIMAL(10, 2) NOT NULL,
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+```
+In this example, we create two tables: `customers` and `orders`. The `customers` table has a primary key `customer_id`, a unique constraint on the `email` column, and a NOT NULL constraint on the `name` column. The `orders` table has a primary key `order_id`, a foreign key `customer_id` that references the `customers` table, a check constraint on the `order_date` column, and a NOT NULL constraint on the `total` column.

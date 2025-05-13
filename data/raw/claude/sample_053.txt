@@ -1,0 +1,21 @@
+A compiler translates source code into machine code through a series of steps:
+
+1. Lexical Analysis: The compiler breaks down the source code into a sequence of tokens, such as keywords, identifiers, constants, and operators. It removes comments and whitespace during this phase.
+
+2. Syntax Analysis (Parsing): The compiler checks if the sequence of tokens adheres to the grammar rules of the programming language. It constructs an Abstract Syntax Tree (AST) that represents the structure of the code.
+
+3. Semantic Analysis: The compiler performs type checking, checks for undeclared variables, and ensures that the operations are semantically correct. It also builds a symbol table to keep track of identifiers and their attributes.
+
+4. Intermediate Code Generation: The compiler generates an intermediate representation (IR) of the code, such as quadruples or three-address code. This IR is independent of the target machine architecture.
+
+5. Code Optimization: The compiler applies various optimization techniques to improve the efficiency of the generated code. Common optimizations include constant folding, dead code elimination, and loop unrolling.
+
+6. Code Generation: The compiler translates the optimized intermediate code into the target machine code, considering the specific instruction set and architecture of the target machine.
+
+7. Symbol Resolution: The compiler resolves symbolic references, such as function calls and variable references, by replacing them with actual memory addresses.
+
+8. Linking: If the program consists of multiple source files, the compiler links the generated object code files together to create an executable program. It resolves external references and combines the code into a single executable.
+
+Throughout these stages, the compiler may also perform error handling and provide diagnostic messages for syntax errors, type mismatches, or other issues encountered during the compilation process.
+
+The specific implementation details and optimizations may vary depending on the programming language and the compiler being used. However, the general process of translating source code into machine code remains the same.

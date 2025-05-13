@@ -1,0 +1,21 @@
+The process of booting a computer involves a series of steps that starts from powering on the device and ends with loading the operating system (OS). This process can be broadly divided into several stages, as outlined below:
+
+### 1. Power-On Self-Test (POST)
+
+- **Initiation**: When the power button on a computer is pressed, the motherboard receives power and starts the initial boot procedure. The first step in this procedure is the Power-On Self-Test (POST). 
+- **Function**: POST is a diagnostic testing sequence run by a computer's BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface). It checks the computer's hardware to ensure everything is functioning correctly before loading the operating system. This includes testing the CPU, RAM, and other system devices.
+
+### 2. BIOS/UEFI Initialization
+
+- **BIOS/UEFI**: After POST, control is handed over to the BIOS or UEFI firmware. This firmware is stored in a chip on the motherboard. BIOS is the older firmware model, while UEFI is its modern, more feature-rich replacement.
+- **Configuration and Setup**: The BIOS/UEFI provides a configuration interface that allows users to modify system settings, including boot device order. It initializes all the system hardware, such as the hard drive, SSD, optical drive, and any connected peripherals.
+
+### 3. Bootloader
+
+- **Selection of Boot Device**: The BIOS/UEFI identifies the boot device based on the order configured by the user or the system default. This could be a hard drive, SSD, USB drive, or even a network location.
+- **Boot Sector**: Once the boot device is identified, the BIOS/UEFI reads the boot sector, which contains a small program called the bootloader. For most personal computers, this is typically part of the Master Boot Record (MBR) on BIOS systems or the EFI System Partition on UEFI systems.
+- **Function of Bootloader**: The bootloader's main role is to load the operating system. If multiple OSes are available, it may present a menu for the user to select which one to boot. In Windows, this is managed by the Windows Boot Manager; in Linux, GRUB (GRand Unified Bootloader) is commonly used.
+
+### 4. Loading the Operating System
+
+- **Kernel Loading**: The bootloader loads the kernel of the operating system into memory. The kernel is the core component of the OS, managing the CPU

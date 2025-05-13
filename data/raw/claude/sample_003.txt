@@ -1,0 +1,15 @@
+Attention mechanisms are a key component of transformer models, which have revolutionized natural language processing (NLP) tasks. In transformer models, attention allows the model to focus on relevant parts of the input sequence when generating an output. Here's how attention mechanisms work in transformers:
+
+1. Query, Key, and Value: For each input in the sequence (e.g., words in a sentence), the transformer generates three vectors: a query vector (Q), a key vector (K), and a value vector (V). These vectors are obtained by multiplying the input embeddings with learned weight matrices (WQ, WK, WV).
+
+2. Self-Attention: Self-attention allows the model to attend to different positions of the input sequence to capture dependencies. For each position, the query vector is compared with all the key vectors using a dot product. The resulting scores are then scaled and passed through a softmax function to obtain attention weights. These weights indicate the importance of each position in the sequence.
+
+3. Weighted Sum: The attention weights are multiplied element-wise with the corresponding value vectors, and the results are summed up to obtain a weighted representation for each position. This representation captures the most relevant information from other positions in the sequence.
+
+4. Multi-Head Attention: Instead of performing a single attention function, transformers use multi-head attention. The query, key, and value vectors are linearly projected multiple times with different learned projection matrices. Each projection is used to perform self-attention in parallel, allowing the model to attend to different aspects of the input simultaneously. The results from each attention head are then concatenated and linearly transformed.
+
+5. Positional Encoding: Since transformers do not have inherent sequential information like RNNs, positional encodings are added to the input embeddings. These encodings provide information about the relative position of each input in the sequence, allowing the model to capture positional dependencies.
+
+6. Encoder-Decoder Architecture: Transformers often use an encoder-decoder architecture. The encoder applies self-attention to the input sequence, while the decoder attends to both the encoder's output and its own previous outputs to generate the target sequence. This allows the model to capture dependencies between the input and output sequences.
+
+7. Residual Connections and Layer Normalization: Transformers employ residual connections and layer norm

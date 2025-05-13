@@ -1,0 +1,105 @@
+**SOLID Principle Overview**
+=====================================
+
+The SOLID principle is a set of five design principles in object-oriented programming (OOP) that aim to promote cleaner, more robust, and updatable code for software development in object-oriented languages. Each letter in SOLID represents a principle for development:
+
+### S - Single Responsibility Principle (SRP)
+
+*   A class should have only one reason to change.
+*   A class should have a single responsibility or a single reason to change.
+*   This principle helps to avoid the God object anti-pattern, where a class has too many responsibilities.
+
+### O - Open/Closed Principle (OCP)
+
+*   A class should be open for extension but closed for modification.
+*   You should be able to add new functionality without changing the existing code.
+*   This principle helps to avoid modifying existing code, which can introduce bugs.
+
+### L - Liskov Substitution Principle (LSP)
+
+*   Derived classes should be substitutable for their base classes.
+*   Any code that uses a base class should be able to work with a derived class without knowing the difference.
+*   This principle helps to ensure that inheritance is used correctly.
+
+### I - Interface Segregation Principle (ISP)
+
+*   A client should not be forced to depend on interfaces it does not use.
+*   Instead of having a large, fat interface, break it up into smaller, more focused interfaces.
+*   This principle helps to avoid the fat interface anti-pattern.
+
+### D - Dependency Inversion Principle (DIP)
+
+*   High-level modules should not depend on low-level modules. Both should depend on abstractions.
+*   Abstractions should not depend on details. Details should depend on abstractions.
+*   This principle helps to reduce coupling and increase flexibility.
+
+**Example Use Case**
+--------------------
+
+Suppose we're building a payment processing system. We can apply the SOLID principles as follows:
+
+*   **Single Responsibility Principle (SRP):** Create separate classes for different payment methods (e.g., `CreditCardPayment`, `PayPalPayment`).
+*   **Open/Closed Principle (OCP):** Use an abstract `PaymentMethod` class that can be extended to add new payment methods without modifying existing code.
+*   **Liskov Substitution Principle (LSP):** Ensure that the `CreditCardPayment` and `PayPalPayment` classes can be used interchangeably with the `PaymentMethod` class.
+*   **Interface Segregation Principle (ISP):** Instead of having a large `PaymentMethod` interface, break it up into smaller interfaces (e.g., `Chargeable`, `Refundable`).
+*   **Dependency Inversion Principle (DIP):** Use dependency injection to provide the payment method to the payment processor, rather than hardcoding the dependency.
+
+By applying the SOLID principles, we can create a more maintainable, flexible, and scalable payment processing system.
+
+**Code Example**
+```python
+from abc import ABC, abstractmethod
+
+# Dependency Inversion Principle (DIP)
+class PaymentMethod(ABC):
+    @abstractmethod
+    def charge(self, amount):
+        pass
+
+    @abstractmethod
+    def refund(self, amount):
+        pass
+
+# Single Responsibility Principle (SRP)
+class CreditCardPayment(PaymentMethod):
+    def charge(self, amount):
+        print(f"Charging ${amount} to credit card")
+
+    def refund(self, amount):
+        print(f"Refunding ${amount} to credit card")
+
+# Open/Closed Principle (OCP)
+class PayPalPayment(PaymentMethod):
+    def charge(self, amount):
+        print(f"Charging ${amount} to PayPal")
+
+    def refund(self, amount):
+        print(f"Refunding ${amount} to PayPal")
+
+# Interface Segregation Principle (ISP)
+class Chargeable(ABC):
+    @abstractmethod
+    def charge(self, amount):
+        pass
+
+class Refundable(ABC):
+    @abstractmethod
+    def refund(self, amount):
+        pass
+
+# Liskov Substitution Principle (LSP)
+class PaymentProcessor:
+    def __init__(self, payment_method: PaymentMethod):
+        self.payment_method = payment_method
+
+    def process_payment(self, amount):
+        self.payment_method.charge(amount)
+
+# Usage
+payment_processor = PaymentProcessor(CreditCardPayment())
+payment_processor.process_payment(100)
+
+payment_processor = PaymentProcessor(PayPalPayment())
+payment_processor.process_payment(100)
+```
+In this example, we've applied the SOLID principles to create a payment processing system that is maintainable, flexible, and scalable.

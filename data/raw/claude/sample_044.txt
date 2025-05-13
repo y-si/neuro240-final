@@ -1,0 +1,24 @@
+Dynamic programming (DP) is an algorithmic technique for solving complex problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid redundant calculations. It is based on the principle of optimality, which states that an optimal solution to a problem can be constructed from optimal solutions to its subproblems.
+
+Key characteristics of dynamic programming:
+1. Overlapping subproblems: The problem can be broken down into smaller subproblems, and the results of these subproblems are reused multiple times.
+2. Optimal substructure: The optimal solution to the problem can be constructed from optimal solutions to its subproblems.
+
+When to use dynamic programming:
+1. When the problem exhibits overlapping subproblems and optimal substructure properties.
+2. When the problem can be solved recursively, but the recursive solution is inefficient due to redundant calculations.
+3. When the problem requires optimization (maximization or minimization) and can be solved by making a sequence of decisions.
+
+Some common examples of problems that can be solved using dynamic programming include:
+1. Fibonacci sequence calculation
+2. Shortest path problems (e.g., Floyd-Warshall, Bellman-Ford)
+3. Knapsack problems
+4. Matrix chain multiplication
+5. Longest common subsequence
+6. Edit distance
+
+The two main approaches to implementing dynamic programming are:
+1. Top-down (Memoization): Start with the main problem and recursively solve subproblems, storing their results for future use.
+2. Bottom-up (Tabulation): Start with the smallest subproblems and iteratively build up to the main problem, storing the results of subproblems in a table.
+
+Dynamic programming can significantly reduce the time complexity of a problem by avoiding redundant calculations, but it may require extra space to store the results of subproblems. It is a powerful technique for solving optimization problems and is widely used in computer science and other fields.

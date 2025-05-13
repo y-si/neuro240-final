@@ -1,0 +1,87 @@
+**Threads vs Processes: Understanding the Difference**
+=====================================================
+
+In computer science, threads and processes are two fundamental concepts that enable concurrent execution of tasks. While they share some similarities, they have distinct differences in terms of their creation, management, and resource allocation.
+
+**Processes**
+------------
+
+A process is an independent unit of execution that runs in its own memory space. Each process has its own:
+
+*   Memory allocation
+*   Program counter
+*   Stack
+*   System resources (e.g., open files, network connections)
+
+When a process is created, the operating system allocates a new memory space for it, and the process runs independently of other processes.
+
+**Threads**
+------------
+
+A thread is a lightweight process that shares the same memory space as other threads in the same process. Threads have their own:
+
+*   Program counter
+*   Stack
+*   Local variables
+
+However, threads share the same:
+
+*   Memory allocation
+*   System resources
+
+Threads are created within a process, and they can communicate with each other using shared variables or synchronization primitives.
+
+**Key differences**
+-------------------
+
+Here are the main differences between threads and processes:
+
+*   **Memory allocation**: Processes have their own memory space, while threads share the same memory space.
+*   **Creation overhead**: Creating a new process is more expensive than creating a new thread, as the operating system needs to allocate new memory and resources.
+*   **Communication**: Processes communicate using inter-process communication (IPC) mechanisms, such as pipes, sockets, or shared memory. Threads communicate using shared variables or synchronization primitives.
+*   **Synchronization**: Processes require more complex synchronization mechanisms, such as semaphores or monitors, to coordinate access to shared resources. Threads can use synchronization primitives, such as locks or condition variables, to coordinate access to shared variables.
+
+**Example Use Cases**
+---------------------
+
+*   **Web server**: A web server can create multiple processes to handle incoming requests concurrently, each process handling a separate request.
+*   **Multithreaded application**: A multithreaded application can create multiple threads to perform tasks concurrently, such as rendering graphics, handling user input, and updating the UI.
+
+**Code Example**
+---------------
+
+Here's an example in Python that demonstrates the difference between threads and processes:
+```python
+import threading
+import multiprocessing
+import time
+
+def worker(num):
+    print(f"Worker {num} started")
+    time.sleep(2)
+    print(f"Worker {num} finished")
+
+# Create multiple threads
+threads = []
+for i in range(5):
+    t = threading.Thread(target=worker, args=(i,))
+    threads.append(t)
+    t.start()
+
+# Create multiple processes
+processes = []
+for i in range(5):
+    p = multiprocessing.Process(target=worker, args=(i,))
+    processes.append(p)
+    p.start()
+
+# Wait for all threads and processes to finish
+for t in threads:
+    t.join()
+
+for p in processes:
+    p.join()
+```
+In this example, we create multiple threads and processes that execute the same worker function concurrently. The threads share the same memory space, while the processes have their own memory space.
+
+In conclusion, threads and processes are both used for concurrent execution, but they differ in terms of their creation, management, and resource allocation. Understanding the differences between threads and processes is essential for designing and implementing efficient concurrent systems.

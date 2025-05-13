@@ -1,0 +1,29 @@
+The main difference between compile-time and run-time errors lies in when they occur and how they are detected. Here's a detailed explanation of each:
+
+1. Compile-time errors:
+   - Compile-time errors, also known as syntax errors, occur during the compilation phase of a program.
+   - They are detected by the compiler before the program is executed.
+   - These errors prevent the program from being compiled successfully.
+   - Compile-time errors are typically caused by mistakes in the source code, such as:
+     - Syntax errors: Missing semicolons, parentheses, or braces, invalid keywords, etc.
+     - Type errors: Assigning a value of the wrong type to a variable, passing arguments of the wrong type to a function, etc.
+     - Undeclared variables or functions: Using a variable or function that hasn't been declared.
+   - Compile-time errors are usually easier to detect and fix because the compiler provides specific error messages and line numbers indicating where the errors occurred.
+
+2. Run-time errors:
+   - Run-time errors, also known as exceptions, occur during the execution of a program.
+   - They are detected while the program is running, after it has been successfully compiled.
+   - Run-time errors cause the program to terminate abruptly or behave unexpectedly.
+   - These errors are typically caused by issues that cannot be detected during compilation, such as:
+     - Division by zero: Attempting to divide a number by zero.
+     - Accessing an out-of-bounds array index: Trying to access an element outside the valid range of an array.
+     - Null pointer dereference: Attempting to access or invoke a method on a null object reference.
+     - Resource unavailability: Trying to open a file that doesn't exist or attempting to connect to a database that is not available.
+   - Run-time errors are often more challenging to detect and debug because they depend on the specific input and execution conditions of the program.
+   - Debugging techniques, such as using breakpoints, logging, and exception handling, are commonly employed to identify and resolve run-time errors.
+
+Here's a simple example to illustrate the difference:
+
+```python
+# Compile-time error: Syntax error
+if x >

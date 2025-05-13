@@ -1,0 +1,35 @@
+Supervised and unsupervised learning are two fundamental types of machine learning approaches. The primary difference between them lies in the way the model learns from the data.
+
+**Supervised Learning:**
+
+In supervised learning, the model is trained on labeled data, where each example is associated with a target output or response variable. The goal is to learn a mapping between input data and the corresponding output labels, so the model can make predictions on new, unseen data.
+
+Key characteristics of supervised learning:
+
+1. **Labeled data**: The training data is labeled with the correct output.
+2. **Target variable**: The model is trained to predict a specific target variable.
+3. **Error minimization**: The model is optimized to minimize the error between its predictions and the actual labels.
+
+Examples of supervised learning tasks include:
+
+* Image classification (e.g., classifying images as "cats" or "dogs")
+* Sentiment analysis (e.g., classifying text as "positive" or "negative")
+* Regression tasks (e.g., predicting house prices based on features like location and size)
+
+**Unsupervised Learning:**
+
+In unsupervised learning, the model is trained on unlabeled data, and there is no target output or response variable. The goal is to discover patterns, relationships, or structure in the data, without any prior knowledge of the expected output.
+
+Key characteristics of unsupervised learning:
+
+1. **Unlabeled data**: The training data is not labeled with any output.
+2. **No target variable**: The model is not trained to predict a specific target variable.
+3. **Pattern discovery**: The model is optimized to discover patterns or relationships in the data.
+
+Examples of unsupervised learning tasks include:
+
+* Clustering (e.g., grouping similar customers based on their behavior)
+* Dimensionality reduction (e.g., reducing the number of features in a dataset while preserving the most important information)
+* Anomaly detection (e.g., identifying unusual patterns in a dataset)
+
+In summary, supervised learning is used when you have labeled data and want to make predictions on new data, while unsupervised learning is used when you have unlabeled data and want to discover patterns or relationships in the data.

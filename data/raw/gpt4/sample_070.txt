@@ -1,0 +1,15 @@
+The CAP theorem, also known as Brewer's theorem, is a fundamental principle in distributed database systems and distributed computing in general. It was formulated by Eric Brewer in 2000 during a keynote at the Symposium on Principles of Distributed Computing (PODC). The theorem outlines the limitations and trade-offs that distributed systems have to deal with. Specifically, CAP stands for Consistency, Availability, and Partition tolerance, and the theorem states that a distributed system can only guarantee two out of these three properties at any given time.
+
+Let's break down these three key concepts:
+
+1. **Consistency**: Every read operation receives the most recent write or an error. In other words, if a data item is updated, subsequent accesses to that item will always return the updated value, providing a consistent view of the data across all nodes in the system. Consistency as referred here is often aligned with the concept of linearizability, ensuring a system-wide order of operations.
+
+2. **Availability**: Every request receives a (non-error) response – without the guarantee that it contains the most recent write. Availability in this context means that the system continues to operate and serve client requests even if some of the nodes in the system are failing or are cut off from the rest of the system. The key point is that operations always complete and return a response, ensuring that the system remains responsive under all circumstances.
+
+3. **Partition Tolerance**: The system continues to operate despite arbitrary partitioning due to network failures. A partition refers to any network condition where a subset of nodes within a distributed system cannot communicate with other nodes in the system due to network segmentation. Partition tolerance means that the system can still function and uphold some form of consistency and availability even when there is a network partition.
+
+According to the CAP theorem, it's impossible for a distributed database system to simultaneously provide more than two of these guarantees during a network partition. This doesn't mean that systems can't strive to balance all three under normal operating conditions; however, when network partitions occur, a trade-off becomes necessary.
+
+- **CP** (Consistency and Partition tolerance): In a CP system, operations might become unavailable in the event of a network partition to ensure consistency across the partitions. An example of a CP system is Apache HBase.
+
+- **AP** (Availability and Partition tolerance): In an AP system, operations will always be available, but might return the most recently available version of the data, which might not be up to date, in case of a

@@ -1,0 +1,17 @@
+An AVL tree, named after its inventors Adelson-Velsky and Landis, is a self-balancing binary search tree. It maintains balance by ensuring that the heights of the left and right subtrees of any node differ by at most one. This height difference is called the Balance Factor.
+
+Here's how an AVL tree maintains balance:
+
+1. Balance Factor: Each node in an AVL tree stores a balance factor, which is the difference between the heights of its left and right subtrees. The balance factor can be -1, 0, or 1.
+
+2. Insertion: When inserting a new node, the tree follows the standard BST insertion procedure. After insertion, the balance factors of the nodes along the path from the root to the inserted node are updated. If any node's balance factor becomes -2 or 2, the tree becomes unbalanced, and rotations are performed to restore balance.
+
+3. Rotation: AVL trees use rotations to restore balance. There are four types of rotations:
+   - Left Rotation (LL): Performed when a node's balance factor is 2 and its right child's balance factor is 0 or 1.
+   - Right Rotation (RR): Performed when a node's balance factor is -2 and its left child's balance factor is 0 or -1.
+   - Left-Right Rotation (LR): Performed when a node's balance factor is 2 and its right child's balance factor is -1.
+   - Right-Left Rotation (RL): Performed when a node's balance factor is -2 and its left child's balance factor is 1.
+
+4. Deletion: When deleting a node, the tree follows the standard BST deletion procedure. After deletion, the balance factors of the nodes along the path from the root to the deleted node are updated. If any node's balance factor becomes -2 or 2, rotations are performed to restore balance.
+
+By performing these rotations whenever the tree becomes unbalanced, an AVL tree ensures that the heights of the left and right subtrees of any node differ by at most one. This guarantees that the tree remains balanced and the height of the tree is always logarithmic, i.e., O(log n), where

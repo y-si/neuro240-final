@@ -1,0 +1,38 @@
+Attention mechanisms are a crucial component of transformer models, introduced in the paper "Attention Is All You Need" by Vaswani et al. in 2017. They revolutionized the field of natural language processing (NLP) and have since been widely adopted in various deep learning applications.
+
+**What is Attention?**
+
+Attention is a mechanism that allows a model to focus on specific parts of the input data when processing it. In traditional neural networks, the model processes the input data sequentially, using a fixed-size window or a recurrent neural network (RNN) to capture contextual information. However, this approach can be limiting, especially when dealing with long-range dependencies or complex relationships between input elements.
+
+**How Attention Works in Transformers**
+
+In transformer models, attention is used to weigh the importance of different input elements when computing the output. The attention mechanism is based on the following key components:
+
+1. **Query (Q)**: The query is the input element that the model is currently processing. It's used to compute the attention weights.
+2. **Key (K)**: The key is the input element that the model is comparing the query to. It's used to compute the attention weights.
+3. **Value (V)**: The value is the input element that the model is using to compute the output. It's used to compute the weighted sum.
+4. **Attention Weights**: The attention weights are computed by taking the dot product of the query and key, and then applying a softmax function to normalize the weights.
+
+The attention mechanism can be formalized as follows:
+
+`Attention(Q, K, V) = softmax(Q * K^T / sqrt(d)) * V`
+
+where `d` is the dimensionality of the input elements.
+
+**Multi-Head Attention**
+
+To improve the expressiveness of the attention mechanism, transformer models use a technique called multi-head attention. This involves computing multiple attention weights for each input element, using different linear transformations of the query, key, and value. The outputs of each attention head are then concatenated and linearly transformed to produce the final output.
+
+**Self-Attention**
+
+In transformer models, attention is used in a self-attention mechanism, where the model attends to different parts of the input sequence simultaneously. This allows the model to capture long-range dependencies and complex relationships between input elements.
+
+**Benefits of Attention**
+
+The attention mechanism in transformer models provides several benefits, including:
+
+* **Parallelization**: Attention can be computed in parallel, making it much faster than traditional RNNs.
+* **Long-range dependencies**: Attention can capture long-range dependencies and complex relationships between input elements.
+* **Interpretability**: Attention weights can be used to visualize the model's attention patterns, providing insights into how the model is processing the input data.
+
+In summary, attention mechanisms in transformer models allow the model to focus on specific parts of the input data when processing it, enabling the model to capture long-range dependencies and complex relationships between input elements.

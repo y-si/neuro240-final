@@ -1,0 +1,25 @@
+HTTP (Hypertext Transfer Protocol) and WebSocket are both communication protocols used in web development, but they have some key differences:
+
+1. Communication Style:
+   - HTTP: HTTP is a request-response protocol. The client sends a request to the server, and the server responds with the requested data. Each request-response cycle is independent.
+   - WebSocket: WebSocket is a full-duplex, bidirectional communication protocol. Once a WebSocket connection is established, both the client and the server can send messages to each other independently, without the need for a new request.
+
+2. Connection Persistence:
+   - HTTP: HTTP connections are stateless. Each request-response cycle is treated as a separate connection, and the server does not maintain any state between requests.
+   - WebSocket: WebSocket connections are persistent. Once a WebSocket connection is established, it remains open until either the client or the server closes it. This allows for real-time communication without the overhead of establishing a new connection for each message.
+
+3. Overhead:
+   - HTTP: HTTP has higher overhead due to the need for headers in each request and response. Each request-response cycle requires a new connection to be established, which adds latency.
+   - WebSocket: WebSocket has lower overhead compared to HTTP. Once the initial handshake is complete, the connection remains open, and messages can be sent with minimal overhead.
+
+4. Message Format:
+   - HTTP: HTTP messages are typically in the form of plain text or JSON (JavaScript Object Notation) and are sent as part of the request or response body.
+   - WebSocket: WebSocket messages can be in any format agreed upon by the client and the server. They are typically sent as binary data or plain text.
+
+5. Use Cases:
+   - HTTP: HTTP is suitable for traditional web applications where the client requests data from the server and updates the UI based on the response. It is commonly used for retrieving resources, submitting forms, and making API calls.
+   - WebSocket: WebSocket is ideal for real-time applications that require continuous updates from the server to the client or vice versa. Examples include chat applications, live feeds, collaborative tools, and gaming applications.
+
+6. Compatibility:
+   - HTTP: HTTP is widely supported by all web browsers and servers.
+   - WebSocket:

@@ -1,0 +1,17 @@
+Garbage collection (GC) is a form of automatic memory management that languages like Java and Python use to help ensure efficient use of memory and to mitigate memory leaks. While the specifics can vary between languages and their implementations, the core idea is to automatically reclaim memory that is no longer in use by the program, freeing it up for future allocations. Here's a general overview of how garbage collection typically works in these languages:
+
+### Java Garbage Collection
+
+1. **Object Creation**: In Java, objects are created on the heap, which is a portion of memory dedicated to dynamic allocation. Over time, as new objects are created, the heap can fill up.
+
+2. **Reachability Analysis**: The garbage collector periodically performs a "reachability analysis" starting from "roots". Roots are variables and references in active threads, static fields, and other special references that are directly accessible. If an object can be traced back to a root through a chain of references, it's considered reachable and, therefore, still in use.
+
+3. **Mark and Sweep**: One common garbage collection strategy involves two phases: the "mark" phase, where the garbage collector identifies which objects are still in use by marking them as reachable, and the "sweep" phase, where memory occupied by objects not marked as reachable (i.e., garbage) is reclaimed. The Java Virtual Machine (JVM) can implement this in various ways, including through generational garbage collection (separating objects by age), parallel garbage collection (using multiple threads), and other methods.
+
+### Python Garbage Collection
+
+Python, particularly its CPython implementation, uses a combination of reference counting and generational garbage collection to manage memory.
+
+1. **Reference Counting**: Each object in Python maintains a count of references to it. When an object is referenced (e.g., assigned to a variable or included in a list), its reference count increases. Conversely, when references to an object are removed, its reference count decreases. Once an object's reference count drops to zero, meaning no references to it exist, it is immediately reclaimed by the system.
+
+2. **Cyclic Garbage Collection**: Reference counting alone cannot detect cyclic references (where two or more objects reference each other, creating a loop). To handle this, Python periodically runs a generational garbage collector that can detect and clean up these cycles. Objects are divided into generations based on how long they have survived (with newly created objects in the youngest generation), and the collector runs more

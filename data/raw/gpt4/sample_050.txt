@@ -1,0 +1,25 @@
+A **container** is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, runtime, system tools, system libraries, and settings. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
+
+### How Containers Work
+
+Containers work by virtualizing the operating system (OS) from the underlying infrastructure. They run at the user space level of the host OS. This is distinct from virtual machines (VMs), which include not only the application and its dependencies but also an entire guest operating system. This makes containers much more lightweight and faster than VMs.
+
+### Docker and How It Works
+
+**Docker** is a platform and tool for developing, shipping, and running applications in containers. Docker has become synonymous with container technology because it has been instrumental in popularizing it. Docker makes it easier for developers to create, deploy, and run applications by using containers. Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+#### Components of Docker
+
+- **Docker Engine**: A client-server application with a server (a long-running program called a daemon process), a REST API specifying interfaces that programs can use to talk to the daemon and command it what to do, and a command-line interface (CLI) client that talks to the daemon through the REST API.
+
+- **Docker Images**: A Docker image is a lightweight, standalone, and executable software package that includes everything needed to run a piece of software, including the code, runtime, library, environment variables, and configuration files.
+
+- **Docker Containers**: Containers are the runtime instances of Docker images. When you run an image, you do not modify the image; instead, you get a current instance of that image, which is a container.
+
+- **Docker Hub**: Docker Hub is a service provided by Docker for finding and sharing container images with your team. It is the world's largest library and community for container images.
+
+#### How Docker Works
+
+1. **Dockerfile**: The process starts with a Dockerfile, which is a script composed of various commands (and arguments) used to assemble a Docker image. 
+
+2. **Build**: By running the `docker build` command, Docker uses the Dockerfile

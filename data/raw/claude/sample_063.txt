@@ -1,0 +1,28 @@
+MapReduce is a programming model and an associated implementation for processing and generating large datasets with a parallel, distributed algorithm on a cluster. It was originally developed by Google and is now widely used in big data processing.
+
+The MapReduce model consists of two main functions:
+
+1. Map: This function takes input data and converts it into a set of key-value pairs. The input data is divided into smaller sub-problems and distributed across multiple nodes in a cluster. Each node processes its sub-problem independently and produces intermediate key-value pairs.
+
+2. Reduce: This function takes the output from the Map function (intermediate key-value pairs) and combines/merges them to produce a final result. The Reduce function is also distributed across multiple nodes, and each node processes a subset of the intermediate data based on the keys.
+
+The MapReduce framework orchestrates the processing by marshalling the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, and providing for redundancy and fault tolerance.
+
+Example use case: Word Count
+
+Suppose you have a large collection of documents and you want to count the occurrences of each word across all the documents. This is a classic example where MapReduce can be applied.
+
+1. Map phase:
+   - Input: Each document in the collection.
+   - Output: For each word in the document, emit a key-value pair where the key is the word, and the value is 1.
+
+   Example:
+   - Input: "The quick brown fox jumps over the lazy dog"
+   - Output: (The, 1), (quick, 1), (brown, 1), (fox, 1), (jumps, 1), (over, 1), (the, 1), (lazy, 1), (dog, 1)
+
+2. Reduce phase:
+   - Input: All the key-value pairs from the Map phase, grouped by the key (word).
+   - Output: For each unique word, emit a key-value pair where the key is the word, and the value is the sum of all the values (counts) associated with that word.
+
+   Example:
+   - Input: (the, [1, 1]), (quick, [1]), (brown, [1]), (fox,

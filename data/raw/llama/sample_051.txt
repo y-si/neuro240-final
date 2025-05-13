@@ -1,0 +1,59 @@
+**What is a Memory Leak?**
+==========================
+
+A memory leak is a situation where a computer program or application fails to release memory that it no longer needs, resulting in a gradual increase in memory usage over time. This can lead to performance issues, crashes, and even security vulnerabilities.
+
+**Causes of Memory Leaks**
+-------------------------
+
+Memory leaks can occur due to various reasons, including:
+
+1. **Unreleased resources**: Failing to close files, sockets, or database connections can lead to memory leaks.
+2. **Circular references**: When two or more objects reference each other, preventing the garbage collector from freeing up memory.
+3. **Global variables**: Using global variables can lead to memory leaks if they are not properly cleaned up.
+4. **Unclosed loops**: Infinite loops or loops that run for an extended period can cause memory leaks.
+
+**How to Avoid Memory Leaks**
+---------------------------
+
+To avoid memory leaks, follow these best practices:
+
+### 1. **Use Garbage Collection**
+
+Garbage collection is a mechanism that automatically frees up memory occupied by objects that are no longer in use. Most modern programming languages, such as Java, C#, and Python, have built-in garbage collection.
+
+### 2. **Close Resources**
+
+Always close files, sockets, and database connections when they are no longer needed. Use try-with-resources statements or finally blocks to ensure resources are closed.
+
+### 3. **Avoid Circular References**
+
+Use weak references or break circular references to prevent objects from holding onto each other.
+
+### 4. **Use Stack-Based Allocation**
+
+Use stack-based allocation for short-lived objects to avoid memory leaks.
+
+### 5. **Monitor Memory Usage**
+
+Use memory profiling tools to detect memory leaks and identify areas of improvement.
+
+### 6. **Follow Best Practices**
+
+Follow best practices for memory management in your programming language of choice.
+
+**Example: Avoiding Memory Leaks in Java**
+--------------------------------------
+
+```java
+// Bad practice: Not closing the file
+FileInputStream fileInputStream = new FileInputStream("example.txt");
+// ...
+
+// Good practice: Closing the file using try-with-resources
+try (FileInputStream fileInputStream = new FileInputStream("example.txt")) {
+    // ...
+}
+```
+
+By following these best practices and using the right tools, you can avoid memory leaks and write more efficient, reliable code.

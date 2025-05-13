@@ -1,0 +1,73 @@
+**Compiler Overview**
+=====================
+
+A compiler is a program that translates source code written in a high-level programming language (such as C, C++, or Java) into machine code that can be executed directly by the computer's processor. This process involves several stages, which are outlined below.
+
+**Compilation Stages**
+---------------------
+
+### 1. **Preprocessing**
+
+The first stage of compilation is preprocessing. During this stage, the preprocessor reads the source code and performs the following tasks:
+
+* Expands macros: Replaces macro definitions with their actual values.
+* Includes header files: Inserts the contents of included header files into the source code.
+* Removes comments: Deletes comments from the source code.
+
+### 2. **Syntax Analysis (Parsing)**
+
+The next stage is syntax analysis, also known as parsing. The parser reads the preprocessed source code and checks its syntax. It ensures that the code follows the rules of the programming language and reports any syntax errors.
+
+### 3. **Semantic Analysis (Semantic Checking)**
+
+After parsing, the compiler performs semantic analysis. During this stage, the compiler checks the meaning of the code and reports any semantic errors. This includes checking the types of variables, ensuring that functions are called correctly, and verifying that the code follows the language's scoping rules.
+
+### 4. **Intermediate Code Generation**
+
+Once the code has been parsed and semantically analyzed, the compiler generates intermediate code. This code is platform-independent and is used as input for the next stage of compilation.
+
+### 5. **Optimization**
+
+The compiler may perform optimization on the intermediate code to improve its performance. This can include techniques such as dead code elimination, constant folding, and register allocation.
+
+### 6. **Code Generation**
+
+The final stage of compilation is code generation. During this stage, the compiler translates the intermediate code into machine code that can be executed directly by the computer's processor.
+
+### 7. **Code Emission**
+
+The last stage of compilation is code emission. During this stage, the compiler writes the generated machine code to an object file or executable file.
+
+**Example Use Case**
+--------------------
+
+Suppose we have a simple C program that adds two numbers:
+```c
+// example.c
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(2, 3);
+    return result;
+}
+```
+To compile this program, we would use a compiler such as GCC:
+```bash
+$ gcc -o example example.c
+```
+The compiler would perform the following stages:
+
+1. Preprocessing: Expand macros, include header files, and remove comments.
+2. Syntax analysis: Parse the source code and check its syntax.
+3. Semantic analysis: Check the meaning of the code and report any semantic errors.
+4. Intermediate code generation: Generate platform-independent intermediate code.
+5. Optimization: Perform optimization on the intermediate code.
+6. Code generation: Translate the intermediate code into machine code.
+7. Code emission: Write the generated machine code to an executable file called `example`.
+
+**Conclusion**
+----------
+
+In conclusion, a compiler translates source code into machine code by performing several stages, including preprocessing, syntax analysis, semantic analysis, intermediate code generation, optimization, code generation, and code emission. Understanding these stages can help developers appreciate the complexity of the compilation process and write more efficient code.

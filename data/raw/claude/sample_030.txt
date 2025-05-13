@@ -1,0 +1,17 @@
+The vanishing gradient problem is a difficulty that can occur when training deep neural networks with many layers using gradient-based learning methods and backpropagation. 
+
+In deep networks, the gradients are calculated by the chain rule during backpropagation, multiplying gradients of each layer together from the output back to the input layers. If the gradients in initial layers are small (much less than 1.0), then the gradients will get exponentially smaller as backpropagation progresses back through the layers. The gradients can become so small that they essentially "vanish", making learning in the front layers extremely slow or stopping the network from learning further.
+
+This problem arises with activation functions like sigmoid or tanh whose gradients are in the range (0, 1). Small gradients get smaller when multiplied together. It's less of an issue with ReLU activations which don't constrain the output range.
+
+Some approaches to mitigate vanishing gradients:
+
+1. Use ReLU activation functions which allow gradients to flow more easily 
+2. Careful initialization of weights to keep gradients in a healthy range
+3. Architectures like residual networks or LSTMs that provide "shortcuts" for gradients
+4. Gradient clipping to prevent gradients getting too small
+5. Batch normalization layers to normalize activations 
+
+The opposite problem, exploding gradients, can occur if gradients are large and grow exponentially during backpropagation. Gradient clipping is a common solution.
+
+Overall, the vanishing gradient problem can make deep networks difficult to train, but architectural innovations in recent years have helped to overcome it. Let me know if you have any other questions!

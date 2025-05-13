@@ -1,0 +1,14 @@
+A random forest is an ensemble learning method that improves upon a single decision tree in several ways. Here are the key advantages:
+
+1. **Reduced Overfitting**: A single decision tree can suffer from overfitting, where it becomes too specialized to the training data and fails to generalize well to new, unseen data. Random forests mitigate this by combining multiple trees, each trained on a random subset of the data. This helps to average out the noise and reduce overfitting.
+2. **Improved Robustness**: Random forests are more robust to outliers and noisy data. If one tree in the forest is affected by an outlier, the other trees can still provide accurate predictions, reducing the overall impact of the outlier.
+3. **Increased Accuracy**: By combining multiple trees, random forests can achieve higher accuracy than a single decision tree. Each tree in the forest provides a different perspective on the data, and the ensemble can capture more complex relationships between the features.
+4. **Handling High-Dimensional Data**: Random forests can handle high-dimensional data with many features. By randomly selecting a subset of features at each node, the forest can reduce the dimensionality of the data and improve the accuracy of the predictions.
+5. **Reducing Variance**: Random forests can reduce the variance of the predictions. By averaging the predictions from multiple trees, the forest can reduce the impact of individual tree errors and provide more consistent predictions.
+
+To achieve these benefits, random forests use two key techniques:
+
+1. **Bootstrap Aggregating (Bagging)**: Each tree in the forest is trained on a random subset of the data, known as a bootstrap sample. This helps to reduce overfitting and improve the robustness of the forest.
+2. **Random Feature Selection**: At each node in the tree, a random subset of features is selected for splitting. This helps to reduce the dimensionality of the data and improve the accuracy of the predictions.
+
+By combining these techniques, random forests can provide more accurate and robust predictions than a single decision tree, making them a popular choice for many machine learning applications.

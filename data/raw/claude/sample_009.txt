@@ -1,0 +1,20 @@
+Batch normalization is a technique used in deep learning to standardize the inputs to a layer in a neural network. Its main purpose is to address the problem of internal covariate shift and to improve the training speed and stability of deep neural networks.
+
+Key points about batch normalization:
+
+1. Internal Covariate Shift: As the parameters of the previous layers change during training, the distribution of the inputs to the current layer also changes. This phenomenon is known as internal covariate shift and can slow down the training process. Batch normalization aims to mitigate this issue.
+
+2. Normalization: Batch normalization normalizes the activations of a layer by subtracting the batch mean and dividing by the batch standard deviation. This ensures that the activations have a mean of zero and a standard deviation of one.
+
+3. Scale and Shift: After normalization, batch normalization introduces two learnable parameters per layer: a scale parameter (γ) and a shift parameter (β). These parameters allow the network to learn the optimal scale and shift of the activations for each layer.
+
+4. Mini-batch Statistics: Batch normalization operates on mini-batches of data during training. It computes the mean and variance of the activations within each mini-batch and uses these statistics for normalization.
+
+5. Benefits: Batch normalization offers several benefits, including:
+   - Faster training: It allows for higher learning rates and faster convergence.
+   - Regularization: It has a regularizing effect, reducing the need for techniques like dropout.
+   - Improved stability: It helps stabilize the training process and reduces the sensitivity to initialization.
+
+6. Inference: During inference, the batch normalization layer uses the population mean and variance estimated during training instead of the mini-batch statistics.
+
+By normalizing the activations and introducing learnable parameters, batch normalization helps alleviate the internal covariate shift problem, leading to faster and more stable training of deep neural networks. It has become a widely adopted technique in various deep learning architectures.

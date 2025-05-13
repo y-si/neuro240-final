@@ -1,0 +1,31 @@
+Reinforcement learning (RL) and supervised learning are two primary paradigms of machine learning, each with distinct methodologies, objectives, and application areas. Here's how they differ from each other:
+
+### 1. Learning Process
+
+- **Supervised Learning** involves learning a function that maps an input to an output based on input-output pairs. It infers a function from labeled training data consisting of a set of training examples, where each example is a pair consisting of an input object (typically a vector) and the desired output value (a label).
+
+- **Reinforcement Learning**, on the other hand, is about training models to make a sequence of decisions. The agent learns to achieve a goal in an uncertain, potentially complex environment. In reinforcement learning, an agent makes observations and takes actions within an environment, and in return, it receives rewards. Its objective is to learn to act in a way that will maximize some notion of cumulative reward.
+
+### 2. Feedback
+
+- **Supervised Learning** feedback comes in the form of labeled data, where each training example has a known output or label. The model is trained until the difference between its predictions and the actual labels is minimized.
+
+- **Reinforcement Learning** feedback is based on rewards and punishments. The feedback is not immediate and may be delayed. The learning agent must discover which actions yield the most reward by trying them.
+
+### 3. Objective
+
+- **Supervised Learning** aims to learn a mapping from inputs to outputs, to predict the output for new inputs.
+
+- **Reinforcement Learning** aims to find a suitable action model that would maximize the total cumulative reward of the agent.
+
+### 4. Examples and Applications
+
+- **Supervised Learning** applications include image recognition, speech recognition, and forecasting. For instance, in image recognition, the system is trained with images that are labeled with their content (e.g., "dog", "cat").
+
+- **Reinforcement Learning** is used in scenarios where decision making and sequential actions are involved, such as game playing (e.g., AlphaGo), robotics for navigation and control, and in recommendation systems where the system learns to recommend based on user interaction.
+
+### 5. Data Requirement
+
+- **Supervised Learning** requires a large amount of labeled data. The quality and quantity of this data significantly affect the performance of the learned model.
+
+- **Reinforcement Learning** can start learning from scratch, without any initial data, by interacting with

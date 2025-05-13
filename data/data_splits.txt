@@ -1,0 +1,7 @@
+# Walk through of data splits for sanity-checked experiment
+
+- `data/all_texts.csv`: All raw texts combined from all authors.
+- `data/train_split.csv`: 80% random stratified split for training (contains `text`, `label`, `filename`).
+- `data/test_split.csv`: 20% random stratified split for testing (contains `text`, `label`, `filename`).
+
+These splits are created to ensure no data leakage and will be used for all downstream feature extraction, training, and evaluation.

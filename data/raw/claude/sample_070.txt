@@ -1,0 +1,18 @@
+The CAP theorem, also known as Brewer's theorem, is a fundamental concept in distributed systems and databases. It states that a distributed data store can only provide two out of the following three guarantees simultaneously:
+
+1. Consistency (C): Every read operation receives the most recent write or an error. All nodes see the same data at the same time, ensuring a single up-to-date copy of the data.
+
+2. Availability (A): Every request receives a non-error response, without the guarantee that it contains the most recent write. The system remains operational, even if some nodes fail or are unreachable.
+
+3. Partition tolerance (P): The system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes. The system can tolerate network partitions and maintain its properties.
+
+According to the CAP theorem, in the presence of a network partition, a distributed system must choose between consistency and availability. It is impossible to provide both strong consistency and high availability in a distributed system during a network partition.
+
+In practice, distributed systems often prioritize partition tolerance (P) because network failures and partitions are unavoidable in real-world scenarios. Therefore, the choice is typically between consistency (CP) and availability (AP):
+
+- CP systems (such as MongoDB, HBase) prioritize consistency over availability. They ensure strong consistency but may become unavailable during a network partition.
+- AP systems (such as Cassandra, CouchDB) prioritize availability over consistency. They remain available during a network partition but may return stale or inconsistent data.
+
+It's important to note that the CAP theorem applies specifically to distributed systems and is most relevant when a network partition occurs. In the absence of network partitions, a distributed system can provide both consistency and availability.
+
+When designing a distributed system, architects must carefully consider the trade-offs and choose the appropriate balance between consistency, availability, and partition tolerance based on the specific requirements and constraints of their application.

@@ -1,0 +1,25 @@
+Hashing functions play a crucial role in cryptography by taking an input (or message) and producing a fixed-size output called a hash or digest. The main characteristics and purposes of cryptographic hash functions are:
+
+1. Deterministic: For a given input, the hash function always produces the same output.
+
+2. Fixed output size: Regardless of the input size, the output hash has a fixed length, typically 128, 256, or 512 bits, depending on the hash function used (e.g., MD5, SHA-256, SHA-3).
+
+3. Efficiency: Computing the hash value is relatively fast, even for large inputs.
+
+4. One-way (Pre-image resistance): Given a hash value, it is computationally infeasible to find the original input message. This ensures that the original message cannot be derived from the hash.
+
+5. Collision resistance: It is computationally infeasible to find two different inputs that produce the same hash value. This ensures the uniqueness of the hash values.
+
+6. Avalanche effect: A small change in the input message results in a significantly different hash value, making it difficult to find patterns or similarities between the input and output.
+
+Applications of hashing in cryptography include:
+
+1. Data integrity: Hashing ensures that data has not been altered during storage or transmission.
+
+2. Password storage: Instead of storing plain-text passwords, systems store the hash values of passwords, making it difficult for attackers to obtain the original passwords even if they access the stored hashes.
+
+3. Digital signatures: Hash functions are used in combination with asymmetric encryption to create and verify digital signatures, ensuring the authenticity and integrity of messages or documents.
+
+4. Proof of work: Cryptocurrencies like Bitcoin use hash functions as part of their consensus mechanism, requiring miners to find a specific hash value to validate transactions and create new blocks.
+
+Common cryptographic hash functions include MD5 (now considered insecure), SHA-1 (deprecated), SHA-256, SHA-3, and BLAKE2. These functions are designed to meet the required security properties and are extensively used in various cryptographic protocols and applications.

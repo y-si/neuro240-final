@@ -1,0 +1,19 @@
+A TLS (Transport Layer Security) handshake is a process that establishes a secure connection between a client (usually a web browser) and a server. The handshake ensures that the communication between the two parties is encrypted and authenticated. Here's a simplified explanation of the TLS handshake process:
+
+1. Client Hello: The client initiates the handshake by sending a "Client Hello" message to the server. This message includes the client's TLS version, supported cipher suites, and a random number.
+
+2. Server Hello: The server responds with a "Server Hello" message, which contains the server's chosen TLS version, selected cipher suite from the client's list, and another random number.
+
+3. Certificate Exchange: The server sends its digital certificate to the client. This certificate contains the server's public key and is signed by a trusted Certificate Authority (CA). The client verifies the certificate to ensure the server's identity.
+
+4. Server Key Exchange (optional): If the server's certificate doesn't contain enough information for the client to encrypt the premaster secret, the server sends additional information in this step.
+
+5. Server Hello Done: The server sends a message indicating that it has finished its part of the handshake.
+
+6. Client Key Exchange: The client generates a random "premaster secret," encrypts it using the server's public key (obtained from the server's certificate), and sends it to the server.
+
+7. Change Cipher Spec: Both the client and the server send a message to indicate that they will start using the agreed-upon encryption and MAC (Message Authentication Code) algorithms.
+
+8. Finished: The client and server exchange "Finished" messages, which are encrypted and authenticated using the session keys derived from the premaster secret. This step verifies that the handshake was successful and not tampered with.
+
+After the handshake is complete, the client and server can securely exchange data using the established encrypted connection. The symmetric session keys, derived from the premaster secret, are used to encrypt and decrypt the data transmitted between them.

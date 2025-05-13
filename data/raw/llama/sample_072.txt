@@ -1,0 +1,117 @@
+**Task Scheduling on Multi-Core CPUs**
+
+In a multi-core CPU, multiple processing units (cores) are integrated into a single physical package. Each core can execute instructions independently, allowing for concurrent execution of multiple tasks. The operating system (OS) plays a crucial role in managing these tasks and scheduling them on the available cores.
+
+**Overview of the Scheduling Process**
+
+The OS uses a combination of algorithms and data structures to schedule tasks on a multi-core CPU. Here's a high-level overview of the process:
+
+1. **Task Creation**: When a new task is created, the OS assigns it a unique identifier and adds it to a data structure called a **task queue** or **run queue**.
+2. **Task Prioritization**: The OS assigns a priority to each task based on its importance, deadlines, and other factors. This priority determines the order in which tasks are executed.
+3. **Core Selection**: The OS selects an available core to execute the task. This decision is based on factors such as core utilization, task affinity, and power management.
+4. **Task Dispatch**: The OS dispatches the task to the selected core, which executes the task's instructions.
+5. **Task Completion**: When a task completes, the OS updates the task's status and removes it from the task queue.
+
+**Scheduling Algorithms**
+
+The OS uses various scheduling algorithms to manage the task queue and select the next task to execute. Some common algorithms include:
+
+1. **First-Come-First-Served (FCFS)**: Tasks are executed in the order they are added to the task queue.
+2. **Round-Robin (RR)**: Tasks are executed in a circular order, with each task receiving a fixed time slice (called a **time quantum**).
+3. **Priority Scheduling**: Tasks are executed based on their priority, with higher-priority tasks executed first.
+4. **Multi-Level Feedback Queue (MLFQ)**: Tasks are divided into multiple queues based on their priority, and tasks are executed from the highest-priority queue first.
+
+**Multi-Core Scheduling Techniques**
+
+To optimize task scheduling on multi-core CPUs, the OS uses various techniques, including:
+
+1. **Load Balancing**: The OS distributes tasks across multiple cores to balance the workload and minimize idle time.
+2. **Task Affinity**: The OS assigns tasks to specific cores based on their affinity, which can improve performance by reducing cache misses and minimizing data transfer between cores.
+3. **Core Parking**: The OS can park (idle) cores that are not in use to reduce power consumption and heat generation.
+4. **Hyper-Threading**: The OS can use hyper-threading to execute multiple threads on a single core, improving utilization and reducing idle time.
+
+**Example Use Case**
+
+Suppose we have a multi-core CPU with four cores, and we want to execute four tasks: A, B, C, and D. The OS uses a priority scheduling algorithm to manage the task queue.
+
+| Task | Priority |
+| --- | --- |
+| A | High |
+| B | Medium |
+| C | Low |
+| D | High |
+
+The OS schedules the tasks as follows:
+
+1. Core 1: Task A (High priority)
+2. Core 2: Task D (High priority)
+3. Core 3: Task B (Medium priority)
+4. Core 4: Task C (Low priority)
+
+In this example, the OS has scheduled the tasks based on their priority, ensuring that the high-priority tasks are executed first.
+
+**Code Example**
+
+Here's a simple example of a task scheduling algorithm in C:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// Task structure
+typedef struct {
+    int id;
+    int priority;
+} Task;
+
+// Task queue structure
+typedef struct {
+    Task* tasks;
+    int size;
+} TaskQueue;
+
+// Function to add a task to the task queue
+void add_task(TaskQueue* queue, Task* task) {
+    queue->tasks[queue->size] = *task;
+    queue->size++;
+}
+
+// Function to schedule tasks based on priority
+void schedule_tasks(TaskQueue* queue) {
+    // Sort tasks by priority
+    for (int i = 0; i < queue->size; i++) {
+        for (int j = i + 1; j < queue->size; j++) {
+            if (queue->tasks[i].priority < queue->tasks[j].priority) {
+                Task temp = queue->tasks[i];
+                queue->tasks[i] = queue->tasks[j];
+                queue->tasks[j] = temp;
+            }
+        }
+    }
+
+    // Execute tasks in order of priority
+    for (int i = 0; i < queue->size; i++) {
+        printf("Executing task %d with priority %d\n", queue->tasks[i].id, queue->tasks[i].priority);
+    }
+}
+
+int main() {
+    TaskQueue queue;
+    queue.size = 0;
+    queue.tasks = malloc(4 * sizeof(Task));
+
+    Task task1 = {1, 3};
+    Task task2 = {2, 2};
+    Task task3 = {3, 1};
+    Task task4 = {4, 3};
+
+    add_task(&queue, &task1);
+    add_task(&queue, &task2);
+    add_task(&queue, &task3);
+    add_task(&queue, &task4);
+
+    schedule_tasks(&queue);
+
+    return 0;
+}
+```
+This code example demonstrates a simple task scheduling algorithm that sorts tasks by priority and executes them in order.

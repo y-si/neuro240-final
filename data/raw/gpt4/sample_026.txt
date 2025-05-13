@@ -1,0 +1,21 @@
+Decision trees make predictions by splitting the data into subsets based on the value of input features, following a simple decision-making process that mimics human decision making. Here's a step-by-step explanation of how decision trees work to make predictions:
+
+### 1. Starting at the Root
+
+- **Root Node**: The process begins at the root node of the tree, which contains the entire dataset. This node is the starting point where the first split is made.
+- **Feature Selection**: The decision tree algorithm selects the best feature to split the data based on a specific criterion, such as Gini impurity, entropy (information gain), or variance reduction for regression trees. The goal is to choose a feature and a threshold that best separates the data into subsets that are as homogenous as possible with respect to the target variable.
+
+### 2. Splitting the Data
+
+- **Binary Splits**: Most decision trees use binary splits, meaning the data at each node is split into two groups based on the selected feature threshold. For example, if the feature is "Age" and the threshold is 30, the data would be split into two groups: one with Age <= 30 and one with Age > 30.
+- **Recursive Splitting**: This splitting process is applied recursively to each child node, with the algorithm choosing the best feature and threshold at each step. The process continues until a stopping criterion is met, such as when a node reaches a maximum specified depth, when a node has fewer than a minimum number of points, or when no further information gain can be achieved.
+
+### 3. Making Predictions
+
+- **Leaf Nodes**: The recursion ends when a node cannot be split any further, turning it into a leaf node. Each leaf node represents a final output (a prediction) that the model makes based on the input features that led to this leaf.
+- **Classification Trees**: In a classification tree, the leaf node assigns the most common class (target label) among the training samples that reach that leaf. For instance, if a leaf node contains 30 samples labeled "Cat" and 10 labeled "Dog," any new data point that ends up in this leaf will be classified as "Cat."
+- **Regression Trees**: In a regression tree, instead of predicting a class, the leaf node predicts a continuous value. This is typically the average of the target values of the training samples that reach that leaf.
+
+### Example
+
+Imagine a simple decision tree designed to classify animals as

@@ -1,0 +1,19 @@
+HTTP (Hypertext Transfer Protocol) and WebSocket are both protocols used for communication between a client (typically, a web browser) and a server over the web. While they share some similarities, such as both being initially established over a TCP/IP connection, they serve different purposes and operate in fundamentally different ways. Here are the key differences between HTTP and WebSocket:
+
+1. **Connection Lifespan:**
+   - **HTTP**: Traditionally, HTTP works on a request-response model. This means the client sends a request, the server processes it, sends back a response, and then the connection is closed. Even with persistent connections in HTTP/1.1 and multiplexing in HTTP/2, each request-response is distinct and does not inherently keep the connection open for continuous communication.
+   - **WebSocket**: Designed for long-lived communications, WebSocket establishes a persistent, full-duplex connection between the client and server. This connection remains open, allowing for ongoing, two-way interaction without the need to establish new connections for each exchange.
+
+2. **Overhead and Latency:**
+   - **HTTP**: Each new request typically carries a significant amount of overhead due to headers, and with traditional HTTP, the latency can be higher because of the need to establish connections repeatedly if not using persistent connections.
+   - **WebSocket**: After the initial handshake over HTTP, data frames can be sent with minimal overhead and lower latency. This is beneficial for real-time applications where quick data exchange is crucial.
+
+3. **Data Format:**
+   - **HTTP**: Primarily designed to transport text-based data, including HTML, JSON, XML, etc. While it can transport binary data (e.g., images, videos) through encoding (like base64), it's not its most efficient use case.
+   - **WebSocket**: Can natively handle both text and binary data efficiently, making it suitable for a wider array of applications, including those requiring high-speed, real-time data transfer such as live video streaming or gaming.
+
+4. **Use Cases:**
+   - **HTTP**: Ideal for document-centric or RESTful services where the communication is mostly client-initiated and follows a clear request-response pattern. Examples include web page loading, REST APIs, and form submissions.
+   - **WebSocket**: Best suited for interactive, real-time applications that require constant data exchange from both client and server sides, such as online games, chat applications, live sports updates, and collaborative editing platforms.
+
+5. **Protocol Design:

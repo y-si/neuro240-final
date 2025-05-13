@@ -1,0 +1,22 @@
+Reinforcement learning (RL) and supervised learning (SL) are two fundamental machine learning paradigms. While both aim to train models to make predictions or take actions, they differ significantly in their approach, objectives, and feedback mechanisms.
+
+**Supervised Learning (SL)**
+
+In SL, the model is trained on a labeled dataset, where each example is paired with a target output or response. The goal is to learn a mapping between inputs and outputs, so the model can make accurate predictions on new, unseen data. The model receives feedback in the form of a loss function, which measures the difference between its predictions and the true labels.
+
+Example: Image classification, where the model is trained on a dataset of images with corresponding labels (e.g., "cat" or "dog").
+
+**Reinforcement Learning (RL)**
+
+In RL, the model learns by interacting with an environment and receiving feedback in the form of rewards or penalties. The goal is to learn a policy that maps states to actions, which maximizes the cumulative reward over time. The model does not receive explicit labels or supervision; instead, it must explore the environment, take actions, and learn from the consequences.
+
+Example: A robot learning to navigate a maze, where the reward is +1 for reaching the goal and -1 for hitting a wall.
+
+**Key differences**
+
+1. **Feedback mechanism**: SL uses labeled data and a loss function, while RL uses rewards or penalties to guide the learning process.
+2. **Objective**: SL aims to minimize the loss function, while RL aims to maximize the cumulative reward.
+3. **Exploration-exploitation trade-off**: RL models must balance exploring the environment to learn about the rewards and exploiting the current knowledge to maximize the reward.
+4. **Action selection**: RL models must select actions based on the current state, while SL models simply make predictions based on the input data.
+
+In summary, supervised learning is suitable for problems with labeled data, where the goal is to make accurate predictions. Reinforcement learning is suitable for problems where the model must interact with an environment, learn from feedback, and make decisions to achieve a goal.

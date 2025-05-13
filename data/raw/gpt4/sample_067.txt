@@ -1,0 +1,21 @@
+RAID stands for Redundant Array of Independent Disks (originally Redundant Array of Inexpensive Disks). It is a method of storing the same data in different places on multiple hard disks to protect data in the case of a drive failure and, in some configurations, to improve performance. RAID levels describe the balance each method strikes between performance, availability, and capacity. Here's a basic overview of RAID 0, RAID 1, and RAID 5:
+
+### RAID 0 (Striping)
+- **Purpose**: To increase performance.
+- **How it Works**: Data is split into blocks and each block is written to a separate disk drive. This means each disk drive in the array works on a different part of a request at the same time, significantly improving performance.
+- **Capacity Use**: 100% of the total capacity of the drives in the array is usable.
+- **Fault Tolerance**: None. If one drive fails, all data in the RAID 0 array is lost.
+- **Use Case**: Situations where performance is critical and data redundancy is not required, such as in non-critical applications or as a scratch disk in video editing.
+
+### RAID 1 (Mirroring)
+- **Purpose**: To ensure data redundancy.
+- **How it Works**: Data is copied identically from one disk to another, creating a "mirror." Every write operation is carried out on both disks.
+- **Capacity Use**: 50% of the total capacity of the drives in the array is usable, as each piece of data is stored twice.
+- **Fault Tolerance**: Very high. If one disk fails, the system can instantly switch to the other disk without losing data.
+- **Use Case**: Situations where data integrity and redundancy are critical, with minimal downtime in the event of disk failure, such as in critical databases or systems.
+
+### RAID 5 (Striping with Parity)
+- **Purpose**: To provide a balance between performance, capacity, and redundancy.
+- **How it Works**: Data and parity (a form of error checking) information are striped across three or more disks. If a single disk fails, the data can be reconstructed from the remaining disks using the parity information.
+- **Capacity Use**: The equivalent of one disk's capacity in the array is used for parity, so with N disks, the capacity is equivalent to N-1 disks.
+- **Fault Tolerance**: Can survive the failure of one disk without data

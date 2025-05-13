@@ -1,0 +1,39 @@
+**HTTP vs WebSocket: Key Differences**
+=====================================
+
+HTTP (Hypertext Transfer Protocol) and WebSocket are two distinct protocols used for communication over the web. While they share some similarities, they have different design goals, use cases, and characteristics.
+
+**HTTP (Hypertext Transfer Protocol)**
+------------------------------------
+
+*   **Request-Response Model**: HTTP is a request-response protocol, where a client (usually a web browser) sends a request to a server, and the server responds with the requested data.
+*   **Stateless**: HTTP is a stateless protocol, meaning each request is independent of the previous one, and the server does not maintain any information about the client between requests.
+*   **Unidirectional**: HTTP is a unidirectional protocol, where the client initiates the communication, and the server responds.
+*   **Polling**: To receive updates, the client must periodically send requests to the server, a technique known as polling.
+
+**WebSocket**
+-------------
+
+*   **Bi-Directional Communication**: WebSocket is a bi-directional protocol, allowing both the client and server to send data to each other at any time.
+*   **Stateful**: WebSocket is a stateful protocol, where the connection is maintained between the client and server, and both parties can keep track of the conversation.
+*   **Push-Based**: WebSocket enables push-based communication, where the server can send updates to the client without the client requesting them.
+*   **Persistent Connection**: WebSocket establishes a persistent connection between the client and server, reducing the overhead of establishing new connections.
+
+**Comparison Summary**
+----------------------
+
+|  | HTTP | WebSocket |
+| --- | --- | --- |
+| **Communication Model** | Request-Response | Bi-Directional |
+| **State** | Stateless | Stateful |
+| **Direction** | Unidirectional | Bi-Directional |
+| **Update Mechanism** | Polling | Push-Based |
+| **Connection** | Short-Lived | Persistent |
+
+**Use Cases**
+-------------
+
+*   **HTTP**: Suitable for traditional web applications, where the client requests data from the server, and the server responds. Examples include web browsing, RESTful APIs, and file downloads.
+*   **WebSocket**: Ideal for real-time web applications, such as live updates, gaming, chat applications, and collaborative editing.
+
+In summary, HTTP is a request-response protocol suitable for traditional web applications, while WebSocket is a bi-directional protocol ideal for real-time web applications that require push-based communication and persistent connections.

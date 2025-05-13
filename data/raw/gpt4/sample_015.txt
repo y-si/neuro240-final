@@ -1,0 +1,33 @@
+Compile-time and run-time errors are two main categories of errors that can occur during the lifecycle of software development and execution. Understanding the difference between them is crucial for debugging and writing effective code. Here's a breakdown of each:
+
+### Compile-Time Errors
+
+**Definition**: Compile-time errors are detected by the compiler when you try to compile your source code into an executable program. These errors must be resolved for the code to successfully compile.
+
+**Causes**: They are typically caused by syntax errors, type checking errors, or incorrect use of an identifier or function. These errors are caught because they break the language's rules, which the compiler knows and enforces.
+
+**Examples**:
+- Syntax errors like missing semicolons, unmatched parentheses, or incorrect use of language keywords.
+- Type errors where an operation is performed on an incompatible type, like trying to add a string to an integer without explicit type conversion.
+- Missing or incorrectly named variables or functions.
+
+**Resolution**: To resolve compile-time errors, you must correct the syntax or semantic mistakes in your code based on the compiler's feedback. Modern IDEs (Integrated Development Environments) are quite good at detecting these errors even before you compile.
+
+### Run-Time Errors
+
+**Definition**: Run-time errors occur during the execution of the program, after it has successfully compiled. These errors are detected while the program is running, and they can cause the program to crash or behave unexpectedly.
+
+**Causes**: They are caused by illegal operations that are not caught at compile time. This could be because the operations themselves are syntactically correct but logically incorrect in the context of what the program is trying to achieve at the moment of execution.
+
+**Examples**:
+- Attempting to divide by zero.
+- Trying to access an out-of-bounds index in an array or list.
+- Null pointer dereference, where you try to use an object reference that has not been initialized.
+- Failing to allocate memory, which might throw an out-of-memory error.
+
+**Resolution**: Debugging run-time errors can be more challenging than compile-time errors because they may depend on specific execution paths or data that is only available at runtime. Using debugging tools, logging, and analyzing the program's state at the time of the error can help identify and fix these issues.
+
+### Key Differences
+
+- **Detection Time**: Compile-time errors are detected before the program runs, while run-time errors are detected during execution.
+- **Nature**: Compile-time errors are mostly syntactical or structural problems

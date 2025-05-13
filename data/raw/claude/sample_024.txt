@@ -1,0 +1,13 @@
+Cache memory is a small, fast memory located close to the CPU (Central Processing Unit) that stores frequently accessed data and instructions. It improves system performance in several ways:
+
+1. Faster access time: Cache memory has a much shorter access time compared to main memory (RAM) because it is built using faster memory technologies like SRAM (Static RAM). This allows the CPU to retrieve data and instructions from the cache more quickly, reducing wait times.
+
+2. Reduced memory latency: By storing frequently used data and instructions in the cache, the CPU can access them without having to fetch them from the slower main memory. This reduces the overall memory latency and improves the CPU's performance.
+
+3. Temporal locality: Programs often exhibit temporal locality, meaning they tend to access the same data and instructions repeatedly within a short period. Cache memory takes advantage of this principle by keeping recently accessed data and instructions readily available for the CPU.
+
+4. Spatial locality: Programs also exhibit spatial locality, which means they tend to access data and instructions that are stored close to each other in memory. Cache memory is designed to fetch and store data in blocks or cache lines, allowing the CPU to access nearby data more efficiently.
+
+5. Reduced bus traffic: By serving many of the CPU's requests from the cache, the number of transactions between the CPU and main memory is reduced. This decreases the traffic on the system bus, allowing other components to use the bus more effectively.
+
+Modern processors often have multiple levels of cache memory (L1, L2, L3) with increasing sizes and slightly slower speeds as the level increases. The CPU first looks for data in the L1 cache, then L2, L3, and finally in main memory if the data is not found in any of the caches. This hierarchical design helps balance the cost and performance of the memory subsystem.

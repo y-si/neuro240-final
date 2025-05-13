@@ -1,0 +1,19 @@
+There are several common techniques used to prevent overfitting in machine learning:
+
+1. Cross-validation: This involves splitting the data into training and validation sets, training the model on the training set, and evaluating its performance on the validation set. This helps assess how well the model generalizes to unseen data.
+
+2. Regularization: Regularization techniques, such as L1 (Lasso) and L2 (Ridge) regularization, add a penalty term to the loss function to discourage the model from learning overly complex patterns. This helps reduce the model's sensitivity to noise in the training data.
+
+3. Early stopping: During training, the model's performance on the validation set is monitored. If the performance starts to degrade, training is stopped early to prevent the model from overfitting to the training data.
+
+4. Dropout: Dropout is a regularization technique commonly used in neural networks. It randomly drops out (sets to zero) a fraction of the neurons during training, which helps prevent the neurons from co-adapting and forces them to learn more robust features.
+
+5. Data augmentation: Augmenting the training data by applying transformations (e.g., rotation, scaling, flipping) can help increase the diversity of the training examples and reduce overfitting. This is especially useful when the available training data is limited.
+
+6. Ensemble methods: Ensemble techniques, such as bagging and boosting, combine multiple models to make predictions. By averaging the predictions of multiple models, ensemble methods can reduce the risk of overfitting and improve generalization.
+
+7. Simplifying the model: Using a simpler model with fewer parameters can help reduce the risk of overfitting. This can be achieved by reducing the number of layers or neurons in a neural network or using a less complex model architecture.
+
+8. Gathering more data: Increasing the size of the training dataset can help the model learn more robust and generalizable patterns, reducing the risk of overfitting.
+
+By applying these techniques, machine learning practitioners can mitigate overfitting and improve the model's ability to generalize well to unseen data.

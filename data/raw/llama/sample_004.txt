@@ -1,0 +1,35 @@
+Activation functions play a crucial role in neural networks, as they introduce non-linearity into the model, allowing it to learn and represent more complex relationships between inputs and outputs.
+
+**What is an activation function?**
+
+An activation function is a mathematical function that takes the output of a neuron (or a layer of neurons) and maps it to a new value, typically between 0 and 1, or -1 and 1. This new value is then used as the input to the next layer of neurons.
+
+**Why are activation functions necessary?**
+
+Without activation functions, neural networks would be limited to learning linear relationships between inputs and outputs. This is because the output of a neuron would simply be a linear combination of its inputs, and the output of the next layer would be a linear combination of the previous layer's outputs, and so on.
+
+However, many real-world problems involve non-linear relationships, such as classification problems where the output is not a simple linear function of the inputs. Activation functions help to introduce non-linearity into the model, allowing it to learn and represent these more complex relationships.
+
+**Types of activation functions**
+
+There are several types of activation functions commonly used in neural networks, including:
+
+1. **Sigmoid**: Maps the input to a value between 0 and 1, using the logistic function.
+2. **ReLU (Rectified Linear Unit)**: Maps all negative inputs to 0, and all positive inputs to the same value.
+3. **Tanh (Hyperbolic Tangent)**: Maps the input to a value between -1 and 1, using the hyperbolic tangent function.
+4. **Softmax**: Maps the input to a probability distribution over multiple classes, often used in classification problems.
+5. **Leaky ReLU**: A variation of ReLU that allows a small fraction of the input to pass through, even if it's negative.
+
+**How do activation functions work?**
+
+When an activation function is applied to the output of a neuron, it transforms the output in a way that allows the model to learn non-linear relationships. For example, the sigmoid activation function maps the output to a value between 0 and 1, which can be interpreted as a probability.
+
+The choice of activation function depends on the specific problem being solved, as well as the architecture of the neural network. Some activation functions are more suitable for certain types of problems, such as classification or regression.
+
+**Key benefits of activation functions**
+
+1. **Non-linearity**: Activation functions introduce non-linearity into the model, allowing it to learn and represent complex relationships.
+2. **Improved representation**: Activation functions help the model to represent the input data in a more meaningful way, by transforming the output of each neuron.
+3. **Increased capacity**: Activation functions increase the capacity of the model to learn and represent complex patterns in the data.
+
+In summary, activation functions play a crucial role in neural networks by introducing non-linearity, improving representation, and increasing capacity. The choice of activation function depends on the specific problem being solved, as well as the architecture of the neural network.

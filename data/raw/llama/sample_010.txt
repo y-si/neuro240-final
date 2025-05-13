@@ -1,0 +1,40 @@
+Convolutional Neural Networks (CNNs) are a type of deep learning model that are particularly well-suited for image processing tasks. Here's a step-by-step explanation of how they process images:
+
+**Step 1: Image Input**
+The image is fed into the CNN as a 3D array of pixel values, where each pixel is represented by three color channels (red, green, and blue). The image is typically resized to a fixed size to ensure that all images have the same dimensions.
+
+**Step 2: Convolutional Layers**
+The image is then passed through multiple convolutional layers, which are the core building blocks of a CNN. Each convolutional layer consists of:
+
+* **Filters (Kernels)**: Small, learnable matrices that slide over the image, scanning for patterns. These filters are typically 3x3 or 5x5 pixels in size.
+* **Convolution Operation**: The filter is applied to each region of the image, computing the dot product between the filter and the image pixels. This produces a feature map, which represents the presence of a particular pattern in the image.
+* **Activation Function**: The feature map is then passed through an activation function, such as ReLU (Rectified Linear Unit), which introduces non-linearity to the model.
+
+**Step 3: Feature Extraction**
+The convolutional layers extract features from the image, such as edges, lines, and textures. These features are represented as feature maps, which are stacked together to form a feature cube.
+
+**Step 4: Pooling Layers**
+To reduce the spatial dimensions of the feature cube and retain the most important information, pooling layers are applied. There are two types of pooling:
+
+* **Max Pooling**: Selects the maximum value from each region of the feature map.
+* **Average Pooling**: Computes the average value from each region of the feature map.
+
+**Step 5: Flattening**
+The feature cube is then flattened into a 1D array, which is fed into fully connected layers.
+
+**Step 6: Fully Connected Layers**
+The flattened array is passed through multiple fully connected layers, which are used for classification or regression tasks. These layers consist of:
+
+* **Dense Layers**: Fully connected layers with learnable weights and biases.
+* **Activation Functions**: Introduce non-linearity to the model.
+
+**Step 7: Output**
+The final output of the CNN is a probability distribution over the possible classes or a continuous value for regression tasks.
+
+**Key Concepts**
+
+* **Local Connectivity**: CNNs only connect neurons that are spatially close, which reduces the number of parameters and improves performance.
+* **Shared Weights**: The same filter is applied to all regions of the image, which reduces the number of parameters and improves performance.
+* **Translation Equivariance**: CNNs are translation equivariant, meaning that the output is the same regardless of the position of the input.
+
+Overall, CNNs process images by extracting features through convolutional and pooling layers, and then using fully connected layers to classify or regress the output.

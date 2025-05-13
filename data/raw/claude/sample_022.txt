@@ -1,0 +1,29 @@
+Virtual memory is a memory management technique used by operating systems to provide an illusion of a large, contiguous address space to programs, regardless of the actual physical memory available on the system. It allows each program to operate as if it has access to the entire range of addresses provided by the CPU, even if the system's physical memory is not large enough to hold all the running programs simultaneously.
+
+Here's how virtual memory works:
+
+1. Address Space Separation:
+   - Each process is given its own virtual address space, which is separate from the physical memory addresses.
+   - The virtual address space is divided into pages, typically 4KB in size.
+
+2. Page Tables:
+   - The operating system maintains a page table for each process, which maps virtual page numbers to physical page numbers in RAM.
+   - The page table keeps track of the mapping between the virtual addresses used by the program and the actual physical memory locations.
+
+3. Memory Allocation:
+   - When a program requests memory, the operating system allocates virtual memory pages to the process.
+   - The virtual pages are not immediately mapped to physical memory until they are actually accessed by the program.
+
+4. Page Faults:
+   - When a program tries to access a virtual memory address that is not currently mapped to physical memory, a page fault occurs.
+   - The operating system handles the page fault by finding a free physical memory page and loading the required data from the storage (e.g., hard disk) into that physical page.
+   - The page table is updated to map the virtual page to the newly allocated physical page.
+
+5. Swapping:
+   - If the system runs out of physical memory and needs to allocate more pages, the operating system may use a process called swapping.
+   - It involves moving some of the least recently used pages from physical memory to secondary storage (e.g., hard disk) to free up space for new pages.
+   - When a swapped-out page is accessed again, it is brought back into physical memory, and another page may be swapped out if necessary.
+
+6. Translation Lookaside Buffer (TLB):
+   - To improve performance, the CPU caches recently used virtual-to-physical page mappings in a hardware cache called the Translation Lookaside Buffer (TLB).
+   - The TL

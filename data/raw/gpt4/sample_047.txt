@@ -1,0 +1,26 @@
+REST (Representational State Transfer) and GraphQL are both popular approaches for designing web APIs, allowing clients to interact with server-side resources. However, they differ significantly in how they handle data retrieval and manipulation. Here are the main differences between REST and GraphQL:
+
+### 1. Data Fetching
+
+- **REST**: In REST, data is accessed through a predetermined set of URLs, where each URL represents a resource. If a client needs information stored across multiple resources, it must make multiple round trips to the server, potentially leading to over-fetching or under-fetching of data.
+- **GraphQL**: GraphQL allows clients to request exactly the data they need in a single query, including data from multiple resources. This reduces the need for multiple requests and avoids over-fetching and under-fetching issues.
+
+### 2. API Versioning
+
+- **REST**: API versioning is a common practice in REST to handle changes in the API structure, leading to multiple versions of the API being maintained simultaneously (e.g., v1, v2).
+- **GraphQL**: GraphQL typically doesn’t require versioning. Changes can be made to the schema (the structure that defines the data points in a GraphQL API) without impacting existing queries. Deprecated fields can be marked as such, but still supported, allowing for smoother transitions and backward compatibility.
+
+### 3. Request Efficiency and Performance
+
+- **REST**: Performance can be impacted by the need for multiple requests to gather complex data. REST APIs can mitigate this with techniques like embedding (including related resources in a response), which can complicate the API.
+- **GraphQL**: Offers more efficient data loading through a single network request. It also supports features like batching and caching out of the box, which can improve performance and reduce server load.
+
+### 4. Error Handling
+
+- **REST**: Typically uses HTTP status codes to indicate the success or failure of an API request (e.g., 200 for success, 404 for not found, 500 for server errors).
+- **GraphQL**: Returns a 200 status code for most responses, including errors. Instead, errors are included in the response body alongside any data that was successfully retrieved, allowing for more nuanced error handling on the client side.
+
+### 5. Specification and Flexibility
+
+- **REST**: There is no strict specification for REST; it's a set of design principles rather than a protocol. This flexibility means REST APIs can vary widely in their implementation.
+- **GraphQL**: Is a specification. This

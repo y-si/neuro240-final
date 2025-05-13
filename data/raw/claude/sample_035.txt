@@ -1,0 +1,19 @@
+The softmax function plays a crucial role in neural networks, particularly in the output layer of a multi-class classification problem. Its main purpose is to convert the raw output scores (logits) of a neural network into a probability distribution over the possible classes.
+
+Here are the key points to understand about the softmax function:
+
+1. Normalization: The softmax function takes a vector of real numbers (logits) and normalizes them into a probability distribution. It ensures that the sum of the output probabilities is equal to 1, and each individual probability falls within the range of 0 to 1.
+
+2. Formula: The softmax function is defined as follows:
+   softmax(z_i) = exp(z_i) / sum(exp(z_j))
+   where z_i is the i-th element of the input vector, and the sum is taken over all elements of the vector.
+
+3. Interpretation: The output of the softmax function represents the probability of each class given the input. The class with the highest probability is typically considered the predicted class.
+
+4. Comparison to other activation functions: Unlike other activation functions like ReLU or sigmoid, which are applied element-wise, the softmax function considers the entire vector of logits to compute the probabilities. This is because the probabilities are relative and depend on the values of all the logits.
+
+5. Training: During training, the softmax function is used in conjunction with a loss function, such as cross-entropy loss, to measure the difference between the predicted probabilities and the true class labels. The gradients are then backpropagated through the network to update the weights and improve the model's performance.
+
+6. Inference: During inference, the softmax function is applied to the output logits to obtain the predicted probabilities for each class. The class with the highest probability is selected as the final prediction.
+
+The softmax function is commonly used in the output layer of neural networks for multi-class classification tasks. It provides a convenient way to interpret the network's outputs as probabilities and enables the model to make informed decisions based on the relative confidences of each class.

@@ -1,0 +1,28 @@
+HTTPS (Hypertext Transfer Protocol Secure) is a secure communication protocol used to transfer data between a web browser and a web server. It secures communication by using a combination of encryption, authentication, and integrity checks. Here's how it works:
+
+**Key Components:**
+
+1. **TLS (Transport Layer Security)**: HTTPS uses TLS, a cryptographic protocol that provides end-to-end encryption, authentication, and integrity checks.
+2. **SSL (Secure Sockets Layer)**: SSL is an older version of TLS, but the terms are often used interchangeably.
+3. **Certificates**: HTTPS uses digital certificates, which contain the public key and identity information of the server.
+4. **Public Key Infrastructure (PKI)**: PKI is a system that manages the creation, distribution, and verification of digital certificates.
+
+**The HTTPS Process:**
+
+1. **Handshake**: When a client (e.g., a web browser) initiates a connection to a server, they perform a TLS handshake. The client sends a "hello" message to the server, which responds with its digital certificate and a random session ID.
+2. **Certificate Verification**: The client verifies the server's digital certificate by checking its validity, ensuring it was issued by a trusted Certificate Authority (CA), and matching the domain name.
+3. **Key Exchange**: The client and server negotiate a shared secret key, which is used for symmetric encryption.
+4. **Encryption**: The client and server use the shared secret key to encrypt and decrypt data.
+5. **Data Transfer**: The client and server exchange encrypted data, which is decrypted by the recipient.
+6. **Integrity Checks**: The client and server perform integrity checks to ensure the data has not been tampered with during transmission.
+
+**Security Benefits:**
+
+1. **Encryption**: HTTPS encrypts data in transit, making it unreadable to unauthorized parties.
+2. **Authentication**: HTTPS verifies the identity of the server, ensuring the client is communicating with the intended server.
+3. **Integrity**: HTTPS ensures the data has not been tampered with during transmission.
+4. **Confidentiality**: HTTPS protects sensitive data, such as passwords and credit card numbers, from eavesdropping.
+
+**In Summary:**
+
+HTTPS secures communication by using a combination of encryption, authentication, and integrity checks. The TLS protocol provides end-to-end encryption, while digital certificates and PKI ensure the identity of the server. This ensures that data is protected from eavesdropping, tampering, and unauthorized access.

@@ -1,0 +1,17 @@
+Regularization in neural networks is a technique used to prevent overfitting, which occurs when a model learns the noise in the training data to the extent that it negatively impacts the model's ability to generalize to new, unseen data. Regularization helps to reduce the complexity of the model and encourages it to learn more robust and generalizable features.
+
+There are several common regularization techniques used in neural networks:
+
+1. L1 Regularization (Lasso): Adds the sum of the absolute values of the weights to the loss function. This encourages the model to learn sparse feature representations, effectively reducing the number of active features.
+
+2. L2 Regularization (Ridge): Adds the sum of the squared values of the weights to the loss function. This encourages the model to learn smaller weight values and helps to distribute the importance more evenly among the features.
+
+3. Elastic Net Regularization: A combination of L1 and L2 regularization, which balances the effects of both techniques.
+
+4. Dropout: During training, randomly sets a fraction of input units to 0 at each update, forcing the network to learn more robust features and reducing interdependent learning among neurons.
+
+5. Early Stopping: Monitors the model's performance on a validation set during training and stops the training process when the performance on the validation set starts to degrade, indicating potential overfitting.
+
+6. Weight Decay: Similar to L2 regularization, directly penalizes large weights by multiplying them by a factor slightly less than 1 during each weight update.
+
+By incorporating regularization techniques, neural networks can learn more generalized and robust representations of the input data, reducing overfitting and improving performance on unseen data. The choice of regularization technique and its hyperparameters depends on the specific problem and the architecture of the neural network.

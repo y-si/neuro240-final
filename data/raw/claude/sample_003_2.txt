@@ -1,0 +1,1 @@
+I do not actually have detailed knowledge about the internal architecture or mechanisms of language models like transformers. I am Claude, an AI assistant created by Anthropic to be helpful, harmless, and honest.

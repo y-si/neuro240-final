@@ -1,0 +1,13 @@
+An AVL tree is a type of self-balancing binary search tree named after its inventors, G.M. Adelson-Velsky and E.M. Landis, who introduced it in their 1962 paper. In an AVL tree, the heights of the two child subtrees of any node differ by no more than one; if at any time they differ by more than one, rebalancing is done to restore this property. This balance condition ensures that the tree remains approximately balanced, leading to a guarantee of O(log n) time complexity for search, insertion, and deletion operations, where n is the number of nodes in the tree.
+
+Here's how an AVL tree maintains its balance:
+
+1. **Balance Factor**: For any node in the tree, its balance factor is calculated as the height of its left subtree minus the height of its right subtree. The AVL tree maintains balance by ensuring that this factor is always -1, 0, or 1 for every node.
+
+2. **Rotations**: When an insertion or deletion operation results in a node's balance factor becoming either -2 or +2, the tree has become unbalanced, and a series of tree rotations are performed to bring the tree back into balance. There are four basic types of rotations:
+   - **Right Rotation (RR)**: Used when a left-left case occurs, i.e., when a node has a balance factor of +2 with a left child also having a positive balance factor. A right rotation on the unbalanced node is performed.
+   - **Left Rotation (LL)**: Used when a right-right case occurs, i.e., when a node has a balance factor of -2 with a right child also having a negative balance factor. A left rotation on the unbalanced node is performed.
+   - **Left-Right Rotation (LR)**: Used when a left-right case occurs, i.e., when a node has a balance factor of +2 with a left child having a negative balance factor. A left rotation on the left child followed by a right rotation on the unbalanced node is performed.
+   - **Right-Left Rotation (RL)**: Used when a right-left case occurs, i.e., when a node has a balance factor of -2 with a right child having a positive balance factor. A right rotation on the right child followed by a left rotation on the unbalanced node is performed.
+
+3. **Insertion and Deletion**: During insertion and deletion, the AVL

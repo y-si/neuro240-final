@@ -1,0 +1,20 @@
+Reinforcement learning (RL) and supervised learning are both machine learning paradigms, but they differ in their approach and the type of problems they aim to solve. Here are the key differences between reinforcement learning and supervised learning:
+
+1. Learning Approach:
+   - Supervised Learning: In supervised learning, the model learns from labeled training data, where the correct output (label) is provided for each input example. The goal is to learn a mapping function from input to output based on the given examples.
+   - Reinforcement Learning: In reinforcement learning, the model learns through interaction with an environment. The agent takes actions in the environment and receives feedback in the form of rewards or penalties. The goal is to learn a policy that maximizes the cumulative reward over time.
+
+2. Feedback:
+   - Supervised Learning: In supervised learning, the model receives immediate feedback in the form of the correct output for each input example. The model adjusts its parameters based on the difference between its predicted output and the true output.
+   - Reinforcement Learning: In reinforcement learning, the feedback is delayed and sparse. The agent receives rewards or penalties after taking actions, and these rewards may not be immediately available. The agent needs to learn from the long-term consequences of its actions.
+
+3. Data Availability:
+   - Supervised Learning: Supervised learning requires a labeled dataset, where the input-output pairs are known in advance. The model learns from these pre-labeled examples.
+   - Reinforcement Learning: Reinforcement learning does not rely on a pre-labeled dataset. Instead, the agent generates its own data through interaction with the environment. The agent explores the environment, takes actions, and learns from the resulting rewards.
+
+4. Problem Type:
+   - Supervised Learning: Supervised learning is commonly used for problems such as classification, regression, and prediction, where the goal is to learn a mapping from input to output based on labeled examples.
+   - Reinforcement Learning: Reinforcement learning is used for sequential decision-making problems, where the agent needs to learn a policy to maximize a cumulative reward. It is suitable for tasks such as game playing, robotics, and control systems.
+
+5. Exploration vs. Exploitation:
+   - Supervised Learning: Supervised learning does not involve exploration-exploitation trade-off. The model learns from the provide

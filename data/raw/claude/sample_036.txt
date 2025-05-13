@@ -1,0 +1,20 @@
+DNS (Domain Name System) resolves a domain name to an IP address through a series of steps. Here's a simplified explanation of the process:
+
+1. A user enters a domain name (like example.com) into their web browser.
+
+2. The browser checks its local cache to see if it has recently resolved this domain name. If found, it uses the cached IP address.
+
+3. If not found in the cache, the browser sends a request to the operating system's resolver, which checks its local cache.
+
+4. If still not found, the resolver sends a query to the recursive DNS server, typically provided by the ISP or configured manually.
+
+5. The recursive server checks its cache. If the IP is not found, it starts the recursive lookup process:
+   a. The recursive server contacts one of the root name servers, which responds with the IP address of the relevant Top-Level Domain (TLD) name server (.com, .org, etc.).
+   b. The recursive server then queries the TLD name server, which responds with the IP address of the domain's authoritative name server.
+   c. Finally, the recursive server queries the authoritative name server, which responds with the IP address for the specific domain.
+
+6. The recursive server returns the IP address to the resolver, which forwards it to the browser.
+
+7. The browser caches the IP address for future use and initiates a connection to the web server using the resolved IP address.
+
+This process is recursive and may involve additional caching at intermediate servers to improve efficiency. DNS also supports other record types beyond IP addresses, such as MX records for mail servers and TXT records for domain verification and other purposes.

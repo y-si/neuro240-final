@@ -1,0 +1,20 @@
+Precision and recall are two fundamental metrics used to evaluate the performance of classification models, especially in contexts where the balance between different types of classification errors is important, such as in information retrieval and binary classification tasks. They help in understanding the effectiveness of a classifier in identifying true positives from a dataset. Here's what each term means and how they differ:
+
+### Precision (Positive Predictive Value)
+Precision measures the accuracy of positive predictions made by the classification model. It is defined as the ratio of true positive predictions to the total number of positive predictions (which includes both true positives and false positives). In simpler terms, it answers the question: "Of all the instances the model predicted as positive, how many are actually positive?"
+
+Mathematically, Precision is expressed as:
+\[ Precision = \frac{TP}{TP + FP} \]
+where \(TP\) is the number of true positives, and \(FP\) is the number of false positives.
+
+### Recall (Sensitivity, True Positive Rate)
+Recall measures the ability of a classification model to identify all relevant instances within a dataset. It is defined as the ratio of true positive predictions to the total actual positives (which includes both true positives and false negatives). Essentially, it answers the question: "Of all the actual positive instances, how many did the model successfully identify?"
+
+Mathematically, Recall is expressed as:
+\[ Recall = \frac{TP}{TP + FN} \]
+where \(TP\) is the number of true positives, and \(FN\) is the number of false negatives.
+
+### Differences
+- **Focus**: Precision focuses on the purity of the positive predictions, whereas recall focuses on the coverage or completeness of the positive predictions.
+- **Trade-off**: There is often a trade-off between precision and recall. Increasing precision typically reduces recall and vice versa. This is because improving precision usually means being more conservative about labeling an instance as positive (thus missing some positives, reducing recall), while improving recall requires being more liberal in labeling an instance as positive (thus including more false positives, reducing precision).
+- **Application**: The choice of whether to prioritize precision or recall depends on the specific requirements of the application. For example, in a spam detection system, recall might be more important because missing a spam email (a false negative) is usually preferable to incorrectly marking a legitimate email as spam (a false positive). Conversely, in a legal document retrieval system, precision might be more important because the cost of reviewing irrelevant documents (false positives) is

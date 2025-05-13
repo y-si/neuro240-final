@@ -1,0 +1,38 @@
+OAuth 2.0 is an authorization framework that allows a client application to access a protected resource on behalf of a resource owner, without sharing the resource owner's credentials. Here's a step-by-step explanation of how OAuth 2.0 works for authentication:
+
+**Roles**
+
+1. **Resource Server**: The server that protects the resource (e.g., a web API).
+2. **Client**: The application that wants to access the protected resource (e.g., a mobile app or web app).
+3. **Authorization Server**: The server that authenticates the resource owner and issues an access token to the client.
+4. **Resource Owner**: The user who owns the protected resource.
+
+**Flow**
+
+1. **Client Registration**: The client registers with the authorization server, providing its client ID and redirect URI.
+2. **Authorization Request**: The client requests authorization from the resource owner to access the protected resource. The client redirects the resource owner to the authorization server's authorization endpoint.
+3. **User Authentication**: The resource owner authenticates with the authorization server using their credentials (e.g., username and password).
+4. **Authorization Grant**: After authentication, the authorization server prompts the resource owner to grant or deny access to the client. If granted, the authorization server redirects the resource owner back to the client with an authorization code.
+5. **Token Request**: The client sends the authorization code to the authorization server's token endpoint to obtain an access token.
+6. **Access Token**: The authorization server issues an access token to the client, which can be used to access the protected resource.
+7. **Resource Access**: The client uses the access token to access the protected resource on the resource server.
+
+**Token Types**
+
+1. **Access Token**: A short-lived token that grants access to the protected resource.
+2. **Refresh Token**: A long-lived token that can be used to obtain a new access token when the original access token expires.
+
+**Advantages**
+
+1. **Decoupling**: OAuth 2.0 decouples the client from the resource server, allowing for greater flexibility and scalability.
+2. **Security**: OAuth 2.0 provides a secure way to authenticate and authorize clients without sharing credentials.
+3. **Standardization**: OAuth 2.0 is a widely adopted standard, making it easier to integrate with different systems and services.
+
+**Common OAuth 2.0 Flows**
+
+1. **Authorization Code Flow**: Suitable for web applications that can securely store the client secret.
+2. **Implicit Flow**: Suitable for clients that cannot store the client secret, such as JavaScript applications.
+3. **Client Credentials Flow**: Suitable for clients that need to access their own resources.
+4. **Resource Owner Password Credentials Flow**: Suitable for clients that need to access the resource owner's resources using their credentials.
+
+In summary, OAuth 2.0 provides a secure and standardized way for clients to access protected resources on behalf of resource owners, without sharing credentials.

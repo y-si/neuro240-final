@@ -1,0 +1,27 @@
+MapReduce is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm on a cluster. Developed by Google, it simplifies the complexities of distributed computing by abstracting the underlying implementation details. MapReduce processes large unstructured or semi-structured data across a distributed cluster of computers using two main functions: Map and Reduce.
+
+### How MapReduce Works
+
+**1. Map Step:**
+- The Map function takes an input dataset and converts it into another set of intermediate key/value pairs. The input data is usually stored in a distributed file system across multiple nodes. This step involves reading the data from input sources, processing it (such as filtering, grouping, or sorting), and producing intermediate key-value pairs. Each Map task operates in isolation, processing a portion of the data.
+
+**2. Shuffle and Sort:**
+- After the Map tasks complete, the MapReduce framework shuffles the intermediate key/value pairs so that all values associated with the same key are brought together. This is necessary for the next step, as the Reduce function needs to operate on all values associated with the same key.
+
+**3. Reduce Step:**
+- The Reduce function takes the intermediate key/value pairs from the Map phase, processes them (usually aggregating, summarizing, or combining them), and generates the final output. Each Reduce task deals with a set of keys, and it may produce zero, one, or multiple output values for each key.
+
+### Execution Overview:
+
+1. **Input data** is split into chunks and distributed across the cluster.
+2. The **Map function** is applied in parallel to each chunk, producing intermediate key/value pairs.
+3. The system **shuffles and sorts** these intermediate values, grouping values by key.
+4. The **Reduce function** is then applied in parallel to each group of values, producing the final result.
+
+### Example Use Case: Word Count
+
+A classic example of a MapReduce job is counting the number of occurrences of each word in a large set of documents—a "word count" task.
+
+**Map Step:** Each document is split into words. The Map function processes one document at a time, emitting a key/value pair for each word encountered, with the word as the key and the number 1 as the value (indicating a single occurrence of this word).
+
+**Shuffle and Sort:** The system collects all key/value pairs from the Map phase, sorting them so that all occurrences of the same word are

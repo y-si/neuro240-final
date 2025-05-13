@@ -1,0 +1,23 @@
+Hashing functions are a fundamental component of cryptographic processes, providing a way to secure and verify data integrity. In cryptography, hashing functions are designed to take an input (or 'message') and return a fixed-size string of bytes, which is typically a digest that appears random. The output, known as the hash, is a unique representation of the input data. Here are the key characteristics and how they work in the context of cryptography:
+
+### Key Characteristics of Cryptographic Hashing Functions
+
+1. **Deterministic**: The same input will always produce the same output (hash), ensuring consistency in verification processes.
+
+2. **Fixed Output Length**: Regardless of the input size, the hash output is of a fixed length. This property is crucial for storing and managing data efficiently.
+
+3. **Fast Computation**: Hash functions are designed to be computationally efficient, allowing for quick calculation of the hash value from an input.
+
+4. **Pre-image Resistance**: Given a hash value, it should be computationally infeasible to reverse it to find the original input, safeguarding against back-calculation attacks.
+
+5. **Small Changes Produce Large Differences**: Even a tiny change to the input (like changing one bit) will produce a significantly different hash. This property is known as the avalanche effect.
+
+6. **Collision Resistance**: It should be extremely hard to find two different inputs that produce the same output hash, preventing potential forgery or data manipulation.
+
+### How Hashing Functions Work in Cryptography
+
+**Data Integrity and Verification**: Hashing functions are used to ensure data integrity. When data is transmitted or stored, its hash can also be kept or sent. The receiver can re-compute the hash on the received data and compare it with the original hash. If they match, the data has not been altered, ensuring its integrity.
+
+**Password Storage**: Instead of storing passwords directly, systems store hashed values of passwords. When a user logs in, the system hashes the input password and compares it with the stored hash. This way, even if the data storage is compromised, the actual passwords are not exposed.
+
+**Digital Signatures**: Hash functions are used in creating digital signatures. Instead of signing a message directly, which could be computationally expensive for large messages, a hash of the message is created and encrypted with a private key. The receiver decrypts the hash with the public key and compares it with the hash of the original message. If they match, it confirms the authenticity and integrity of the

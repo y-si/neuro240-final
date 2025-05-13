@@ -1,0 +1,75 @@
+**REST vs GraphQL: Key Differences**
+=====================================
+
+REST (Representational State of Resource) and GraphQL are two popular architectural styles for designing networked applications. While both enable data exchange between clients and servers, they differ significantly in their approach, advantages, and use cases.
+
+**REST**
+--------
+
+### Overview
+
+REST is an architectural style that emphasizes simplicity, flexibility, and scalability. It's based on the concept of resources, which are identified by URIs, and can be manipulated using a fixed set of operations (e.g., GET, POST, PUT, DELETE).
+
+### Key Characteristics
+
+* **Resource-based**: Everything is a resource, and each resource is identified by a unique identifier (URI).
+* **Client-server architecture**: The client and server are separate, with the client making requests to the server to access or modify resources.
+* **Stateless**: The server does not maintain any information about the client state between requests.
+* **Cacheable**: Responses from the server can be cached by the client to reduce the number of requests.
+
+### Example
+
+Suppose we have a RESTful API for managing books. To retrieve a book, we would send a GET request to `https://example.com/books/123`, where `123` is the book's ID.
+
+**GraphQL**
+------------
+
+### Overview
+
+GraphQL is a query language for APIs that allows clients to specify exactly what data they need, and receive only that data in response. It's designed to reduce the number of requests and improve performance.
+
+### Key Characteristics
+
+* **Query-based**: Clients send queries to the server, specifying the data they need.
+* **Schema-driven**: The server defines a schema that describes the types of data available and the relationships between them.
+* **Resolvers**: The server uses resolvers to fetch the requested data from the underlying storage.
+* **Single endpoint**: GraphQL APIs typically have a single endpoint, which handles all queries.
+
+### Example
+
+Using the same book example, a GraphQL query might look like this:
+```graphql
+query {
+  book(id: 123) {
+    title
+    author
+    publicationDate
+  }
+}
+```
+This query would return only the specified fields for the book with ID `123`.
+
+**Comparison**
+--------------
+
+|  | REST | GraphQL |
+| --- | --- | --- |
+| **Request style** | Resource-based | Query-based |
+| **Number of requests** | Multiple requests for different resources | Single request for multiple resources |
+| **Data retrieval** | Fetch entire resource, even if only some fields are needed | Fetch only the requested fields |
+| **Caching** | Caching is done at the resource level | Caching is done at the query level |
+| **Schema** | No explicit schema | Schema-driven |
+
+**Choosing between REST and GraphQL**
+------------------------------------
+
+* Use REST when:
+	+ You need a simple, well-established API architecture.
+	+ Your API has a small number of resources and a simple data model.
+	+ You prefer a more traditional, resource-based approach.
+* Use GraphQL when:
+	+ You need to reduce the number of requests and improve performance.
+	+ Your API has a complex data model with many relationships between resources.
+	+ You want to give clients more control over the data they receive.
+
+Ultimately, the choice between REST and GraphQL depends on your specific use case, performance requirements, and personal preference.

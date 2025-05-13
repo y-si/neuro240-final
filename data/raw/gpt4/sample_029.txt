@@ -1,0 +1,23 @@
+The K-means clustering algorithm is a popular method used in data mining and machine learning to partition a given dataset into \(K\) distinct, non-overlapping subgroups, or "clusters," where each data point belongs to the cluster with the closest mean. The algorithm aims to minimize the variance within each cluster, making the data points within a cluster as similar as possible while maximizing the difference between clusters. The steps to perform K-means clustering are as follows:
+
+### 1. Choose the Number of Clusters, \(K\)
+First, you decide the number of clusters, \(K\), you want to find in your dataset. This choice can be somewhat arbitrary, but there are techniques like the Elbow Method, the Silhouette Method, or domain-specific knowledge that can help determine a good value for \(K\).
+
+### 2. Initialize Centroids
+Randomly pick \(K\) data points from your dataset as the initial centroids. These points act as the starting centers of the \(K\) clusters. The selection of initial centroids can significantly affect the algorithm's outcome, so sometimes the initialization is done using methods like the K-means++ algorithm to improve convergence.
+
+### 3. Assign Data Points to the Closest Centroid
+For each data point in the dataset, calculate the distance to each of the \(K\) centroids and assign the data point to the cluster represented by the closest centroid. The distance is typically measured using Euclidean distance but can be replaced with other distance measures depending on the nature of the data and the application.
+
+### 4. Update Centroids
+Once all data points have been assigned to clusters, recalculate the centroids of each cluster as the mean of all points in that cluster. This step updates the cluster centers to be the actual center of the data points in the cluster.
+
+### 5. Repeat Steps 3 and 4
+Repeat the assignment of data points to the closest centroid and the recalculation of centroids for all clusters until one of the following conditions is met:
+- The centroids do not change, meaning that further iterations will not alter the clusters.
+- The points remain in the same clusters, indicating that a stable solution has been reached.
+- A predetermined number of iterations is reached, to ensure the algorithm terminates.
+- The change in centroids or in the objective function falls below a certain threshold, indicating only minimal improvement.
+
+### Convergence
+The algorithm converges when the assignment of data points to clusters no longer changes between iterations, meaning

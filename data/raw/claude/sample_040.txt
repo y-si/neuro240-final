@@ -1,0 +1,25 @@
+IP addresses and subnetting are fundamental concepts in computer networking that allow devices to communicate and be organized into logical networks.
+
+IP Addresses:
+- An IP (Internet Protocol) address is a unique identifier assigned to each device on a network.
+- IPv4 addresses are 32-bit numbers, typically represented in dotted-decimal notation (e.g., 192.168.0.1).
+- IP addresses consist of two parts: the network portion and the host portion.
+- The network portion identifies the network to which the device belongs, while the host portion identifies the specific device within that network.
+
+Subnetting:
+- Subnetting is the process of dividing a large network into smaller subnetworks (subnets).
+- It allows for more efficient use of IP addresses and improves network performance by reducing network traffic.
+- Subnets are created by borrowing bits from the host portion of an IP address and using them to create additional network portions.
+- The number of borrowed bits determines the number of subnets and the number of hosts per subnet.
+- A subnet mask is used to specify which portion of an IP address represents the network and which portion represents the host.
+- The subnet mask is a 32-bit number, typically represented in dotted-decimal notation (e.g., 255.255.255.0).
+- In a subnet mask, the network bits are represented by 1s, and the host bits are represented by 0s.
+
+Example:
+Let's say we have a network with the IP address range 192.168.1.0/24. The "/24" notation indicates that the first 24 bits (192.168.1) represent the network portion, and the remaining 8 bits are available for hosts.
+
+Using subnetting, we can further divide this network into smaller subnets. For example, if we borrow 2 bits from the host portion, we create 4 subnets (2^2) with 64 hosts each (2^6-2, excluding the network and broadcast addresses).
+
+The resulting subnets would be:
+- Subnet 1: 192.168.1.0/26 (192.168.1.0 - 192.168.1.63)
+- Subnet

@@ -1,0 +1,23 @@
+Activation functions play a crucial role in neural networks by introducing non-linearities into the model, which enables the network to learn complex patterns in the data. Below, I'll outline the primary roles and characteristics of activation functions in neural networks:
+
+### 1. **Introduction of Non-Linearity**
+   - **Problem with Linearity**: Without activation functions, the layers in a neural network would only output linear combinations of their inputs. However, most real-world data contains complex patterns that are not linearly separable.
+   - **Solution through Non-Linearity**: Activation functions such as ReLU (Rectified Linear Unit) or sigmoid introduce non-linear properties to the network which help it to learn and model non-linearity in the input data. This allows neural networks to make complex decisions and predictions.
+
+### 2. **Converting Input Signal to Output Signal**
+   - **Transformations**: Activation functions take an input signal and transform it into an output signal that can be used as an input in the next layer. This process facilitates data flow through the network.
+  
+### 3. **Control Signaling**
+   - **Gate Mechanisms**: Some advanced activation functions and gating mechanisms like those in LSTM (Long Short-Term Memory) networks help control the flow of information by learning which data is important to keep or discard.
+
+### 4. **Probabilistic Interpretation**
+   - **Example - Sigmoid**: In binary classification tasks, the sigmoid activation function can be used in the last layer of a neural network to map values to a probability distribution ranging between 0 and 1, interpreting the outputs as probabilities.
+   - **Example - Softmax**: For multiclass classification, the softmax activation function can be used in the output layer to provide a probabilistic interpretation of classification made across multiple classes. 
+
+### 5. **Driving Learning**
+   - **Backpropagation and Derivatives**: Neural networks learn through a process called backpropagation, where errors are computed at the output and propagated backwards through the network to update weights. Activation functions that are differentiable such as ReLU or tanh (hyperbolic tangent) support this learning by allowing for the derivatives to be computed during the backpropagation process.
+
+### Types of Activation Functions
+1. **Linear Activation Function**: It is the simplest form where the function does not change the input. Mostly not useful in deep networks as it does not allow the model to learn complex data patterns.
+   
+2. **Binary Step Function**: This function outputs binary results, used for binary classification tasks.

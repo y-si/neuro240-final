@@ -1,0 +1,27 @@
+Convolutional Neural Networks (CNNs) are a type of deep learning architecture specifically designed to process and analyze grid-like data, such as images. Here's a step-by-step explanation of how CNNs process images:
+
+1. Input Layer:
+   - The input layer receives the raw pixel values of an image.
+   - The image is typically represented as a 3D matrix with dimensions (height, width, channels), where channels correspond to color channels (e.g., RGB).
+
+2. Convolutional Layers:
+   - Convolutional layers are the core building blocks of CNNs.
+   - Each convolutional layer consists of a set of learnable filters (also known as kernels) that slide over the input image.
+   - The filters are small matrices (e.g., 3x3 or 5x5) that contain learnable weights.
+   - As the filters slide over the image, they perform element-wise multiplications and sum up the results to produce a feature map.
+   - Multiple filters are applied in each convolutional layer, each detecting different features or patterns in the image.
+   - The output of a convolutional layer is a set of feature maps that capture the presence of specific features at various locations in the image.
+
+3. Activation Function:
+   - After each convolutional layer, an activation function is applied element-wise to the feature maps.
+   - Common activation functions include ReLU (Rectified Linear Unit), which introduces non-linearity and helps the network learn complex patterns.
+
+4. Pooling Layers:
+   - Pooling layers are used to downsample the feature maps spatially.
+   - The most common pooling operation is max pooling, which selects the maximum value within a local neighborhood of the feature map.
+   - Pooling helps to reduce the spatial dimensions of the feature maps, making the network more robust to small translations and reducing computational complexity.
+
+5. Fully Connected Layers:
+   - After several convolutional and pooling layers, the feature maps are flattened into a 1D vector.
+   - The flattened vector is then fed into one or more fully connected (dense) layers.
+   - Fully connected layers perform high-level reasoning and learn non

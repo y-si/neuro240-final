@@ -1,0 +1,30 @@
+K-means clustering is an unsupervised machine learning algorithm used to partition a dataset into K clusters. Here's how the algorithm works:
+
+1. Initialization:
+   - Specify the number of clusters (K) you want to create.
+   - Randomly select K data points from the dataset as the initial centroids (cluster centers).
+
+2. Assignment:
+   - For each data point in the dataset, calculate the distance (usually Euclidean distance) between the data point and each centroid.
+   - Assign each data point to the nearest centroid based on the calculated distances.
+
+3. Update:
+   - After assigning all data points to clusters, recalculate the centroid of each cluster by taking the mean (average) of all data points assigned to that cluster.
+
+4. Repetition:
+   - Repeat steps 2 and 3 iteratively until the centroids no longer change significantly or a maximum number of iterations is reached.
+
+5. Convergence:
+   - The algorithm converges when the centroids stabilize, meaning the assignments of data points to clusters no longer change.
+
+The objective of K-means is to minimize the sum of squared distances between each data point and its assigned centroid. By iteratively reassigning data points and updating centroids, the algorithm aims to find the optimal partitioning of the dataset into K clusters.
+
+Some key points to note about K-means clustering:
+
+- The algorithm requires specifying the number of clusters (K) in advance.
+- The initial selection of centroids can affect the final clustering result. Different initializations may lead to different solutions.
+- K-means is sensitive to outliers and noise in the data, as they can significantly influence the centroid positions.
+- The algorithm assumes that clusters are spherical and of equal size, which may not always be the case in real-world datasets.
+- K-means is computationally efficient and scales well to large datasets.
+
+K-means clustering is widely used in various applications, such as customer segmentation, image compression, anomaly detection, and more. It provides a simple and intuitive way to partition data into meaningful clusters based on similarity.

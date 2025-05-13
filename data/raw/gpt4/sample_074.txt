@@ -1,0 +1,23 @@
+The Transport Layer Security (TLS) handshake is a protocol used to establish a secure communication channel between two parties over an insecure network like the internet. The handshake is designed to provide privacy and data integrity between two communicating applications. Here’s a simplified overview of the steps involved in a TLS handshake to establish a secure connection:
+
+### 1. ClientHello
+- The process begins with the client sending a ClientHello message to the server. This message contains the client's TLS version, a list of supported cipher suites (algorithms for encryption, decryption, and hashing), a list of supported compression methods, and a randomly generated value.
+
+### 2. ServerHello
+- In response, the server sends a ServerHello message to the client. This message contains the chosen protocol version (usually the highest version supported by both client and server), the chosen cipher suite from the list provided by the client, the chosen compression method, and another randomly generated value.
+
+### 3. Server Certificate and Key Exchange
+- The server then sends its digital certificate to the client. This certificate is verified by the client using the certificate authority (CA) that issued it. The certificate contains the server's public key, which the client will use to encrypt data that only the server can decrypt using its private key.
+- Depending on the chosen cipher suite, the server may also send a server key exchange message, which is necessary for certain types of encryption methods.
+
+### 4. Server Hello Done
+- After sending all necessary credentials and parameters, the server sends a ServerHelloDone message, indicating it has finished sending messages to establish the security settings.
+
+### 5. Client Key Exchange
+- The client responds with a key exchange message, which, depending on the chosen cipher suite, may contain pre-master secret encrypted with the server’s public key. Only the server can decrypt this with its private key.
+
+### 6. Pre-Master Secret to Master Secret
+- Both the client and server generate the pre-master secret either through direct encryption (using RSA) or through a key exchange mechanism (like Diffie-Hellman). This pre-master secret is then used to generate the master secret, a shared secret that is used to generate encryption keys.
+
+### 7. Client and Server Finished
+- The client then sends a ChangeCipherSpec message, indicating that it will start encrypting messages with the generated keys. It then sends an encrypted Finished message, which includes a hash and MAC (Message Authentication Code) of the previous handshake

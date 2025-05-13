@@ -1,0 +1,118 @@
+**Depth-First Search (DFS) vs Breadth-First Search (BFS)**
+=====================================================
+
+Depth-First Search (DFS) and Breadth-First Search (BFS) are two fundamental graph traversal algorithms used to search and explore nodes in a graph or tree data structure.
+
+**Depth-First Search (DFS)**
+-------------------------
+
+In DFS, we explore as far as possible along each branch before backtracking. The algorithm works by:
+
+1.  Choosing a starting node (also called the root node)
+2.  Exploring the node's neighbors
+3.  Recursively exploring each neighbor's neighbors
+4.  Backtracking when a dead end is reached
+
+**Example Use Case:**
+
+Suppose we have a file system with directories and subdirectories. We want to find a specific file. DFS would start at the root directory, explore each subdirectory, and then explore each subdirectory's subdirectories, and so on, until it finds the file or reaches a dead end.
+
+**Breadth-First Search (BFS)**
+-------------------------
+
+In BFS, we explore all the nodes at the current level before moving on to the next level. The algorithm works by:
+
+1.  Choosing a starting node (also called the root node)
+2.  Exploring all the node's neighbors
+3.  Exploring all the neighbors' neighbors
+4.  Continuing this process until all nodes are visited
+
+**Example Use Case:**
+
+Suppose we have a social network with friends and friends of friends. We want to find all the people within two degrees of separation from a given person. BFS would start at the person, explore all their friends, and then explore all their friends' friends.
+
+**Key Differences:**
+
+*   **Order of Exploration:** DFS explores as far as possible along each branch, while BFS explores all nodes at the current level before moving on to the next level.
+*   **Time Complexity:** Both algorithms have a time complexity of O(V + E), where V is the number of vertices (nodes) and E is the number of edges. However, DFS can be faster in practice because it uses less memory.
+*   **Space Complexity:** DFS typically uses less memory than BFS because it only needs to store the current path, while BFS needs to store all nodes at the current level.
+
+**Code Comparison:**
+
+Here's a simple example in Python to illustrate the difference:
+
+```python
+from collections import deque
+
+class Graph:
+    def __init__(self):
+        self.adjacency_list = {}
+
+    def add_edge(self, node1, node2):
+        if node1 not in self.adjacency_list:
+            self.adjacency_list[node1] = []
+        if node2 not in self.adjacency_list:
+            self.adjacency_list[node2] = []
+        self.adjacency_list[node1].append(node2)
+        self.adjacency_list[node2].append(node1)
+
+    def dfs(self, start_node):
+        visited = set()
+        traversal_order = []
+        self._dfs_helper(start_node, visited, traversal_order)
+        return traversal_order
+
+    def _dfs_helper(self, node, visited, traversal_order):
+        visited.add(node)
+        traversal_order.append(node)
+        for neighbor in self.adjacency_list[node]:
+            if neighbor not in visited:
+                self._dfs_helper(neighbor, visited, traversal_order)
+
+    def bfs(self, start_node):
+        visited = set()
+        traversal_order = []
+        queue = deque([start_node])
+        visited.add(start_node)
+        while queue:
+            node = queue.popleft()
+            traversal_order.append(node)
+            for neighbor in self.adjacency_list[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited.add(neighbor)
+        return traversal_order
+
+# Create a graph
+graph = Graph()
+graph.add_edge('A', 'B')
+graph.add_edge('A', 'C')
+graph.add_edge('B', 'D')
+graph.add_edge('C', 'E')
+graph.add_edge('D', 'F')
+
+# Perform DFS and BFS
+dfs_traversal = graph.dfs('A')
+bfs_traversal = graph.bfs('A')
+
+print("DFS Traversal:", dfs_traversal)
+print("BFS Traversal:", bfs_traversal)
+```
+
+In this example, the graph has the following structure:
+
+```
+    A
+   / \
+  B   C
+ /   /
+D   E
+|
+F
+```
+
+The DFS traversal order is: `['A', 'B', 'D', 'F', 'C', 'E']`
+
+The BFS traversal order is: `['A', 'B', 'C', 'D', 'E', 'F']`
+
+Note that the traversal orders are different because DFS explores as far as possible along each branch, while BFS explores all nodes at the current level before moving on to the next level.

@@ -1,0 +1,52 @@
+**Dynamic Programming: A Problem-Solving Approach**
+=====================================================
+
+Dynamic programming is a method for solving complex problems by breaking them down into smaller subproblems, solving each subproblem only once, and storing the solutions to subproblems to avoid redundant computation. This approach is particularly useful for problems that have the following properties:
+
+1.  **Optimal Substructure**: The problem can be broken down into smaller subproblems, and the optimal solution to the larger problem can be constructed from the optimal solutions of the subproblems.
+2.  **Overlapping Subproblems**: The subproblems are not independent, and some subproblems may be identical or have similar solutions.
+
+**Key Characteristics of Dynamic Programming**
+---------------------------------------------
+
+1.  **Memoization**: Dynamic programming stores the solutions to subproblems in a memory-based data structure (e.g., array, hash table) to avoid redundant computation.
+2.  **Bottom-Up Approach**: Dynamic programming typically starts with the smallest subproblems and builds up to the larger problem.
+
+**When to Use Dynamic Programming**
+---------------------------------
+
+1.  **Optimization Problems**: Dynamic programming is well-suited for optimization problems, such as finding the shortest path, minimum spanning tree, or maximum subarray.
+2.  **Counting Problems**: Dynamic programming can be used to count the number of ways to solve a problem, such as counting the number of paths in a grid or the number of ways to make change.
+3.  **String Matching**: Dynamic programming can be used for string matching problems, such as finding the longest common subsequence or substring.
+
+**Example: Fibonacci Series**
+---------------------------
+
+The Fibonacci series is a classic example of a problem that can be solved using dynamic programming. The Fibonacci series is defined as:
+
+F(n) = F(n-1) + F(n-2)
+
+A naive recursive approach would result in redundant computation, but dynamic programming can be used to store the solutions to subproblems and avoid redundant computation.
+
+```python
+def fibonacci(n):
+    # Create a memoization table
+    memo = [0] * (n + 1)
+    memo[1] = 1
+
+    # Fill the memoization table
+    for i in range(2, n + 1):
+        memo[i] = memo[i-1] + memo[i-2]
+
+    # Return the solution
+    return memo[n]
+```
+
+**Example Use Cases**
+--------------------
+
+1.  **Shortest Path**: Dynamic programming can be used to find the shortest path in a graph or network.
+2.  **Knapsack Problem**: Dynamic programming can be used to solve the knapsack problem, which involves finding the optimal subset of items to include in a knapsack with limited capacity.
+3.  **Longest Common Subsequence**: Dynamic programming can be used to find the longest common subsequence between two strings.
+
+In summary, dynamic programming is a powerful problem-solving approach that can be used to solve complex problems by breaking them down into smaller subproblems, solving each subproblem only once, and storing the solutions to subproblems to avoid redundant computation.

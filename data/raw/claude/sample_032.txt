@@ -1,0 +1,17 @@
+Early stopping is a technique used to prevent overfitting in machine learning models, particularly in neural networks. Overfitting occurs when a model learns the noise in the training data to the extent that it negatively impacts the performance of the model on new data.
+
+Here's how early stopping helps prevent overfitting:
+
+1. Training and validation split: The available data is split into training and validation sets. The model is trained on the training set, while the validation set is used to evaluate the model's performance during training.
+
+2. Monitoring validation performance: During training, the model's performance is evaluated on the validation set after each epoch or at regular intervals.
+
+3. Stopping criterion: A specific criterion is defined for stopping the training process. This could be a minimum improvement in validation performance or a maximum number of epochs without improvement.
+
+4. Best model selection: While training, the model's weights are saved at each point where the validation performance improves. When the stopping criterion is met, the model weights from the point of best validation performance are retained.
+
+5. Preventing overfitting: By monitoring the validation performance and stopping the training when it stops improving, early stopping prevents the model from continuing to learn noise in the training data. This helps the model generalize better to unseen data.
+
+The idea behind early stopping is that the model's performance on the validation set will start to degrade when it begins to overfit the training data. By stopping the training at this point, the model is more likely to capture the underlying patterns in the data rather than the noise.
+
+Early stopping is a simple and effective technique that acts as a regularization method, helping to mitigate overfitting without requiring additional hyperparameters or modifications to the model architecture.

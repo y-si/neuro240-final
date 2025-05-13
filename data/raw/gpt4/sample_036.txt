@@ -1,0 +1,21 @@
+The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or any resource connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities. Most prominently, it translates more readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices with the underlying network protocols. The process of DNS resolution involves translating human-friendly domain names (like `www.example.com`) into IP addresses (like `192.0.2.1`) that computers use to connect to each other.
+
+Here's a simplified step-by-step breakdown of how DNS resolves a domain name:
+
+### 1. Browser Cache
+The process starts when you type a domain name into your web browser. The browser first checks its cache to see if it has recently resolved the domain name. If the information is in the cache, the DNS resolution process ends here, and the website is loaded from the IP address found in the cache.
+
+### 2. Operating System Cache
+If the browser cache doesn't have the DNS information, the query moves to the operating system's DNS cache. If the OS has the IP address for the domain stored in its cache, it returns the address to the browser. If not, the search continues.
+
+### 3. Recursive Resolver
+The next step involves the recursive resolver, which is usually provided by your Internet Service Provider (ISP). The resolver's role is to find the IP address for the domain by making a series of queries across the DNS infrastructure. If the recursive resolver has the IP address cached from recent queries, it returns the address to your system. Otherwise, it proceeds to query the root servers.
+
+### 4. Root Nameservers
+The recursive resolver queries one of the root nameservers. The Internet has 13 root nameservers, labeled A through M, which are strategically distributed worldwide. These servers do not know the IP address for the domain but can direct the resolver to the TLD (Top-Level Domain) nameservers for the domain's TLD (e.g., `.com`, `.net`, `.org`).
+
+### 5. TLD Nameservers
+The resolver then queries the TLD nameserver for the domain. The TLD nameserver hosts information about the domain names under its TLD and can provide the IP address of the authoritative nameservers for the specific domain being queried.
+
+### 6. Authoritative Nameservers
+Finally, the resolver queries the authoritative

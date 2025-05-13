@@ -1,0 +1,29 @@
+Containers and virtual machines (VMs) are both technologies used to isolate and package applications and their dependencies, but they differ in their approach and level of isolation.
+
+Virtual Machines:
+- VMs emulate a complete operating system (OS) environment, including the hardware.
+- Each VM runs on top of a hypervisor, which is a software layer that manages the virtualization of the underlying hardware.
+- VMs package the application along with a full OS, libraries, and binaries.
+- VMs are heavyweight and require a separate OS instance for each VM, consuming more resources.
+- VMs provide strong isolation, as each VM runs independently with its own OS kernel.
+- Starting and stopping VMs is relatively slow due to the need to boot up the entire OS.
+
+Containers:
+- Containers provide a lightweight and portable way to package applications and their dependencies.
+- Containers share the host machine's OS kernel and use OS-level virtualization.
+- Each container runs as an isolated process on the host OS, with its own filesystem, CPU, memory, and network resources.
+- Containers package the application along with its specific libraries and dependencies, making them self-contained.
+- Containers are lightweight and consume fewer resources compared to VMs.
+- Containers provide process-level isolation, allowing multiple containers to run on the same host OS.
+- Starting and stopping containers is fast, as they share the host OS kernel and don't need to boot up an entire OS.
+
+Key differences:
+- Isolation level: VMs provide hardware-level isolation, while containers provide process-level isolation.
+- Resource utilization: Containers are more lightweight and efficient in resource utilization compared to VMs.
+- Portability: Containers are highly portable and can run consistently across different environments, while VMs are more tied to the underlying hardware and hypervisor.
+- Startup time: Containers have faster startup times compared to VMs.
+- Scalability: Containers are more easily scalable and can be spun up quickly to handle increased workload.
+
+Containers are commonly used for packaging and deploying microservices, enabling easy scaling and portability across different environments. Popular container technologies include Docker and Kubernetes.
+
+VMs are still useful in scenarios that require strong isolation, running different OS environments, or when you need to run applications

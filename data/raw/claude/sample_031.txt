@@ -1,0 +1,29 @@
+L1 and L2 regularization are techniques used in machine learning to prevent overfitting and improve model generalization. They add a penalty term to the loss function during training, discouraging the model from learning overly complex patterns. Here's a comparison between L1 and L2 regularization:
+
+L1 Regularization (Lasso Regularization):
+- L1 regularization adds the absolute values of the model's coefficients to the loss function.
+- The penalty term is the sum of the absolute values of the coefficients multiplied by a regularization parameter (lambda).
+- L1 regularization tends to shrink the less important features' coefficients to exactly zero, performing feature selection.
+- It can lead to sparse models where many coefficients become zero, effectively removing less relevant features.
+- L1 regularization is useful when dealing with high-dimensional datasets with many irrelevant features.
+- It helps in feature selection and can improve model interpretability by identifying the most important features.
+
+L2 Regularization (Ridge Regularization):
+- L2 regularization adds the squared values of the model's coefficients to the loss function.
+- The penalty term is the sum of the squared values of the coefficients multiplied by a regularization parameter (lambda).
+- L2 regularization tends to shrink the coefficients towards zero, but they rarely become exactly zero.
+- It encourages the model to use all the features, but with smaller coefficients.
+- L2 regularization is useful when most of the features are expected to be relevant to the output.
+- It helps in reducing the impact of less important features without completely eliminating them.
+
+When to use L1 or L2 regularization:
+
+1. Use L1 regularization when:
+   - You have a high-dimensional dataset with many features and suspect that only a few of them are relevant.
+   - You want to perform feature selection and identify the most important features.
+   - You prefer a sparse model with many coefficients set to zero.
+   - Model interpretability is a priority.
+
+2. Use L2 regularization when:
+   - You have a dataset where most of the features are expected to be relevant to the output.
+   - You want to keep all the features in the model but

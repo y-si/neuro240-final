@@ -1,0 +1,70 @@
+**Binary Search Algorithm**
+==========================
+
+Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
+
+**How Binary Search Works**
+---------------------------
+
+Here's a step-by-step explanation of the binary search algorithm:
+
+1. **Start with a sorted list**: Binary search requires the list to be sorted in ascending or descending order.
+2. **Find the middle element**: Calculate the middle index of the list.
+3. **Compare the target element**: Compare the target element (the element you're searching for) with the middle element.
+4. **Eliminate half of the list**: If the target element is less than the middle element, eliminate the right half of the list. If the target element is greater than the middle element, eliminate the left half of the list.
+5. **Repeat steps 2-4**: Repeat the process with the remaining half of the list until you find the target element or the list is empty.
+
+**Example**
+-----------
+
+Suppose we have a sorted list of integers: `[1, 2, 3, 4, 5, 6, 7, 8, 9]`. We want to find the number `5`.
+
+1. Start with the entire list: `[1, 2, 3, 4, 5, 6, 7, 8, 9]`
+2. Find the middle element: `5` (index 4)
+3. Compare the target element: `5` is equal to the middle element, so we've found it!
+
+**Time Complexity**
+------------------
+
+The time complexity of binary search is O(log n), where n is the number of elements in the list. This is because with each iteration, we eliminate half of the list, effectively reducing the search space by half.
+
+**Code Example**
+---------------
+
+Here's an example implementation of binary search in Python:
+```python
+def binary_search(arr, target):
+    """
+    Searches for an element in a sorted list using binary search.
+
+    Args:
+        arr (list): A sorted list of elements.
+        target: The element to search for.
+
+    Returns:
+        int: The index of the target element if found, -1 otherwise.
+    """
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+
+# Example usage:
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target = 5
+index = binary_search(arr, target)
+if index != -1:
+    print(f"Found {target} at index {index}")
+else:
+    print(f"{target} not found in the list")
+```
+This implementation takes a sorted list `arr` and a target element `target` as input, and returns the index of the target element if found, or -1 otherwise.

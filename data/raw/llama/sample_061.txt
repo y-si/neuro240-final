@@ -1,0 +1,105 @@
+**Deadlock in Operating Systems**
+=====================================
+
+A deadlock is a situation in a computer system where two or more processes are unable to proceed because each is waiting for the other to release a resource. This results in a permanent blocking of the processes, and the system is unable to recover.
+
+**Conditions for Deadlock**
+---------------------------
+
+For a deadlock to occur, the following four conditions must be met:
+
+1.  **Mutual Exclusion**: Two or more processes must be competing for a common resource that cannot be used simultaneously.
+2.  **Hold and Wait**: One process must be holding a resource and waiting for another resource, which is held by another process.
+3.  **No Preemption**: The operating system must not be able to preempt one process and give the resource to another process.
+4.  **Circular Wait**: The processes must be waiting for each other to release a resource, resulting in a circular wait.
+
+**Example of Deadlock**
+------------------------
+
+Suppose we have two processes, P1 and P2, and two resources, R1 and R2. The following sequence of events can lead to a deadlock:
+
+1.  P1 requests and gets R1.
+2.  P2 requests and gets R2.
+3.  P1 requests R2, but it is held by P2, so P1 waits.
+4.  P2 requests R1, but it is held by P1, so P2 waits.
+
+Now, both P1 and P2 are waiting for each other to release a resource, resulting in a deadlock.
+
+**Prevention of Deadlock**
+---------------------------
+
+To prevent deadlocks, we can use one of the following strategies:
+
+### 1. **Resource Ordering**
+
+Ensure that resources are always requested in a specific order. This can prevent the circular wait condition.
+
+### 2. **Avoid Nested Locks**
+
+Avoid acquiring multiple locks simultaneously. If a process needs to acquire multiple locks, it should release any locks it already holds before acquiring the next lock.
+
+### 3. **Use a Lock Timeout**
+
+Implement a timeout mechanism for locks. If a process is unable to acquire a lock within a certain time limit, it should release any locks it already holds and try again later.
+
+### 4. **Use a Deadlock Detection Algorithm**
+
+Implement a deadlock detection algorithm that periodically checks for deadlocks and takes corrective action if a deadlock is detected.
+
+### 5. **Avoid Unnecessary Locks**
+
+Minimize the use of locks by using alternative synchronization mechanisms, such as semaphores or monitors.
+
+**Example Code (Python)**
+---------------------------
+
+Here's an example of how to use a lock timeout to prevent deadlocks in Python:
+
+```python
+import threading
+import time
+
+# Define a lock with a timeout
+class LockWithTimeout:
+    def __init__(self):
+        self.lock = threading.Lock()
+        self.timeout = 5  # seconds
+
+    def acquire(self):
+        if not self.lock.acquire(blocking_timeout=self.timeout):
+            raise TimeoutError("Failed to acquire lock within timeout")
+
+    def release(self):
+        self.lock.release()
+
+# Define a function that uses the lock with timeout
+def worker(lock1, lock2):
+    try:
+        lock1.acquire()
+        time.sleep(1)
+        lock2.acquire()
+        print("Worker acquired both locks")
+    except TimeoutError:
+        print("Worker timed out waiting for lock")
+    finally:
+        lock1.release()
+        lock2.release()
+
+# Create two locks with timeouts
+lock1 = LockWithTimeout()
+lock2 = LockWithTimeout()
+
+# Create two threads that use the locks
+thread1 = threading.Thread(target=worker, args=(lock1, lock2))
+thread2 = threading.Thread(target=worker, args=(lock2, lock1))
+
+# Start the threads
+thread1.start()
+thread2.start()
+
+# Wait for the threads to finish
+thread1.join()
+thread2.join()
+```
+
+In this example, the `LockWithTimeout` class defines a lock with a timeout. The `worker` function uses the lock with timeout to prevent deadlocks. If a thread is unable to acquire a lock within the timeout period, it raises a `TimeoutError`.

@@ -1,0 +1,30 @@
+In a multi-core CPU system, the operating system employs various scheduling algorithms to efficiently distribute tasks across the available cores. The primary goal is to maximize CPU utilization and minimize response times. Here are a few common approaches:
+
+1. Symmetric Multiprocessing (SMP):
+   - In SMP, all cores share the same memory and have equal access to system resources.
+   - The OS maintains a single queue of ready tasks and assigns them to any available core.
+   - Each core independently executes tasks from the shared queue.
+   - Load balancing is achieved by distributing tasks evenly among the cores.
+
+2. Affinity Scheduling:
+   - The OS assigns tasks to specific cores based on their affinity or preference.
+   - Affinity can be determined by factors such as cache locality, data sharing, or task dependencies.
+   - Tasks with high affinity to a particular core are scheduled on that core to minimize cache misses and improve performance.
+
+3. Hierarchical Scheduling:
+   - The OS employs a hierarchical approach with multiple levels of scheduling.
+   - At the top level, tasks are assigned to a group of cores or a specific NUMA (Non-Uniform Memory Access) node.
+   - Within each group or NUMA node, tasks are further scheduled onto individual cores using local scheduling policies.
+
+4. Work Stealing:
+   - Each core maintains its own local queue of tasks.
+   - When a core becomes idle, it "steals" tasks from the queues of other cores.
+   - This technique helps balance the load dynamically and avoids idle cores while others are overloaded.
+
+5. Real-time Scheduling:
+   - For real-time systems with strict timing constraints, the OS uses specialized scheduling algorithms like Rate Monotonic Scheduling (RMS) or Earliest Deadline First (EDF).
+   - Tasks are assigned priorities based on their timing requirements, and the OS ensures that higher-priority tasks are given preferential treatment.
+
+The specific scheduling algorithm used by an operating system may vary and can be influenced by factors such as the workload characteristics, system architecture, and performance requirements. Modern operating systems often employ a combination of these techniques to achieve optimal performance and resource utilization on multi-core CPUs.
+
+Additionally, hardware-level features like simultaneous multith

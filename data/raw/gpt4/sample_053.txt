@@ -1,0 +1,22 @@
+The process of translating source code into machine code by a compiler is intricate and involves several stages. The primary goal is to take high-level programming language (source code) and convert it into a low-level machine language (machine code) that a computer's processor can execute directly. This process typically includes the following phases:
+
+### 1. Lexical Analysis (Tokenization)
+In this initial stage, the compiler scans the source code as a sequence of characters and converts it into meaningful sequences called tokens. These tokens are categorized into identifiers, keywords, symbols, and operators. Essentially, this phase breaks down the code into a vocabulary the compiler can understand more easily.
+
+### 2. Syntax Analysis (Parsing)
+During syntax analysis, the compiler checks how tokens are arranged, ensuring they follow the correct syntax of the programming language. This phase constructs a tree-like representation called an Abstract Syntax Tree (AST), which illustrates the hierarchical syntactic structure of the tokenized code. The AST helps the compiler understand the relationship between tokens.
+
+### 3. Semantic Analysis
+Semantic analysis is where the compiler checks for semantic consistency. It ensures that operations are performed on compatible types, variables are declared before use, and other rules that are not enforced by syntax alone. This phase also involves annotating the AST with information needed for code generation, like type checking.
+
+### 4. Intermediate Code Generation
+After the analysis phases, the compiler translates the high-level source code into an intermediate representation (IR). This IR is a lower-level, abstract code that is closer to machine language but is still independent of specific hardware. The use of IR allows for optimization and makes the compiler's backend (the part that generates machine code) more generic and adaptable to different architectures.
+
+### 5. Optimization
+The intermediate code is then passed through optimization phases, where unnecessary operations are eliminated, and the code is transformed to run more efficiently on the target machine. Optimization can occur at various levels, including high-level (source code), intermediate, and low-level (machine code) optimizations, aiming to improve runtime performance and reduce resource consumption.
+
+### 6. Code Generation
+In the code generation phase, the optimized IR is converted into machine code specific to the target processor architecture. This involves selecting appropriate machine instructions, allocating registers, and handling memory locations. The output is often in the form of object code, which may require further linking.
+
+### 7. Assembly and Linking
+The final machine code, or object code, is then assembled and linked

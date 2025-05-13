@@ -1,0 +1,27 @@
+Threads and processes are both units of execution in a computer program, but they have some key differences:
+
+1. Definition:
+   - A process is an instance of a program that is being executed, with its own memory space and system resources.
+   - A thread is a lightweight unit of execution within a process, sharing the same memory space and resources of the parent process.
+
+2. Memory and Resources:
+   - Each process has its own separate memory space and system resources (e.g., file handles, sockets).
+   - Threads within a process share the same memory space and resources of the parent process.
+
+3. Communication:
+   - Inter-process communication (IPC) mechanisms, such as pipes, sockets, or shared memory, are required for processes to communicate with each other.
+   - Threads within a process can communicate directly through shared memory, making communication more efficient.
+
+4. Overhead:
+   - Creating and managing processes involve higher overhead in terms of memory and system resources.
+   - Creating and managing threads have lower overhead compared to processes, as they share the same memory space and resources.
+
+5. Fault Isolation:
+   - If a process crashes or encounters an error, it typically does not affect other processes.
+   - If a thread within a process encounters an error, it can potentially affect other threads and the entire process.
+
+6. Scalability:
+   - Processes are suitable for achieving parallelism across multiple CPU cores or distributed systems.
+   - Threads are useful for achieving concurrency within a single process and can be used for parallel execution on multi-core systems.
+
+In summary, processes are independent units of execution with separate memory spaces, while threads are lightweight units of execution within a process, sharing the same memory space. Processes provide better fault isolation and are suitable for distributed systems, while threads offer lower overhead and efficient communication within a process.

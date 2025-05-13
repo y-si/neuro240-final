@@ -1,0 +1,40 @@
+TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two fundamental protocols used for data communication over the internet. The primary difference between them lies in their approach to data transmission, reliability, and error handling.
+
+**TCP (Transmission Control Protocol)**
+
+TCP is a connection-oriented protocol, which means that a connection is established between the sender and receiver before data is sent. Here are some key characteristics of TCP:
+
+1. **Reliable**: TCP ensures that data is delivered in the correct order and reassembles packets if they are received out of order.
+2. **Connection-oriented**: A connection is established before data is sent, and the connection is maintained throughout the communication.
+3. **Error-checked**: TCP checks for errors and retransmits packets if they are corrupted or lost.
+4. **Ordered delivery**: TCP ensures that packets are delivered in the correct order.
+
+TCP is commonly used for applications that require guaranteed delivery, such as:
+
+* File transfers (e.g., FTP, SFTP)
+* Email
+* Web browsing (HTTP)
+
+**UDP (User Datagram Protocol)**
+
+UDP is a connectionless protocol, which means that no connection is established before data is sent. Here are some key characteristics of UDP:
+
+1. **Unreliable**: UDP does not guarantee delivery, and packets may be lost or corrupted.
+2. **Connectionless**: No connection is established before data is sent.
+3. **Error-tolerant**: UDP does not check for errors, and packets are not retransmitted if they are corrupted or lost.
+4. **Unordered delivery**: UDP does not guarantee that packets are delivered in the correct order.
+
+UDP is commonly used for applications that require fast transmission and can tolerate some packet loss, such as:
+
+* Online gaming
+* Video streaming (e.g., YouTube, Netflix)
+* Voice over IP (VoIP)
+
+**Key differences**
+
+1. **Reliability**: TCP is reliable, while UDP is unreliable.
+2. **Connection**: TCP is connection-oriented, while UDP is connectionless.
+3. **Error handling**: TCP checks for errors and retransmits packets, while UDP does not.
+4. **Ordered delivery**: TCP ensures ordered delivery, while UDP does not.
+
+In summary, TCP is suitable for applications that require guaranteed delivery and error-free transmission, while UDP is suitable for applications that require fast transmission and can tolerate some packet loss.

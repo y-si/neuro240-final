@@ -1,0 +1,26 @@
+RAID (Redundant Array of Independent Disks) is a data storage technology that combines multiple physical disk drives into a single logical unit to improve performance, redundancy, or both. RAID can be implemented in hardware or software. Here's an explanation of some common RAID levels:
+
+1. RAID 0 (Striping):
+   - Data is split into blocks and distributed across all drives in the array.
+   - Provides improved read/write performance due to parallel access to multiple drives.
+   - No redundancy or fault tolerance. If one drive fails, all data is lost.
+   - Capacity is the sum of all drives in the array.
+
+2. RAID 1 (Mirroring):
+   - Data is duplicated (mirrored) across all drives in the array.
+   - Provides fault tolerance. If one drive fails, data can be retrieved from the other drive(s).
+   - Read performance is improved, but write performance may be slightly slower due to the need to write data to multiple drives.
+   - Usable capacity is equal to the size of a single drive in the array.
+
+3. RAID 5 (Striping with Distributed Parity):
+   - Data is striped across all drives, and parity information is distributed across all drives.
+   - Provides fault tolerance. If one drive fails, data can be reconstructed using the parity information.
+   - Good balance between performance, redundancy, and capacity efficiency.
+   - Requires a minimum of three drives.
+   - Usable capacity is the total capacity of all drives minus the capacity of one drive (used for parity).
+
+Other RAID levels include:
+- RAID 6 (Striping with Double Distributed Parity): Similar to RAID 5 but with two parity blocks, allowing for the failure of two drives.
+- RAID 10 (Mirrored Striping): Combines RAID 1 and RAID 0, providing both mirroring and striping for improved performance and redundancy.
+
+RAID can help protect against data loss due to drive failures and improve performance by distributing I/O operations across multiple drives. The choice of RAID level depends on the specific requirements of the system, such as the desire

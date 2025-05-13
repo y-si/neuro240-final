@@ -1,0 +1,16 @@
+Activation functions play a crucial role in neural networks by determining the output of a neural network node (or "neuron") given a set of inputs. They are mathematical equations that transform the linear input-output relationship into a non-linear one, which is essential for learning complex patterns in data. Here are some key functions and roles of activation functions in neural networks:
+
+1. **Non-linearity**: Without activation functions, a neural network would essentially be a linear regression model regardless of how many layers it has. Activation functions introduce non-linearity, allowing the model to learn more complex functions and solve problems that are not linearly separable, such as image recognition, natural language processing, and many other advanced tasks.
+
+2. **Control of Information Flow**: Activation functions decide how much and whether the information will affect the overall network. For instance, certain functions like the sigmoid or tanh can limit the output within a specific range (such as between 0 and 1, or -1 and 1, respectively), which can be interpreted as probabilities or normalized outputs. Functions like the ReLU (Rectified Linear Unit) allow only positive values to pass through, effectively blocking negative values.
+
+3. **Adding Depth to the Network**: The ability of activation functions to introduce non-linearity allows for deeper networks. Without non-linearity, adding more layers to a network wouldn’t increase its ability to learn more complex patterns but would just add computational cost.
+
+4. **Vanishing and Exploding Gradients**: Certain activation functions, like sigmoid or tanh, when used in deep networks, can lead to problems during training, known as vanishing or exploding gradients. This occurs because derivatives of these functions can be very small or very large, respectively, which can make learning very slow or cause numeric instability. This insight led to the popularity of other functions like ReLU, which is less likely to suffer from these issues in practice.
+
+5. **Biological Inspiration**: Initially, activation functions in neural networks were inspired by the way biological neurons process information. Biological neurons activate only when a certain threshold is reached, which is simulated in artificial neurons using functions like the step function initially, and more smooth approximations like sigmoid later.
+
+Popular examples of activation functions include:
+- **Sigmoid**: Outputs values between 0 and 1, making it a good choice for binary classification.
+- **Tanh (Hyperbolic Tangent)**: Outputs values between -1 and 1, often leading to better training performance for intermediate layers compared to sigmoid.
+- **ReLU (Rectified Linear

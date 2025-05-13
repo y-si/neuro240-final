@@ -1,0 +1,23 @@
+L1 and L2 regularization are techniques used to prevent overfitting in machine learning models by adding a penalty on the size of the coefficients. Despite their shared goal, they work in subtly different ways and have different effects on the model. Let's compare them along various dimensions:
+
+### Definition and Formula
+
+- **L1 regularization** (also known as Lasso regularization) adds a penalty equivalent to the absolute value of the magnitude of coefficients. This can lead to some coefficients being exactly zero when the corresponding features are not contributing much to the prediction. The formula for the L1 penalty is the sum of the absolute values of the coefficients, often represented as \( \lambda \sum_{i=1}^{n} |w_i| \), where \( w_i \) are the coefficients and \( \lambda \) is the regularization strength.
+  
+- **L2 regularization** (also known as Ridge regularization) adds a penalty equivalent to the square of the magnitude of coefficients. This discourages large coefficients but does not set them to zero. The formula for the L2 penalty is the sum of the square of the coefficients, often represented as \( \lambda \sum_{i=1}^{n} w_i^2 \).
+
+### Effects on Model
+
+- **Sparsity**: L1 regularization can produce sparse models, where only a subset of the most important features are used, and the rest are set to zero. This can be useful for feature selection in high-dimensional datasets.
+  
+- **Stability**: L2 regularization tends to perform better when there is multicollinearity in the data or when the number of observations is less than the number of features. It provides stable solutions but does not necessarily produce sparse models.
+
+### When to Use
+
+- **Use L1 regularization** when you suspect that only a few features are actually important and you want a model that is simple and interpretable. It is particularly useful when you have a high number of features, and you want to automatically select the most important ones.
+
+- **Use L2 regularization** when you are dealing with highly correlated data or when you do not want to exclude any feature entirely but rather minimize the impact of less important ones. It is useful for improving model predictions by carefully controlling overfitting without necessarily increasing sparsity.
+
+### Trade-offs and Hybrid Approaches
+
+- **Elastic Net** is a hybrid regularization method that combines L1 and L2 penalties. It can be particularly useful when you have a lot

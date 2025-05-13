@@ -1,0 +1,24 @@
+A relational database enforces data integrity through several mechanisms:
+
+1. Primary Keys: Each table in a relational database has a primary key, which uniquely identifies each record in the table. The primary key ensures entity integrity by preventing duplicate records and null values in the key column(s).
+
+2. Foreign Keys: Foreign keys establish relationships between tables. A foreign key in one table references the primary key of another table, ensuring referential integrity. This means that a record in one table cannot reference a non-existent record in another table.
+
+3. Constraints: Databases use constraints to enforce rules on the data. Some common constraints include:
+   - NOT NULL: Ensures that a column cannot contain null values.
+   - UNIQUE: Ensures that all values in a column are unique.
+   - CHECK: Defines a condition that must be met for a value to be inserted or updated in a column.
+
+4. Transactions: Transactions group a set of database operations that must be executed atomically. If any operation within a transaction fails, the entire transaction is rolled back, maintaining data consistency.
+
+5. ACID Properties: Relational databases adhere to ACID properties:
+   - Atomicity: Transactions are treated as a single, indivisible unit of work.
+   - Consistency: The database remains in a consistent state before and after a transaction.
+   - Isolation: Concurrent transactions do not interfere with each other.
+   - Durability: Committed changes persist even in the event of system failures.
+
+6. Data Types: Defining appropriate data types for columns ensures that only valid data is stored. For example, a date column will only accept valid date values.
+
+7. Referential Actions: When defining foreign keys, you can specify referential actions like CASCADE, SET NULL, or RESTRICT. These actions define what happens to the dependent records when a referenced record is updated or deleted, maintaining referential integrity.
+
+These mechanisms work together to ensure that the data stored in a relational database remains accurate, consistent, and reliable, even in the presence of complex relationships and concurrent access.

@@ -1,0 +1,23 @@
+The binary search algorithm is an efficient method for finding a target value within a sorted array. This algorithm works by repeatedly dividing in half the portion of the list that could contain the target value, reducing the search area by half each time, until it finds the target or until the search space is empty. Here's a step-by-step explanation of how it works:
+
+1. **Initial Variables**: The algorithm starts with two pointers: one pointing at the start of the array (`low`), and the other pointing at the end of the array (`high`). The initial call to binary search would have `low = 0` and `high = length of the array - 1`.
+
+2. **Find the Middle**: Calculate the middle position of the current `low` and `high` range. The middle position can be found using `mid = low + (high - low) / 2`. Using `low + (high - low) / 2` instead of `(low + high) / 2` helps prevent overflow if `low` and `high` are very large integers.
+
+3. **Compare the Middle Element with the Target**: 
+   - If the middle element is equal to the target, the search is complete.
+   - If the target is less than the middle element, adjust the search to the left half of the array by setting `high` to `mid - 1`, since the target can only be in the lower half.
+   - If the target is greater than the middle element, adjust the search to the right half of the array by setting `low` to `mid + 1`, since the target can only be in the upper half.
+
+4. **Repeat or Conclude**: The steps are repeated as long as `low` is less than or equal to `high`. If `low` exceeds `high`, the target is not in the array, and the search should return an indication of failure, such as `-1`.
+
+### Time Complexity
+
+The time complexity of binary search is O(log n), where n is the number of elements in the array. This logarithmic time complexity arises because binary search effectively halves the search space with each iteration, leading to a search time that grows logarithmically as the array size increases.
+
+### Space Complexity
+
+The space complexity of binary search depends on the implementation:
+
+- **Iterative Implementation**: O(1), since it uses a fixed amount of space (for the pointers and temporary variables).
+- **

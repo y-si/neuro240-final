@@ -1,0 +1,18 @@
+A deadlock in operating systems is a specific condition in a multiprocessing environment where two or more processes are unable to proceed because each is waiting for one of the others to release a resource they need. In simpler terms, it’s a standstill situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. This results in a cycle of dependencies that cannot be resolved, leading to the impossibility of further progress.
+
+Deadlocks are characterized by four necessary conditions, collectively known as the Coffman conditions (after Edward G. Coffman, Jr., who first identified them in 1971). These conditions are:
+
+1. **Mutual Exclusion:** At least one resource must be held in a non-shareable mode. If another process requests that resource, the requesting process must be delayed until the resource has been released.
+2. **Hold and Wait:** A process must be holding at least one resource and waiting to acquire additional resources that are currently being held by other processes.
+3. **No Preemption:** Resources cannot be forcibly removed from the processes holding them until the resources are used to completion.
+4. **Circular Wait:** There must be a set of processes {P1, P2, ..., Pn} in a circular chain where each process P_i is waiting for a resource that is held by P_{i+1} (with P_n waiting for a resource held by P_1), thus creating a circular chain of dependencies.
+
+To prevent deadlocks, several strategies can be employed, each aiming to break at least one of the Coffman conditions:
+
+1. **Prevent Mutual Exclusion:** This is often not practical since some resources are intrinsically non-shareable (e.g., printers, files).
+
+2. **Eliminate Hold and Wait:** One way to do this is to require all processes to request all the resources they will need at once and not start execution until all requests are granted. This approach can lead to resource underutilization and reduced system throughput.
+
+3. **Disallow No Preemption:** If a process that is holding some resources requests another resource that cannot be immediately allocated to it, then all resources currently being held are released, and the process is restarted only after its original resource requests can be completely satisfied. This strategy is applicable to resources whose state can be easily saved and restored (e.g., memory), but not for non-preemptable resources (e.g., printers).
+
+4. **Avoid

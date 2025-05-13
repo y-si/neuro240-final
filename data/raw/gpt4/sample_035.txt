@@ -1,0 +1,24 @@
+The softmax function plays a crucial role in neural networks, particularly in the context of classification tasks. It is a type of squashing function that transforms its inputs into a probability distribution over predicted output classes. The function outputs a vector that represents the probability distributions of a list of potential outcomes. It is most commonly used in the output layer of a neural network to ensure the outputs can be interpreted as probabilities.
+
+### Mathematical Definition
+
+Given a vector \(z\) of raw class scores from the final layer of a neural network, the softmax function \( \sigma(z)_i \) for a particular class \(i\) is defined as:
+
+\[ \sigma(z)_i = \frac{e^{z_i}}{\sum_{j} e^{z_j}} \]
+
+Where:
+- \( e \) is the base of the natural logarithm.
+- \( z_i \) is the score (also called the logit) for class \(i\).
+- The denominator is the sum of the exponential scores for all classes, which acts as a normalization constant ensuring that the sum of the probabilities of all output classes equals 1.
+
+### Role in Neural Networks
+
+1. **Probability Distribution**: The softmax function converts the raw scores (logits) from the neural network into probabilities by taking the exponential of each output and then normalizing these values by dividing by the sum of all the exponentials. This ensures that the output values are in the range (0, 1) and sum to 1, making them interpretable as probabilities.
+
+2. **Multi-Class Classification**: It is particularly useful in multi-class classification problems, where each instance could belong to one among many classes. The softmax function ensures that the neural network can output a probability distribution over the classes, with the highest probability indicating the predicted class.
+
+3. **Gradient-Friendly**: The softmax function is differentiable, which means we can use it in backpropagation to compute gradients—this is essential for training neural networks through gradient descent or any of its variants. The function provides a smooth gradient that helps in the optimization of the loss function.
+
+4. **Loss Function Compatibility**: In combination with the softmax output layer, the cross-entropy loss function is typically used during training. This pairing is particularly effective because the cross-entropy loss function penalizes incorrect classifications more heavily when the predicted probability diverges significantly from the actual class.
+
+5. **Decision Boundary**: By converting logits to probabilities, the softmax function contributes to defining clear decision boundaries among

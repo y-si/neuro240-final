@@ -1,0 +1,82 @@
+**Garbage Collection Overview**
+=====================================
+
+Garbage collection is a memory management mechanism used by programming languages like Java and Python to automatically free up memory occupied by objects that are no longer needed or referenced. This process helps prevent memory leaks and reduces the risk of crashes or errors caused by running out of memory.
+
+**How Garbage Collection Works**
+-------------------------------
+
+Here's a step-by-step explanation of the garbage collection process:
+
+### 1. Object Creation
+
+When a program creates an object, it allocates memory for that object on the heap. The object is assigned a reference, which is a pointer to the object's location in memory.
+
+### 2. Reference Counting
+
+The garbage collector maintains a reference count for each object, which indicates how many references point to the object. When a reference is created or deleted, the reference count is updated accordingly.
+
+### 3. Mark Phase
+
+The garbage collector periodically runs a mark phase, where it identifies all reachable objects in the heap. This is done by starting from a set of root objects (e.g., global variables, stack variables) and traversing all references to other objects.
+
+### 4. Sweep Phase
+
+After the mark phase, the garbage collector runs a sweep phase, where it goes through the heap and identifies all objects that were not marked as reachable. These objects are considered garbage and their memory is freed.
+
+### 5. Compact Phase (Optional)
+
+Some garbage collectors may also run a compact phase, where they move all reachable objects together to eliminate any holes in the heap. This helps to reduce memory fragmentation and improve performance.
+
+**Types of Garbage Collection**
+-------------------------------
+
+There are several types of garbage collection algorithms, including:
+
+* **Generational Garbage Collection**: This algorithm divides the heap into generations based on object lifetimes. Younger generations are collected more frequently than older generations.
+* **Mark-and-Sweep Garbage Collection**: This algorithm uses the mark and sweep phases described above to identify and free garbage objects.
+* **Concurrent Garbage Collection**: This algorithm runs the garbage collector in parallel with the program, reducing pause times and improving responsiveness.
+
+**Example Use Case: Java**
+---------------------------
+
+In Java, the garbage collector is run periodically by the JVM (Java Virtual Machine). Here's an example of how to manually trigger the garbage collector in Java:
+```java
+public class GarbageCollectionExample {
+    public static void main(String[] args) {
+        // Create an object
+        Object obj = new Object();
+
+        // Remove the reference to the object
+        obj = null;
+
+        // Manually trigger the garbage collector
+        System.gc();
+    }
+}
+```
+Note that the `System.gc()` method does not guarantee that the garbage collector will run immediately. It simply suggests that the JVM should run the garbage collector at some point in the future.
+
+**Example Use Case: Python**
+---------------------------
+
+In Python, the garbage collector is also run periodically by the interpreter. Here's an example of how to manually trigger the garbage collector in Python:
+```python
+import gc
+
+class GarbageCollectionExample:
+    def __init__(self):
+        # Create an object
+        self.obj = object()
+
+    def __del__(self):
+        # Remove the reference to the object
+        self.obj = None
+
+# Create an instance of the class
+example = GarbageCollectionExample()
+
+# Manually trigger the garbage collector
+gc.collect()
+```
+Again, the `gc.collect()` function does not guarantee that the garbage collector will run immediately. It simply suggests that the interpreter should run the garbage collector at some point in the future.

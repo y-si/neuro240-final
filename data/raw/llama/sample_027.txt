@@ -1,0 +1,29 @@
+In classification tasks, precision and recall are two fundamental metrics used to evaluate the performance of a model. They are often used together to provide a comprehensive understanding of a model's accuracy.
+
+**Precision:**
+Precision measures the proportion of true positives (correctly predicted instances) among all the positive predictions made by the model. In other words, it measures how accurate the model is when it predicts a positive outcome.
+
+Precision = True Positives / (True Positives + False Positives)
+
+**Recall:**
+Recall measures the proportion of true positives among all the actual positive instances in the dataset. In other words, it measures how well the model detects all the positive instances.
+
+Recall = True Positives / (True Positives + False Negatives)
+
+To illustrate the difference, consider a medical diagnosis example:
+
+* **Precision:** If a model predicts 100 patients have a disease, and 90 of them actually have it, the precision is 90% (90/100). This means the model is accurate 90% of the time when it predicts a positive outcome.
+* **Recall:** If there are 100 patients with the disease in the dataset, and the model correctly predicts 90 of them, the recall is 90% (90/100). This means the model detects 90% of all the actual positive instances.
+
+**Trade-off between Precision and Recall:**
+There is often a trade-off between precision and recall. A model with high precision may have low recall, and a model with high recall may have low precision. This is because:
+
+* Increasing precision often requires reducing the number of false positives, which can lead to more false negatives (reducing recall).
+* Increasing recall often requires reducing the number of false negatives, which can lead to more false positives (reducing precision).
+
+**F1-score:**
+To balance precision and recall, the F1-score is often used, which is the harmonic mean of precision and recall:
+
+F1-score = 2 \* (Precision \* Recall) / (Precision + Recall)
+
+The F1-score provides a single metric that balances both precision and recall, making it a useful evaluation metric for classification tasks.

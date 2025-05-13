@@ -1,0 +1,19 @@
+HTTPS (Hypertext Transfer Protocol Secure) secures communication over a computer network, such as the Internet, by utilizing a combination of protocols (HTTP within a connection encrypted by Transport Layer Security (TLS) or its predecessor, Secure Sockets Layer (SSL)). This ensures a secure exchange of information between web servers and clients. The process involves several key steps and components to establish a secure connection and protect data:
+
+1. **Encryption**: HTTPS encrypts the data transmitted, which prevents eavesdroppers from understanding the content of the communication between the client and server. Even if intercepted, the data would appear as gibberish without the unique encryption keys held by the communicating parties.
+
+2. **Authentication**: HTTPS also provides a mechanism for the client to verify the identity of the web server. This is done using digital certificates. When a user connects to an HTTPS-secured server, the server presents a certificate issued by a trusted Certificate Authority (CA). This certificate confirms the server's identity and helps prevent man-in-the-middle attacks, where an attacker impersonates the intended server.
+
+3. **Data Integrity**: Beyond encryption, HTTPS also ensures the integrity of the data sent and received. This means that any alterations to the data during transit (intentional or accidental) can be detected and flagged. This is achieved through mechanisms like Message Authentication Codes (MACs), which provide a secure way to verify that the data received is exactly what was sent.
+
+### Key Components of HTTPS:
+
+- **SSL/TLS Protocols**: These protocols are the backbone of HTTPS, providing the necessary encryption, authentication, and data integrity. They negotiate encryption algorithms and keys before the exchange of the actual data.
+
+- **Digital Certificates and Public Key Infrastructure (PKI)**: Certificates are issued by Certificate Authorities (CAs) and bind a public key to an entity (like a company or website). The PKI framework manages these certificates and keys, ensuring secure communication between parties over the internet.
+
+- **Secure Keys**: During the TLS handshake, the client and server agree on a symmetric session key using an asymmetric encryption algorithm. This session key is then used for encrypting the data during that session, ensuring fast and secure communication.
+
+### The HTTPS Connection Process:
+
+1. **TLS Handshake**: When a client (e.g., a web browser) initiates an HTTPS connection to a server, they perform a TLS handshake. During this handshake, the server presents its certificate to the client. The client then verifies this certificate

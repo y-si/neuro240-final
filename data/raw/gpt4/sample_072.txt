@@ -1,0 +1,22 @@
+Operating systems manage the execution of tasks on multi-core CPUs through a sophisticated process known as task scheduling. This process involves deciding which tasks (or threads) run at what times and on which cores, optimizing for performance, efficiency, and fairness among processes. The scheduler, a fundamental component of an operating system, is responsible for this task allocation. Here are the key concepts and strategies involved in scheduling tasks on a multi-core CPU:
+
+### 1. **Types of Schedulers**
+
+- **Long-term Scheduler:** Decides which jobs or processes are admitted to the pool of executable processes. This controls the degree of multiprogramming.
+- **Short-term Scheduler:** Also known as the CPU scheduler, it decides which of the ready, in-memory processes are assigned to CPU cores at any given time.
+- **Medium-term Scheduler:** Sometimes involved in removing processes from active contention for the CPU (swapping out) and later reintroducing them (swapping in), balancing the load and mix of CPU-bound and I/O-bound processes.
+
+### 2. **Scheduling Algorithms**
+
+The operating system employs various algorithms to decide how to allocate CPU time, including:
+
+- **Round Robin (RR):** Assigns time slices to each process in a cyclic manner. It's fair and simple but can lead to high context switching overhead.
+- **First Come, First Served (FCFS):** Processes are scheduled according to their arrival time. While simple, it can suffer from the "convoy effect," where short tasks wait behind long ones.
+- **Shortest Job First (SJF) and Shortest Remaining Time First (SRTF):** Prioritizes tasks that have the shortest duration or remaining time. These are efficient but require predicting task duration, which is not always possible.
+- **Priority Scheduling:** Processes are assigned a priority, and the scheduler selects based on this priority. Priorities can be static or dynamic.
+- **Affinity Scheduling:** Tries to keep processes on the same core or in the same CPU cache where possible to take advantage of cache locality, improving performance.
+
+### 3. **Load Balancing and Task Affinity**
+
+- **Load Balancing:** In multi-core systems, it's crucial to balance the workload across cores to prevent any single core from becoming a bottleneck. The scheduler might redistribute processes and threads across cores to maintain efficiency.
+- **Task Affinity:** Refers to the practice of keeping a process on the same core or moving it to a specific

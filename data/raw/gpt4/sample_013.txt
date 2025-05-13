@@ -1,0 +1,25 @@
+Relational and non-relational databases are two broad categories of databases that serve different needs based on the nature of the data and the requirements of the application. Here's a comparison highlighting their key characteristics, differences, and examples:
+
+### Relational Databases
+
+**Definition**: Relational databases store data in tables, which are structured in rows and columns. Each row represents a record, and each column represents a data attribute. These databases are based on the relational model, an intuitive way that allows the representation of data and its relationships.
+
+**Examples**: MySQL, PostgreSQL, Oracle, and Microsoft SQL Server.
+
+**Characteristics**:
+- **Structured Query Language (SQL)**: They use SQL for defining and manipulating data. SQL is a powerful and standardized language used to query and manage the data.
+- **ACID Properties**: Relational databases strictly follow ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring reliable transaction processing.
+- **Schema**: They require a predefined schema, which means the structure of the data (tables, columns, and the data type of each column) must be defined before storing data.
+- **Complex Queries**: They are powerful in handling complex queries, making them suitable for applications that require multi-row transactions.
+
+### Non-Relational Databases
+
+**Definition**: Non-relational databases, also known as NoSQL databases, store data in formats other than the tabular relations used in relational databases. They are designed to handle large volumes of data and are capable of scaling horizontally.
+
+**Examples**: MongoDB (document-oriented), Cassandra (wide-column store), Redis (key-value store), and Neo4j (graph database).
+
+**Characteristics**:
+- **Flexible Schema**: They do not require a predefined schema, which allows the storage of unstructured or semi-structured data. This flexibility makes it easier to make changes to the data model without impacting existing data.
+- **Scalability**: Non-relational databases are designed to scale out by distributing data across multiple servers or nodes. This is particularly useful for handling large volumes of data and high user loads.
+- **Data Model**: They support a variety of data models, including key-value, document, wide-column, and graph models. This variety allows for the use of the most efficient data model for the specific needs of an application.
+- **CAP Theorem**: Non-relational databases often follow the CAP theorem, which states that a distributed database system can only simultaneously provide two of the following three guarantees

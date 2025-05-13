@@ -1,0 +1,38 @@
+RAID (Redundant Array of Independent Disks) is a data storage technology that allows multiple physical disks to be combined into a single logical unit, providing improved performance, reliability, and capacity. Here's a breakdown of how RAID works and what the different levels mean:
+
+**How RAID Works:**
+
+In a RAID setup, multiple disks are connected to a controller, which manages the data distribution and retrieval. The controller can be a hardware component, such as a RAID card, or a software component, such as a RAID driver.
+
+When data is written to a RAID array, the controller breaks it into smaller chunks, called stripes, and distributes them across the multiple disks. This process is called striping. The controller also maintains a map of the data layout, so it can retrieve the data from the correct disks.
+
+**RAID Levels:**
+
+There are several RAID levels, each with its own strengths and weaknesses. Here are the most common ones:
+
+1. **RAID 0 (Striping):**
+In RAID 0, data is striped across multiple disks without any redundancy. This means that if one disk fails, all data on the array is lost. However, RAID 0 provides the best performance, as data can be read and written in parallel across multiple disks.
+
+Example: 2 x 1TB disks = 2TB total capacity, no redundancy.
+
+2. **RAID 1 (Mirroring):**
+In RAID 1, data is mirrored across two disks. This means that each disk contains an identical copy of the data. If one disk fails, the other disk can take over, ensuring data integrity. However, RAID 1 provides only half the total capacity of the disks, as each disk is a duplicate of the other.
+
+Example: 2 x 1TB disks = 1TB total capacity, 1:1 redundancy.
+
+3. **RAID 5 (Striping with Parity):**
+In RAID 5, data is striped across multiple disks, and parity information is calculated and stored across the disks. Parity information is used to reconstruct data in case of a disk failure. RAID 5 provides a good balance between performance and redundancy.
+
+Example: 3 x 1TB disks = 2TB total capacity, 1 disk can fail without data loss.
+
+**Other RAID Levels:**
+
+There are other RAID levels, including:
+
+* RAID 6 (Striping with dual parity): Similar to RAID 5, but with two sets of parity information, allowing for two disk failures without data loss.
+* RAID 10 (Mirroring and Striping): A combination of RAID 1 and RAID 0, providing both high performance and redundancy.
+* RAID 50 (Striping with parity and mirroring): A combination of RAID 5 and RAID 1, providing both high performance and redundancy.
+
+**Conclusion:**
+
+RAID is a powerful technology that can improve data storage performance, reliability, and capacity. By understanding the different RAID levels, you can choose the best configuration for your specific needs. However, it's essential to remember that RAID is not a substitute for backups, and you should always maintain a separate backup of your critical data.

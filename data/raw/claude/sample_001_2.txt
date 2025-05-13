@@ -1,0 +1,10 @@
+Neural networks are a type of machine learning model that are loosely inspired by how the human brain works. They are made up of interconnected nodes or "neurons" organized into layers.
+
+The basic idea is:
+1. Input data is fed into the first layer of neurons. 
+2. Each neuron does a simple calculation on the data and passes the result to neurons in the next layer.
+3. This continues through the layers until the final output layer, which generates the predicted result. 
+4. The connections between neurons have weights that determine how much influence each neuron's output has on the next layer.
+5. By training the neural network on lots of example data, it learns to adjust these weights to map inputs to the correct outputs.
+
+With enough training data and computing power, neural networks can learn to recognize complex patterns and make surprisingly accurate predictions, which is why they are used in applications like computer vision, speech recognition, language translation, and more. The layered structure allows neural nets to learn hierarchical representations, detecting simple features in early layers and more complex patterns in later layers.

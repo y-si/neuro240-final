@@ -1,0 +1,21 @@
+Depth-First Search (DFS) and Breadth-First Search (BFS) are two fundamental graph traversal algorithms used to explore nodes in a graph or tree data structure. The main difference between them lies in the order in which they visit the nodes.
+
+1. Depth-First Search (DFS):
+   - DFS explores as far as possible along each branch before backtracking.
+   - It starts at the root node (or any arbitrary node) and explores as far as possible along each branch before backtracking.
+   - DFS uses a stack (either explicitly or implicitly through recursion) to keep track of the nodes to visit next.
+   - The exploration goes deep into the graph or tree, visiting all the children of a node before moving on to the next sibling.
+   - DFS is often used when the goal is to explore all possible paths or when the search space is large and the desired node is likely to be far from the root.
+   - Examples of algorithms that use DFS: finding connected components, topological sorting, solving mazes, and exploring all possible solutions in a game tree.
+
+2. Breadth-First Search (BFS):
+   - BFS explores all the neighboring nodes at the current depth before moving on to the nodes at the next depth level.
+   - It starts at the root node (or any arbitrary node) and explores all the neighboring nodes at the current depth before moving on to the nodes at the next depth level.
+   - BFS uses a queue to keep track of the nodes to visit next.
+   - The exploration goes level by level, visiting all the nodes at the current depth before moving on to the next depth.
+   - BFS is often used when the goal is to find the shortest path or the minimum number of steps to reach a target node.
+   - Examples of algorithms that use BFS: finding the shortest path in an unweighted graph, web crawler indexing, and social network analysis.
+
+In summary, the main difference is that DFS explores as far as possible along each branch before backtracking, while BFS explores all the neighboring nodes at the current depth before moving on to the next depth level. DFS uses a stack and goes deep into the graph, while BFS uses a queue and explores level by level.
+
+The choice between DFS and BFS

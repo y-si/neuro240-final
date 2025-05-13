@@ -1,0 +1,26 @@
+HTTPS (Hypertext Transfer Protocol Secure) is a protocol that provides secure communication between a web browser and a website. It uses several mechanisms to ensure the confidentiality, integrity, and authenticity of the data being transmitted:
+
+1. Encryption:
+   - HTTPS uses SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols to encrypt the data exchanged between the browser and the server.
+   - The encryption prevents unauthorized parties from intercepting and reading the transmitted data.
+   - It ensures confidentiality by converting the data into a coded format that can only be decrypted with the proper key.
+
+2. Public Key Infrastructure (PKI):
+   - HTTPS relies on PKI, which uses digital certificates to verify the identity of the website.
+   - The website's server presents a digital certificate to the browser, which contains the website's public key and is signed by a trusted Certificate Authority (CA).
+   - The browser verifies the certificate's authenticity by checking the CA's signature and ensuring that the certificate is valid and not expired.
+
+3. Secure Key Exchange:
+   - HTTPS establishes a secure session between the browser and the server using a process called the SSL/TLS handshake.
+   - During the handshake, the browser and server negotiate the encryption algorithms and exchange session keys securely.
+   - The session keys are used to encrypt and decrypt the data transmitted during the session.
+
+4. Integrity Verification:
+   - HTTPS uses message authentication codes (MACs) or digital signatures to ensure the integrity of the transmitted data.
+   - MACs or digital signatures are computed based on the data and a secret key, allowing the receiver to detect any tampering or modification of the data during transmission.
+
+5. Secure Communication Indicators:
+   - Web browsers typically display visual indicators, such as a padlock icon or a green address bar, to indicate that the connection is secure and the website's identity has been verified.
+   - These indicators assure users that their communication with the website is protected and that they are interacting with the intended website.
+
+By encrypting the data, verifying the website's identity, and ensuring data integrity, HTTPS provides a secure communication channel between the browser and the server. It protects sensitive information, such as login credentials, personal data, and financial

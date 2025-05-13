@@ -1,0 +1,27 @@
+The main differences between supervised and unsupervised learning are:
+
+1. Labeled data:
+   - Supervised learning: The training data is labeled, meaning the input data has corresponding output labels or target values.
+   - Unsupervised learning: The training data is unlabeled, and the algorithm learns patterns or structures from the input data without any predefined labels.
+
+2. Goal:
+   - Supervised learning: The goal is to learn a function that maps input data to the correct output labels, enabling the model to predict labels for new, unseen data.
+   - Unsupervised learning: The goal is to discover inherent structures, patterns, or relationships within the input data without any specific output labels.
+
+3. Types of tasks:
+   - Supervised learning: It is used for tasks such as classification (predicting discrete class labels) and regression (predicting continuous values).
+   - Unsupervised learning: It is used for tasks such as clustering (grouping similar data points), dimensionality reduction (reducing the number of features while preserving important information), and anomaly detection (identifying unusual or outlier data points).
+
+4. Feedback:
+   - Supervised learning: The model receives feedback in the form of correct output labels during training, allowing it to adjust its parameters to minimize the difference between predicted and actual labels.
+   - Unsupervised learning: There is no explicit feedback provided to the model since there are no predefined output labels. The model learns based on the inherent patterns and structures in the data.
+
+5. Examples of algorithms:
+   - Supervised learning: Decision Trees, Random Forests, Support Vector Machines (SVM), Linear Regression, Logistic Regression, Neural Networks.
+   - Unsupervised learning: K-means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA), t-SNE (t-Distributed Stochastic Neighbor Embedding), Autoencoders.
+
+6. Applications:
+   - Supervised learning: Spam email classification, sentiment analysis, image classification, stock price prediction, medical diagnosis.
+   - Unsupervised learning: Customer segmentation, image compression, topic modeling, recommender systems, anomaly detection in fraud or network intrusion.
+
+In summary, supervised learning relies on labele

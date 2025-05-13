@@ -1,0 +1,19 @@
+A memory leak is a type of resource leak that occurs when a computer program incorrectly manages memory allocations, causing it to consume memory that is no longer needed. Over time, memory leaks can lead to performance degradation or even program crashes as the available memory is gradually depleted.
+
+Memory leaks happen when objects are created dynamically (usually using `malloc`, `new`, or similar functions) but are not properly destroyed or freed after they are no longer needed. This results in the memory being still allocated but inaccessible to the program.
+
+To avoid memory leaks, follow these best practices:
+
+1. Always deallocate memory: Make sure to use the appropriate functions to free memory that was dynamically allocated, such as `free()` in C, `delete` in C++, or `Dispose()` in C#.
+
+2. Use smart pointers (C++): Smart pointers, such as `std::unique_ptr` and `std::shared_ptr`, automatically manage the memory they point to and deallocate it when the pointer goes out of scope.
+
+3. Use garbage collection (Java, C#, Python, etc.): Many modern programming languages have built-in garbage collectors that automatically manage memory allocation and deallocation. However, you should still be mindful of object references and avoid unnecessary object retention.
+
+4. Be cautious with global variables and static data: Global variables and static data persist throughout the lifetime of a program, so any memory leaks associated with them will also persist.
+
+5. Use memory profiling tools: Memory profiling tools like Valgrind (for C/C++) or built-in profilers in IDEs can help identify memory leaks by tracking memory allocations and deallocations.
+
+6. Test and monitor your program: Regularly test your program for memory leaks, especially under heavy load or long-running scenarios. Monitor memory usage to detect any unusual growth over time.
+
+By following these practices and being mindful of memory management, you can minimize the risk of memory leaks in your programs.

@@ -1,0 +1,21 @@
+Backpropagation, short for "backward propagation of errors," is a fundamental mechanism in training artificial neural networks. It refers to the method used to calculate the gradient of the loss function of a neural network with respect to its weights. It is used in conjunction with an optimization algorithm like gradient descent to update the weights to minimize the loss, thereby improving the model's predictions. Here’s a step-by-step explanation of how backpropagation works:
+
+### 1. Forward Pass
+- **Initialization**: First, inputs are fed into the neural network. Each neuron in the network applies a weighted sum of the inputs it receives, adds a bias, and then passes it through an activation function that determines the neuron’s output.
+- **Processing**: This output is then passed on as input to the next layer of the network. This process continues until the final output is produced in the last layer of the network, often after multiple layers of processing.
+
+### 2. Loss Calculation
+- **Compute Loss**: The output of the network is compared to the desired output, using a loss function. Common loss functions include Mean Squared Error for regression tasks and Cross-Entropy Loss for classification tasks. This function quantifies the difference between the computed output and the actual output (label).
+
+### 3. Backward Pass
+- **Backpropagation of Error**: The goal of backpropagation is to update the weights in a way that minimizes the loss. This is done by calculating the gradient (partial derivatives) of the loss function with respect to each weight in the network. The process involves applying the chain rule from calculus repeatedly to propagate the loss backward through the network (hence the name).
+  
+  - **Gradient Calculation**: The process starts from the output layer, calculating the error (difference between predicted and actual output). It then computes how much of this error can be attributed to the weights connecting the last hidden layer to the output layer.
+  
+  - **Continue Through Layers**: This step is repeated for each layer in the network, moving from the output layer towards the input layer. At each step, the gradient tells us how much a change in each weight contributed to the error in the output.
+
+### 4. Update Weights
+- **Apply Optimization Algorithm**: Once the gradients are computed, they are used to update the weights. Typically, this is done using optimization algorithms like Gradient Descent. The weights are adjusted in the opposite direction of the gradient to minimize the loss (descending along the gradient).
+
+### 5. Iterate
+- **Repeat**: This

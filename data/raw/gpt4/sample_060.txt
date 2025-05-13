@@ -1,0 +1,24 @@
+OAuth 2.0 is a widely used authorization framework that enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook, GitHub, Google, and so on. It works by delegating user authentication to the service that hosts the user account and authorizing third-party applications to access the user account. OAuth 2.0 specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials. It's important to clarify that OAuth 2.0 is primarily focused on authorization rather than authentication. However, it is often used in contexts that involve authentication.
+
+Here's a simplified overview of how OAuth 2.0 works, especially in scenarios where it's used to authenticate users in addition to authorizing applications:
+
+### 1. Registration
+Before anything, the application (client) must be registered with the provider (the service that hosts the user's account). The application will receive a client ID and a secret (the latter should be kept secure) to identify itself to the provider.
+
+### 2. Authorization Request
+When a user wants to log in or grant the application access to their account, the application redirects the user to the authorization server with the client ID, requested scope (permissions), and a redirect URI to which the server will send the user back after granting access.
+
+### 3. User Consent
+The user is asked to login (if not already logged in) and consent to the requested access by the application. This step is handled entirely by the authorization server and may include multi-factor authentication or other security measures.
+
+### 4. Authorization Grant
+Upon successful authentication and consent, the authorization server redirects the user back to the application using the redirect URI provided earlier. This redirect includes an authorization code, which is a temporary code that the application can exchange for an access token.
+
+### 5. Access Token Request
+The application requests an access token from the authorization server's token endpoint by presenting authentication of its own identity, the authorization grant that it received, and its redirect URI for verification.
+
+### 6. Access Token Response
+If the application's request is valid, the authorization server responds back with an access token (and possibly a refresh token). The access token is a bearer token, which means that whoever holds the token can use it to access the user's data within the scope that was granted, until it expires.
+
+### 7. Making Authenticated Requests
+The application uses the access token to make authenticated requests to the

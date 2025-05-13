@@ -1,0 +1,28 @@
+TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two fundamental protocols used in the transport layer of the Internet protocol suite. They are both used for sending bits of data—known as packets—over the Internet but have key differences in how they accomplish this task.
+
+### 1. Connection Orientation
+
+- **TCP** is connection-oriented. This means that before any data can be sent, a reliable connection must be established between the sender and receiver. This connection ensures that data is delivered exactly as it is sent, in the correct order.
+- **UDP** is connectionless. It does not establish a connection before sending data. Instead, data is sent as individual packets directly to the recipient without guaranteeing order or delivery.
+
+### 2. Reliability
+
+- **TCP** provides reliable data transfer. It ensures that packets are delivered error-free, in sequence, without losses or duplications. If packets are lost or arrive out of order, TCP will retransmit them and reassemble them in the correct order.
+- **UDP** does not guarantee reliable delivery. Packets may be lost or arrive out of order, and there is no mechanism within UDP itself to correct this.
+
+### 3. Flow Control and Congestion Control
+
+- **TCP** includes built-in mechanisms for flow control and congestion control. Flow control prevents the sender from overwhelming the receiver's buffer by adjusting the rate of data transmission. Congestion control aims to reduce network congestion by adjusting the rate of data transmission based on network conditions.
+- **UDP** lacks these mechanisms. It sends data at a constant rate, regardless of the network condition, which could lead to packet loss or network congestion.
+
+### 4. Speed and Efficiency
+
+- **TCP** is generally slower than UDP due to the overhead of establishing connections, error-checking, and ensuring data integrity and order.
+- **UDP** is faster because it lacks the overhead associated with connections, error checking, and flow control. This makes it more efficient for use cases where speed is more critical than reliability.
+
+### 5. Use Cases
+
+- **TCP** is used for applications where reliability and data integrity are crucial. Examples include web browsing (HTTP/HTTPS), email (SMTP, POP3, IMAP), and file transfers (FTP).
+- **UDP** is used for applications where speed and efficiency are more important than reliability. Examples include live video or audio streaming, Voice over IP (VoIP), and online gaming.
+
+In summary, the

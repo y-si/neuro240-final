@@ -1,0 +1,29 @@
+When a computer is powered on, it goes through a process called booting or bootstrapping to load the operating system. Here's a step-by-step explanation of the boot process:
+
+1. Power On Self-Test (POST):
+   - When the computer is turned on, the power supply sends a signal to the motherboard.
+   - The motherboard's firmware, called the BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface), initiates the Power On Self-Test (POST).
+   - POST checks the basic functionality of hardware components like RAM, CPU, and storage devices.
+   - If any issues are detected during POST, the computer may display an error message or emit beep codes.
+
+2. BIOS/UEFI Initialization:
+   - After POST, the BIOS/UEFI initializes and configures the hardware components.
+   - It detects and configures devices such as the keyboard, mouse, and storage drives.
+   - The BIOS/UEFI also determines the boot order, which specifies the order in which the computer searches for bootable devices.
+
+3. Boot Device Selection:
+   - The BIOS/UEFI looks for a bootable device based on the predefined boot order.
+   - Common bootable devices include hard drives, solid-state drives (SSDs), USB drives, or CD/DVD drives.
+   - The BIOS/UEFI searches for a specific boot sector or partition on the selected device.
+
+4. Boot Loader Execution:
+   - Once a bootable device is found, the BIOS/UEFI loads a small program called the boot loader into memory.
+   - The boot loader is responsible for loading the operating system kernel into memory.
+   - Examples of boot loaders include GRUB (Grand Unified Bootloader) for Linux and the Windows Boot Manager for Windows.
+
+5. Operating System Kernel Loading:
+   - The boot loader reads the necessary files from the bootable device and loads the operating system kernel into memory.
+   - The kernel is the core component of the operating system that manages system resources and provides an interface between hardware and software.
+
+6. Operating System Initialization:
+   - Once the kernel is

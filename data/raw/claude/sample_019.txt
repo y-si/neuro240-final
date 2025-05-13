@@ -1,0 +1,17 @@
+Vector embeddings are a fundamental concept in natural language processing (NLP) that allow computers to understand and process human language more effectively. They are a way of representing words or phrases as dense, continuous vectors in a high-dimensional space.
+
+Role in NLP:
+1. Capturing semantic meaning: Vector embeddings are designed to capture the semantic meaning and relationships between words. Words with similar meanings or contexts are mapped to nearby points in the vector space, while dissimilar words are farther apart. This enables NLP models to understand the semantic similarities and differences between words.
+
+2. Dimensionality reduction: Vector embeddings provide a compact representation of words in a lower-dimensional space compared to traditional one-hot encoding or bag-of-words representations. This dimensionality reduction helps in reducing computational complexity and memory requirements while still preserving the essential semantic information.
+
+3. Enabling downstream tasks: Vector embeddings serve as input features for various downstream NLP tasks, such as text classification, sentiment analysis, named entity recognition, and machine translation. By representing words as dense vectors, NLP models can learn patterns and relationships from the input text more effectively, leading to improved performance on these tasks.
+
+4. Transfer learning: Pre-trained vector embeddings, such as Word2Vec, GloVe, or fastText, can be used as a starting point for training NLP models on specific tasks. These embeddings are trained on large corpora of text and capture general language patterns. By leveraging pre-trained embeddings, models can benefit from the knowledge learned from vast amounts of data and require less task-specific training data.
+
+5. Handling out-of-vocabulary words: Vector embeddings can handle out-of-vocabulary (OOV) words, which are words not seen during training. Techniques like subword embeddings or character-level embeddings can be used to generate embeddings for OOV words based on their subword or character components, enabling the model to handle unseen words effectively.
+
+Popular vector embedding techniques include:
+- Word2Vec: Trains embeddings by predicting a target word given its context or predicting the context given a target word.
+- GloVe (Global Vectors for Word Representation): Learns embeddings by factorizing a word-word co-occurrence matrix.
+- fastText: Extends Word2Vec by considering sub

@@ -1,0 +1,26 @@
+Attention mechanisms in transformer models, such as those used in the popular BERT or GPT architectures, revolve around the concept of selectively focusing on different parts of the input data to produce a more contextually relevant output. The fundamental idea is to enhance the model's ability to attend differently to various parts of the input sequence when computing the output sequence, leading to more effective and nuanced language understanding and generation.
+
+### Components of Attention in Transformers
+
+#### 1. **Query, Key, and Value Vectors**
+   - In transformers, every input token (typically a word or subword unit) is transformed into three vectors: a Query vector (Q), a Key vector (K), and a Value vector (V). These vectors are derived by multiplying the input embeddings by learned weights.
+   - **Query (Q)**: Represents the element that is currently being focused on.
+   - **Key (K)**: Represents the elements to be compared against.
+   - **Value (V)**: Represents the actual content of the element.
+
+#### 2. **Scaled Dot-Product Attention**
+   - The core operation in the attention mechanism is the dot product between the Query vector and all Key vectors. This operation scores how much focus to place on other parts of the input data for each word.
+   - The scores are scaled down by the dimensionality of the Key vectors (usually by taking the square root of the dimension) to stabilize the gradients during learning.
+   - These scores are then passed through a softmax layer, which converts them into a probability distribution. Higher scores amplify the focus on corresponding values.
+
+#### 3. **Output Calculation**
+   - The softmax output, which represents attention weights, is multiplied by the Value vectors. This multiplication aggregates the information from different parts of the input sequence, weighted by how relevant each part is to the current word being processed.
+   - The result is a new representation of the input sequence that has been re-weighted according to the computed attention weights, effectively allowing the model to focus more on relevant parts and less on irrelevant parts.
+
+### Multi-Head Attention
+
+Transformers often enhance the basic attention mechanism through something called multi-head attention. This involves running several attention processes (or "heads") in parallel, each with its own independent set of Q, K, and V weights. This parallel processing allows the model to attend to information from different representational subspaces at different positions. Afterward, the outputs from each head are concatenated and linearly transformed into the expected dimension.
+
+### Role in Transformer Architecture
+
+In the

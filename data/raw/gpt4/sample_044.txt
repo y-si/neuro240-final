@@ -1,0 +1,25 @@
+Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is a strategy for algorithm design that is particularly useful for optimization problems. Dynamic programming involves solving each of the smaller subproblems only once and storing their solutions - typically in an array or hash table, which are then used to construct a solution to the original problem. This approach reduces the computational burden significantly, especially for problems where the same subproblems recur multiple times.
+
+Dynamic programming can be applied when the problem exhibits the following two key properties:
+
+1. **Optimal Substructure:** This means that the optimal solution to the problem can be constructed efficiently from the optimal solutions of its subproblems. Essentially, a problem has optimal substructure if an optimal solution to the whole problem contains the optimal solutions to the subproblems.
+
+2. **Overlapping Subproblems:** This occurs when the problem can be broken down into subproblems which are reused several times. In contrast to divide-and-conquer algorithms, where the subproblems are generally independent, dynamic programming is used when subproblems overlap. That is, the same subproblems are solved multiple times.
+
+Dynamic programming can be implemented using two approaches:
+
+- **Top-Down (Memoization):** This approach involves writing the recursive algorithm and using a storage structure (like a hash table or an array) to save the result of each subproblem. The algorithm first checks if the solution to a subproblem has already been computed. If so, it returns the stored value, avoiding the redundant computation. This technique is called memoization.
+
+- **Bottom-Up (Tabulation):** This approach involves solving the subproblems first and then solving the larger problems by using the solutions to the subproblems. This is typically done by filling up a table (array) and is based on the principle of building up the solution to a problem from the solutions to its subproblems.
+
+**When to Use Dynamic Programming:**
+
+Dynamic programming should be used when the problem you are trying to solve has overlapping subproblems and optimal substructure. It is particularly well-suited for optimization problems, such as finding the minimum or maximum of something, counting problems, and certain constraint satisfaction problems.
+
+Examples of problems where dynamic programming is used include:
+
+- Computing the nth Fibonacci number
+- Finding the shortest path in a weighted graph with positive or negative edges (but no negative cycles), like the Bellman-Ford algorithm
+- The knapsack problem
+- The coin change problem
+- Sequence alignment in bioinformatics

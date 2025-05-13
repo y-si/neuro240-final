@@ -1,0 +1,15 @@
+Eventual consistency is a consistency model used in distributed systems, which allows for data stores to reach consistency over time, under the premise that no new updates are made to the data. It contrasts with strong consistency models, where a system guarantees that any read operation will always return the most recent write operation's result by all nodes in the system.
+
+In the context of distributed databases or storage systems, eventual consistency means that if no new updates are made to a particular piece of data, eventually all accesses to that data will return the last updated value. The term "eventually" implies that the system does not guarantee immediate consistency across all nodes following a write or update operation. Instead, the updates propagate through the system asynchronously, and during this propagation time, different nodes might return different values when queried for the same data.
+
+Eventual consistency is a trade-off chosen for its advantages in terms of scalability and availability in distributed systems. It is particularly appealing in scenarios where the system must continue to operate despite network partitions or delays and where absolute consistency at every moment is less critical than the overall availability and performance of the system.
+
+Several strategies can be used to achieve eventual consistency, including:
+
+- **Read repair**: During a read operation, if the system detects discrepancies in the versions of the data, it can initiate a repair operation to update all replicas to the latest version.
+- **Write propagation**: Updates to the data are propagated to all replicas in the background. The system may use various mechanisms to ensure that all replicas eventually receive and apply the updates.
+- **Quorum reads and writes**: The system may require that a certain number of replicas respond to read and write operations, ensuring that a majority of replicas have seen the most recent write before it is considered successful.
+
+Despite its benefits, eventual consistency also poses challenges, particularly in ensuring that applications can correctly handle the potential for outdated or conflicting information. Developers working with eventually consistent systems often need to implement additional logic to handle inconsistencies, such as conflict resolution strategies or user-facing mechanisms that allow for manual reconciliation of data.
+
+In summary, eventual consistency provides a flexible and scalable approach to data consistency in distributed systems at the cost of allowing temporary inconsistencies, making it suitable for applications where availability and partition tolerance are prioritized over immediate consistency.

@@ -1,0 +1,91 @@
+**Hash Table Overview**
+========================
+
+A hash table, also known as a hash map or dictionary, is a data structure that stores key-value pairs in a way that allows for efficient lookup, insertion, and deletion of elements. It uses a hash function to map keys to indices of a backing array, where the corresponding values are stored.
+
+**How Hash Tables Work**
+------------------------
+
+Here's a step-by-step explanation of how hash tables work:
+
+1. **Key-Value Pairs**: You provide a key-value pair to the hash table, where the key is a unique identifier and the value is the data associated with that key.
+2. **Hash Function**: The hash table applies a hash function to the key, which generates a hash code. The hash code is an integer that represents the key.
+3. **Index Calculation**: The hash code is used to calculate an index into the backing array. This index is usually calculated using the modulo operator to ensure it falls within the bounds of the array.
+4. **Collision Resolution**: If two keys hash to the same index, a collision occurs. Hash tables use various techniques to resolve collisions, such as chaining (storing multiple values at the same index) or open addressing (probing other indices until an empty slot is found).
+5. **Value Storage**: The value associated with the key is stored at the calculated index in the backing array.
+
+**Hash Table Operations**
+-------------------------
+
+Hash tables support the following operations:
+
+* **Insert**: Add a new key-value pair to the hash table.
+* **Lookup**: Retrieve the value associated with a given key.
+* **Delete**: Remove a key-value pair from the hash table.
+* **Update**: Update the value associated with a given key.
+
+**Advantages of Hash Tables**
+-----------------------------
+
+Hash tables offer several advantages:
+
+* **Fast Lookup**: Hash tables provide fast lookup times, with an average time complexity of O(1).
+* **Efficient Insertion and Deletion**: Hash tables can insert and delete elements efficiently, with an average time complexity of O(1).
+* **Good Cache Performance**: Hash tables exhibit good cache performance, as the backing array is typically stored in contiguous memory locations.
+
+**Example Use Cases**
+----------------------
+
+Hash tables are commonly used in:
+
+* **Caches**: Hash tables can be used to implement caches, where keys are URLs or other identifiers and values are cached data.
+* **Databases**: Hash tables can be used to index data in databases, allowing for fast lookup and retrieval of data.
+* **Configuration Files**: Hash tables can be used to store configuration data, where keys are configuration options and values are the corresponding settings.
+
+**Example Code**
+----------------
+
+Here's an example implementation of a basic hash table in Python:
+```python
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    def insert(self, key, value):
+        index = self._hash(key)
+        for pair in self.table[index]:
+            if pair[0] == key:
+                pair[1] = value
+                return
+        self.table[index].append([key, value])
+
+    def lookup(self, key):
+        index = self._hash(key)
+        for pair in self.table[index]:
+            if pair[0] == key:
+                return pair[1]
+        return None
+
+    def delete(self, key):
+        index = self._hash(key)
+        for i, pair in enumerate(self.table[index]):
+            if pair[0] == key:
+                del self.table[index][i]
+                return
+
+# Example usage:
+hash_table = HashTable(10)
+hash_table.insert("key1", "value1")
+hash_table.insert("key2", "value2")
+
+print(hash_table.lookup("key1"))  # Output: value1
+print(hash_table.lookup("key2"))  # Output: value2
+
+hash_table.delete("key1")
+print(hash_table.lookup("key1"))  # Output: None
+```
+This implementation uses chaining to resolve collisions and provides basic insert, lookup, and delete operations.

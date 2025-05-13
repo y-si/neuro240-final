@@ -1,0 +1,19 @@
+Big-O notation is a mathematical notation that describes the upper bound of an algorithm's running time or space requirements in terms of the size of the input data. It provides a high-level understanding of the algorithm's efficiency and scalability by focusing on the algorithm's growth rate as the input size increases. Big-O notation simplifies the comparison of algorithms by abstracting away constants and lower-order terms, which are less significant for large input sizes.
+
+Here's a breakdown of the key aspects of Big-O notation:
+
+1. **Asymptotic Analysis**: Big-O is part of asymptotic analysis, which looks at the behavior of algorithms as the input size approaches infinity. It helps in understanding the worst-case scenario for an algorithm's performance.
+
+2. **Upper Bound**: Big-O gives an upper limit on the time or space an algorithm will take or use. It describes the worst-case growth rate of the algorithm's complexity. For example, if an algorithm is said to be O(n), where n is the size of the input, the execution time or space will increase linearly with the increase in input size.
+
+3. **Growth Rates**: Different algorithms have different growth rates. Common Big-O notations and their meanings include:
+   - O(1): Constant time/space. The algorithm's performance is not affected by the size of the input data.
+   - O(log n): Logarithmic time/space. The algorithm's performance grows logarithmically as the input size increases.
+   - O(n): Linear time/space. The algorithm's performance grows linearly with the increase in input size.
+   - O(n log n): Log-linear time/space. This is more efficient than quadratic time but less efficient than linear time for large input sizes.
+   - O(n^2): Quadratic time/space. The algorithm's performance is proportional to the square of the input size.
+   - O(2^n) and O(n!): Exponential and factorial times, respectively. These are less efficient, with the performance degrading rapidly as the input size increases.
+
+4. **Simplification**: In Big-O notation, constants and non-dominant terms are dropped. For instance, an algorithm with a running time of 3n^2 + 5n + 2 is represented as O(n^2) because, as n grows large, the n^2 term dominates the growth rate, and the constants and linear term become less significant.
+
+5. **Comparing

@@ -1,0 +1,51 @@
+Symmetric and asymmetric encryption are two fundamental concepts in cryptography that enable secure data transmission. The primary difference between them lies in the way they use keys to encrypt and decrypt data.
+
+**Symmetric Encryption**
+
+Symmetric encryption uses the same secret key for both encryption and decryption. This means that the same key is used to lock (encrypt) and unlock (decrypt) the data. The key is shared between the sender and the receiver, and it must be kept secret to prevent unauthorized access.
+
+Here's how symmetric encryption works:
+
+1. The sender encrypts the data using the shared secret key.
+2. The encrypted data is transmitted to the receiver.
+3. The receiver decrypts the data using the same shared secret key.
+
+Symmetric encryption is fast and efficient, but it has some limitations:
+
+* Key exchange: The shared secret key must be exchanged securely between the sender and the receiver, which can be a challenge.
+* Key management: Managing and storing the shared secret key can be difficult, especially in large-scale systems.
+
+Examples of symmetric encryption algorithms include AES (Advanced Encryption Standard) and DES (Data Encryption Standard).
+
+**Asymmetric Encryption**
+
+Asymmetric encryption, also known as public-key encryption, uses a pair of keys: a public key and a private key. The public key is used for encryption, while the private key is used for decryption.
+
+Here's how asymmetric encryption works:
+
+1. The sender encrypts the data using the receiver's public key.
+2. The encrypted data is transmitted to the receiver.
+3. The receiver decrypts the data using their private key.
+
+Asymmetric encryption provides several benefits:
+
+* Secure key exchange: The public key can be shared openly without compromising the security of the system.
+* Scalability: Asymmetric encryption is more suitable for large-scale systems, as it eliminates the need for shared secret keys.
+
+However, asymmetric encryption is generally slower than symmetric encryption, and it requires more computational resources.
+
+Examples of asymmetric encryption algorithms include RSA (Rivest-Shamir-Adleman) and elliptic curve cryptography (ECC).
+
+**Hybrid Approach**
+
+In practice, a hybrid approach is often used, which combines the benefits of both symmetric and asymmetric encryption. This approach is commonly used in secure communication protocols, such as SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+
+Here's how the hybrid approach works:
+
+1. The sender and receiver establish a secure connection using asymmetric encryption (e.g., RSA).
+2. The sender and receiver agree on a shared secret key using the secure connection.
+3. The sender encrypts the data using the shared secret key (symmetric encryption).
+4. The encrypted data is transmitted to the receiver.
+5. The receiver decrypts the data using the shared secret key.
+
+In summary, symmetric encryption uses the same secret key for both encryption and decryption, while asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. The hybrid approach combines the benefits of both symmetric and asymmetric encryption to provide secure and efficient data transmission.

@@ -1,0 +1,19 @@
+Big-O notation is a mathematical notation used to describe the performance or complexity of an algorithm. It specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm.
+
+Big-O notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation.
+
+The letter O is used because the growth rate of a function is also referred to as the order of the function. A description of a function in terms of big O notation usually only provides an upper bound on the growth rate of the function.
+
+Associated with big O notation are several related notations, using the symbols o, Ω, ω, and Θ, to describe other kinds of bounds on asymptotic growth rates.
+
+Here are some common orders of growth along with descriptions of the types of algorithms that would exhibit such behavior:
+
+O(1) describes an algorithm that will always execute in the same time (or space) regardless of the size of the input data set.
+
+O(N) describes an algorithm whose performance will grow linearly and in direct proportion to the size of the input data set. 
+
+O(N^2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set. This is common with algorithms that involve nested iterations over the data set. Deeper nested iterations will result in O(N^3), O(N^4) etc.
+
+O(2^N) denotes an algorithm whose growth doubles with each addition to the input data set. The growth curve of an O(2^N) function is exponential — starting off very shallow, then rising meteorically. 
+
+Logarithms are slightly trickier to explain so I'll defer going into those for now. Let me know if this explanation helps provide an overview of the key concepts behind Big-O notation! I'm happy to clarify or elaborate on anything.

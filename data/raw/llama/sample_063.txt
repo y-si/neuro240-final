@@ -1,0 +1,91 @@
+**MapReduce Overview**
+=======================
+
+MapReduce is a programming model used for processing large data sets in parallel across a cluster of computers. It was originally developed by Google and is now widely used in big data processing frameworks such as Hadoop.
+
+**How MapReduce Works**
+------------------------
+
+The MapReduce process consists of two main phases: **Map** and **Reduce**.
+
+### Map Phase
+
+1. **Input Split**: The input data is split into smaller chunks, called input splits.
+2. **Mapper**: Each input split is processed by a mapper, which applies a user-defined function to each record in the split. The mapper outputs a set of key-value pairs.
+3. **Shuffle**: The output key-value pairs from the mapper are partitioned and shuffled across the nodes in the cluster.
+
+### Reduce Phase
+
+1. **Reducer**: Each partition of key-value pairs is processed by a reducer, which applies a user-defined function to each key and its associated values.
+2. **Output**: The reducer outputs the final result, which is typically written to a file or stored in a database.
+
+**Example Use Case: Word Count**
+-------------------------------
+
+Suppose we have a large text file containing a collection of documents, and we want to count the frequency of each word in the documents.
+
+**Mapper**
+
+* Input: A line of text from the document
+* Output: A set of key-value pairs, where each key is a word and the value is 1
+
+Example:
+```
+Input: "This is a test document"
+Output:
+  ("This", 1)
+  ("is", 1)
+  ("a", 1)
+  ("test", 1)
+  ("document", 1)
+```
+
+**Reducer**
+
+* Input: A set of key-value pairs, where each key is a word and the values are the counts from the mapper
+* Output: A single key-value pair, where the key is the word and the value is the total count
+
+Example:
+```
+Input:
+  ("This", 1)
+  ("This", 1)
+  ("is", 1)
+  ("a", 1)
+  ("test", 1)
+  ("document", 1)
+Output:
+  ("This", 2)
+  ("is", 1)
+  ("a", 1)
+  ("test", 1)
+  ("document", 1)
+```
+
+**Code Example (Hadoop)**
+```java
+// Mapper
+public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+  @Override
+  public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    String[] words = value.toString().split("\\s+");
+    for (String word : words) {
+      context.write(new Text(word), new IntWritable(1));
+    }
+  }
+}
+
+// Reducer
+public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+  @Override
+  public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+    int sum = 0;
+    for (IntWritable value : values) {
+      sum += value.get();
+    }
+    context.write(key, new IntWritable(sum));
+  }
+}
+```
+
+In this example, the mapper splits the input text into individual words and outputs a key-value pair for each word. The reducer then sums up the counts for each word and outputs the final result.

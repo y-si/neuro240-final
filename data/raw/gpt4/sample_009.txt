@@ -1,0 +1,15 @@
+Batch normalization is a technique used in deep learning to improve the speed, performance, and stability of artificial neural networks. Introduced by Sergey Ioffe and Christian Szegedy in 2015, it addresses the issue known as "internal covariate shift," where the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This can make the training process slower and require the use of lower learning rates, as well as careful parameter initialization. Batch normalization helps to mitigate these issues by performing the following roles:
+
+1. **Normalizing Layer Inputs**: It normalizes the inputs of a layer for each mini-batch, meaning it adjusts and scales the activations such that they have a mean of zero and a standard deviation of one. This is similar to how input features are often normalized before training begins, but batch normalization applies this concept internally and dynamically to the outputs of layers throughout the network.
+
+2. **Improving Training Speed**: By stabilizing the distribution of activations across the network, batch normalization allows for the use of higher learning rates without the risk of divergence. This can significantly speed up the training process because the network can make larger updates to its weights in each training step.
+
+3. **Reducing Sensitivity to Initialization**: Since the technique helps to control the scale of inputs to neurons, it makes the training process less sensitive to the initial values of the weights. This can be particularly beneficial in deep networks, where poor initialization can severely hinder learning.
+
+4. **Allowing for Deeper Networks**: By alleviating the vanishing/exploding gradients problem, where gradients can become too small or too large, effectively halting learning, batch normalization makes it feasible to train deeper networks. This is a key factor in the success of many modern deep learning architectures.
+
+5. **Acting as a Regularizer**: In some cases, batch normalization has been observed to have a regularization effect, potentially reducing the need for other forms of regularization like dropout. This is partly because the mini-batch statistics introduce some noise into the training process, which can help to prevent overfitting to the training data.
+
+6. **Facilitating Different Activation Functions**: Without batch normalization, certain activation functions (like sigmoid or tanh) could lead to the saturation problem at the extremes of the activation function, where gradients are close to zero. Normalizing helps to mitigate this issue by keeping the inputs to activation functions in a range where they are more sensitive to changes.
+
+It's important to note

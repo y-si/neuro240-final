@@ -1,0 +1,27 @@
+Supervised and unsupervised learning are two major types of learning methodologies used in machine learning, each addressing different kinds of problems and relying on different types of input data. Here are the main differences between these two approaches:
+
+1. **Definition of Problem and Data Types**:
+
+   - **Supervised Learning**: In this approach, the algorithm is trained on a labeled dataset, meaning it learns from data that has an input-parameter/feature set along with corresponding target values (outputs). The targets can be either categorical (for classification) mechanisms or continuous values (for regression). Examples include predicting house prices from various features (regression) or classifying emails into spam and non-spam categories (classification).
+
+   - **Unsupervised Learning**: Under this method, the algorithm is trained on data without any explicitly labeled outputs (no targets). The primary goal here is to discover underlying patterns, groupings, or structures from data sets without prior label knowledge. Typical tasks include clustering (e.g., customer segmentation), association (discovering rules that describe portions of data), and dimensionality reduction (simplifying data inputs to retain valuable information).
+
+2. **Objective**:
+
+   - **Supervised Learning**: The main objective here is to build a predictive model that can accurately predict or infer the output using the learned function. The goal is to minimize the difference between the predicted value and the actual value (error reduction).
+
+   - **Unsupervised Learning**: The focus is on model inference to discover the inherent structure within the data. This could entail understanding the natural grouping or clustering within the data, seeking to simplify complexity via dimension reduction, or identifying data density for graphical representation.
+
+3. **Examples**:
+   
+   - **Supervised Learning Tasks**: Regression (predicting continuous values like house prices), Classification (like predicting categorization in email spam filters, or image recognition).
+   
+   - **Unsupervised Learning Tasks**: Clustering (like segregating market segments in marketing strategies), Principal Component Analysis (PCA) for dimension reduction, association rule mining (like finding items frequently purchased together).
+
+4. **Approaches and Algorithms**:
+
+   - **Supervised Learning**: Uses algorithms like linear regression, logistic regression, support vector machines (SVM), neural networks, decision trees, and random forests.
+
+   - **Unsupervised Learning**: Uses algorithms and techniques like k-means clustering, hierarchical clustering, Expectation Maximization, PCA, t-SNE (t-Distributed Stochastic Neighbor Embedding), and Apriori algorithm.
+
+5. **Evaluation**:

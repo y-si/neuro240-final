@@ -1,0 +1,34 @@
+A hash table, also known as a hash map, is a data structure used to implement an associative array, a structure that can map keys to values. Hash tables offer a method by which we can access data efficiently by using a key rather than a numerical index, which is how data is accessed in simpler data structures like arrays.
+
+### How Hash Tables Work
+
+The core mechanism of a hash table involves two main components: a **key** and a **hash function**.
+
+1. **Key**: The identifier used to store and retrieve values. Each key is unique within a hash table.
+
+2. **Hash Function**: This is a function that takes a key as input and computes an index (a hash code) that suggests where the corresponding value can be stored in the table. The purpose of the hash function is to distribute keys evenly across the storage space, minimizing the occurrence of two keys hashing to the same index, a situation known as a **collision**.
+
+### Handling Collisions
+
+Because multiple keys can potentially hash to the same index, hash tables use specific strategies to handle collisions. The two most common strategies are:
+
+- **Separate Chaining**: This involves storing all entries that hash to the same index in a list (or another data structure) at that index. When a lookup is performed, the list at the relevant index is searched to find the entry with the matching key.
+
+- **Open Addressing**: In this case, when a collision occurs, the hash table seeks an alternative empty slot according to a predefined sequence (linear probing, quadratic probing, and double hashing are examples of such sequences) to store the colliding entry. When looking up a key, the hash table uses the same sequence to search for the key.
+
+### Uses of Hash Tables
+
+Hash tables are widely used due to their efficiency in performing lookups, insertions, and deletions, typically offering average time complexity of O(1) for these operations under favorable conditions. This makes hash tables an excellent choice for various applications, including:
+
+- Implementing associative arrays or dictionaries
+- Database indexing
+- Caching (e.g., web page caching, DNS records caching)
+- Object representation, where object properties and values are stored as key-value pairs
+- Implementing sets
+- Tracking unique items and their frequencies in a collection
+
+### Advantages and Disadvantages
+
+**Advantages**:
+
+- **Efficiency**: Average-case time complexity for insertions, deletions, and lookups is O(

@@ -1,0 +1,21 @@
+Supervised learning and unsupervised learning represent two core approaches to machine learning, each with its distinct methodology, applications, and outcomes. The main differences between them are rooted in the nature of the data used for training and the objectives of the learning process. Here's a breakdown of the key differences:
+
+### 1. Data Labeling
+
+- **Supervised Learning:** This approach uses a labeled dataset for training. This means each training example is paired with an output label. The machine learning model learns from this data by understanding the relationship between the input features and the output labels, enabling it to make predictions or decisions when given new, unseen data.
+- **Unsupervised Learning:** In contrast, unsupervised learning deals with unlabeled data. The goal here is to identify patterns, groupings, or structures within the data without prior knowledge of outcomes or categories. Since there are no output labels, the model tries to learn the inherent structure from the input data alone.
+
+### 2. Objective
+
+- **Supervised Learning:** The primary objective is to predict an output based on input features. It aims at mapping inputs to outputs and is typically used for classification (where the output is a category) and regression (where the output is a continuous value) tasks.
+- **Unsupervised Learning:** The objective is to explore the data to find some structure within. Common tasks include clustering (grouping similar instances together), dimensionality reduction (reducing the number of input variables), and association (discovering rules that describe large portions of the data).
+
+### 3. Examples of Algorithms
+
+- **Supervised Learning:** Popular algorithms include Linear Regression, Logistic Regression, Support Vector Machines (SVM), Decision Trees, and Neural Networks.
+- **Unsupervised Learning:** Common algorithms include K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA), and Autoencoders.
+
+### 4. Evaluation
+
+- **Supervised Learning:** Models are evaluated based on how accurately they make predictions on new, unseen data. Metrics such as accuracy, precision, recall, F1 score (for classification), and mean squared error (MSE), or mean absolute error (MAE) (for regression) are used.
+- **Unsupervised Learning:** Since there are no labels to compare against, evaluation is more subjective and can be based on metrics that measure the quality of the structure found, such as silhouette score (for clustering) or the amount of variance captured (in
