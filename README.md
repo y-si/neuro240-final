@@ -83,6 +83,10 @@ After training, you can find:
 - Classification reports
 - Model comparison CSV
 
+## Documentation
+
+For detailed technical explanations, advanced usage, and step-by-step workflows, please see the [full project documentation](./documentation.md). This file contains in-depth guides and script-by-script instructions beyond the quickstart and overview provided here.
+
 ## Reference
 
 This implementation is inspired by the work of Uchendu et al. in their paper "Authorship Attribution for Neural Text Generation" and their repository:

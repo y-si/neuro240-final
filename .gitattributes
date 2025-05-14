@@ -1,0 +1,26 @@
+# Ensure consistent line endings across platforms
+* text=auto
+
+# Treat Python scripts as text
+*.py text
+
+# Treat Markdown and text files as text
+*.md text
+*.txt text
+
+# Treat shell scripts as text
+*.sh text
+
+# Treat Jupyter notebooks as text for diffing
+*.ipynb text
+
+# Set binary for common binary formats
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.pkl binary
+*.joblib binary
+*.npy binary
+*.npz binary
