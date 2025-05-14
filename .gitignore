@@ -29,7 +29,6 @@ Thumbs.db
 *.onnx
 
 # Ignore results and logs
-results/
 logs/
 
 # Ignore any user-specific files

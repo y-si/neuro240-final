@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Model & Mean Acc. & Std Acc. & Fold Scores & Status \\
+\midrule
+Logistic Regression & 0.86 & 0.012 & [0.867, 0.867, 0.841] & success \\
+Random Forest & 0.88 & 0.030 & [0.916, 0.880, 0.841] & success \\
+Neural Network & 0.63 & 0.068 & [0.723, 0.566, 0.598] & success \\
+XGBoost & 0.93 & 0.021 & [0.940, 0.952, 0.902] & success \\
+LightGBM & 0.92 & 0.031 & [0.928, 0.952, 0.878] & success \\
+Voting Ensemble & 0.94 & 0.006 & [0.940, 0.952, 0.939] & success \\
+Stacking Ensemble & 0.95 & 0.010 & [0.964, 0.952, 0.939] & success \\
+NeuralNet (FS, k=50) & 0.52 & 0.151 & [0.723, 0.361, 0.476] & success \\
+\bottomrule
+\end{tabular}
+\caption{Model comparison results on stylometric + RoBERTa PCA features.}
+\label{tab:model_comparison}
+\end{table}
